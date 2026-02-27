@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { HeroSecondary } from '../components/HeroSecondary';
 import { Timeline } from '../components/Timeline';
-import { ImageStack } from '../components/ImageStack';
-import { PressItem } from '../components/PressItem';
-import { noticias } from '../data/prensa'; // Importamos el archivo de noticias
+import { PressSection } from '../components/PressSection';
+import { ImageText } from '../components/ImageText';
+import { noticias } from '../data/prensa';
+import CTASection from '../components/CTASection';
 
 const Trayectoria = () => {
 	useEffect(() => {
@@ -43,59 +44,76 @@ const Trayectoria = () => {
 			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' />
 
+			{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL (IMAGETEXT) */}
+			<section className='py-20 px-6 bg-white border-b border-gray-100'>
+				<div className='max-w-7xl mx-auto'>
+					<ImageText
+						title='Adil Brkovic Almonte'
+						// subtitle='Licenciado en la Universidad Católica de Valparaíso'
+						text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
+
+Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, indemnizaciones emblemáticas contra el Estado y grandes Corporaciones, como los casos conocidos como Casas COPEVA y la Planta la Farfana de Aguas Andinas.
+
+Especialista en litigios indemnizatorios, su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de calidad a sus representados.`}
+						buttonText='Contactar ahora'
+						buttonLink='/contacto'
+						image='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop'
+						imageAlt='Adil Brkovic Almonte - Abogado Litigante'
+						imageSide='left'
+						buttonVariant='dark'
+					/>
+				</div>
+			</section>
+
+			{/* SECCIÓN 2: EVIDENCIA JURÍDICA Y RESPALDO ACADÉMICO */}
 			<section className='py-24 px-6 md:px-12 max-w-7xl mx-auto'>
-				<div className='grid md:grid-cols-2 gap-20 items-start'>
-					{/* LADO IZQUIERDO: BIOGRAFÍA Y PRENSA */}
-					<div className='space-y-16'>
-						<div className='space-y-8'>
-							<h2 className='text-3xl font-display font-semibold text-[#2c3e50] uppercase tracking-tighter'>Adil Brkovic Almonte</h2>
-							<div className='text-[#778696] font-light leading-relaxed space-y-6 text-lg'>
-								<p>
-									Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad e
-									indemnizaciones emblemáticas contra el Estado.
-								</p>
-								<p>
-									Su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de alta
-									complejidad.
-								</p>
+				<div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch'>
+					{/* COLUMNA IZQUIERDA: FORMACIÓN Y MEDIOS */}
+					<div className='flex flex-col gap-12'>
+						{/* 1. Formación Académica */}
+						<div className='bg-white p-10 md:p-14 shadow-sm border-t-4 border-[#e67e22]'>
+							<div className='mb-10'>
+								<h2 className='text-2xl font-display font-semibold text-[#2c3e50] uppercase tracking-tighter'>Formación Académica</h2>
+								<p className='text-[#778696] text-xs uppercase tracking-widest mt-2 font-light'>Acreditación y Excelencia</p>
 							</div>
 
-							{/* Formación Académica Estilizada */}
-							<div className='bg-white p-8 border-l-4 border-[#e67e22] shadow-sm'>
-								<h3 className='font-display font-semibold text-[#2c3e50] mb-4 uppercase text-xs tracking-[0.2em]'>Formación Académica</h3>
-								<ul className='text-sm space-y-3 text-[#778696] font-light'>
-									<li className='flex items-center gap-2'>
-										<span className='text-[#e67e22]'>•</span> Licenciado en Ciencias Jurídicas y Sociales
-									</li>
-									<li className='flex items-center gap-2'>
-										<span className='text-[#e67e22]'>•</span> Abogado, Excelentísima Corte Suprema de Chile
-									</li>
-								</ul>
-							</div>
+							<ul className='space-y-6 text-[#546e7a] font-light'>
+								<li className='flex items-start gap-4'>
+									<span className='text-[#e67e22] text-xl mt-[-4px]'>•</span>
+									<div>
+										<p className='font-semibold text-[#2c3e50] text-lg leading-tight'>Licenciado en Ciencias Jurídicas y Sociales</p>
+										<p className='text-sm mt-1'>Universidad Católica de Valparaíso</p>
+									</div>
+								</li>
+								<li className='flex items-start gap-4'>
+									<span className='text-[#e67e22] text-xl mt-[-4px]'>•</span>
+									<div>
+										<p className='font-semibold text-[#2c3e50] text-lg leading-tight'>Abogado</p>
+										<p className='text-sm mt-1'>Excelentísima Corte Suprema de Chile</p>
+									</div>
+								</li>
+							</ul>
 						</div>
 
-						{/* SECCIÓN DE PRENSA (NOTAS TAGGEADAS O HIGHLIGHTS) */}
-						<div className='pt-10'>
-							<h2 className='text-xs font-display font-semibold text-[#2c3e50] mb-8 uppercase tracking-[0.3em] border-b border-gray-200 pb-4'>Presencia en Medios</h2>
-							<div className='divide-y divide-gray-100'>
-								{noticias.map((noticia) => (
-									<PressItem key={noticia.id} noticia={noticia} />
-								))}
-							</div>
-						</div>
-
-						<div className='pt-10'>
-							<ImageStack />
-						</div>
+						{/* 2. Presencia en Medios - ¡AHORA IGUALADO! */}
+						<PressSection
+							noticiasFiltradas={noticias} // Muestra todas
+						/>
 					</div>
 
-					{/* LADO DERECHO: LÍNEA DE TIEMPO DE HITOS */}
-					<div className='bg-white p-8 md:p-12 shadow-sm rounded-sm'>
-						<h2 className='text-2xl font-display font-semibold text-[#2c3e50] mb-12 uppercase tracking-tighter border-b border-gray-100 pb-4'>Hitos Judiciales</h2>
+					{/* COLUMNA DERECHA: HITOS JUDICIALES */}
+					<div className='bg-white p-10 md:p-14 shadow-sm border-t-4 border-[#2c3e50]'>
+						<div className='mb-12'>
+							<h2 className='text-2xl font-display font-semibold text-[#2c3e50] uppercase tracking-tighter'>Hitos Judiciales</h2>
+							<p className='text-[#778696] text-xs uppercase tracking-widest mt-2 font-light'>Casos que transformaron la jurisprudencia</p>
+						</div>
 						<Timeline items={hitos} />
 					</div>
 				</div>
 			</section>
+
+			{/* 4. CTA DE CIERRE */}
+			<CTASection variant='full' />
 		</div>
 	);
 };

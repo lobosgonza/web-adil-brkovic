@@ -1,19 +1,15 @@
 @import 'tailwindcss';
 
-/* 1. IMPORTACIÓN DE FUENTES CON PESOS ELEGANTES */
-/* Gabarito: 400 (Regular), 600 (Semibold) para títulos */
-/* Noto Sans: 300 (Light), 400 (Regular), 600 (Semibold) para párrafos */
+/* 1. IMPORTACIÓN DE FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Noto+Sans:wght@300;400;600&display=swap');
 
 @theme {
-	/* Colores del Sistema */
 	--color-brand-dark: #2c3e50;
 	--color-brand-action: #e67e22;
 	--color-brand-whatsapp: #2e7d32;
 	--color-brand-bg: #f4f7f6;
 	--color-brand-muted: #778696;
 
-	/* Tipografías */
 	--font-sans: 'Noto Sans', sans-serif;
 	--font-display: 'Gabarito', sans-serif;
 }
@@ -22,13 +18,11 @@
 body {
 	background-color: var(--color-brand-bg);
 	font-family: var(--font-sans);
-
 	color: var(--color-brand-dark);
-	/* line-height: 1.6; */
 	-webkit-font-smoothing: antialiased;
 }
 
-/* 3. TIPOGRAFÍA DE TÍTULOS */
+/* 3. TIPOGRAFÍA DE TÍTULOS (ESTADO POR DEFECTO: OSCURO) */
 h1,
 h2,
 h3,
@@ -36,55 +30,110 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-display);
-	font-weight: 400; /* Bajamos de 900 a 600 para que sea fino */
+	font-weight: 600;
 	color: var(--color-brand-dark);
-	letter-spacing: -0.02em; /* Un poco más juntos para look profesional */
+	letter-spacing: -0.02em;
 }
 
-/* Especial para el nombre en el Hero */
-.hero-name {
-	font-weight: 400;
-	letter-spacing: -0.05em;
-	text-transform: uppercase;
+/* 4. UTILIDADES DE CONTRASTE PARA TÍTULOS */
+/* Úsalas para forzar el color según el fondo de la sección */
+.heading-dark-bg {
+	color: #ffffff !important;
 }
 
-/* 4. LINKS Y BOTONES GLOBALES */
-a {
-	text-decoration: none;
-	transition: all 0.3s ease;
+.heading-light-bg {
+	color: var(--color-brand-dark) !important;
 }
 
-/* Botón estándar del sitio */
+/* 5. BOTONES (PRIMARIO Y SECUNDARIO) */
 .btn-primary {
-	background-color: var(--color-brand-action);
-	color: #fff;
-	padding: 0.75rem 1.5rem;
-	font-weight: 400;
-	letter-spacing: 0.1em;
+	@apply inline-block text-center cursor-pointer;
+	background-color: var(--color-brand-dark);
+	color: #ffffff !important;
+	padding: 1rem 2.5rem;
+	font-family: var(--font-display);
+	font-weight: 600;
+	letter-spacing: 0.15em;
 	text-transform: uppercase;
 	font-size: 0.75rem;
-	transition: all 0.3s ease;
+	border-radius: 0px;
+	border: 1px solid var(--color-brand-dark);
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-primary:hover {
+	background-color: var(--color-brand-action);
+	color: #ffffff;
+	border: 1px solid var(--color-brand-action);
+}
+
+.btn-secondary {
+	@apply inline-block text-center cursor-pointer;
+	padding: 1rem 2.5rem;
+	font-family: var(--font-display);
+	font-weight: 600;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	border-radius: 0px;
+	transition: all 0.4s ease;
+}
+
+.btn-secondary-dark {
+	background-color: transparent;
+	color: var(--color-brand-dark);
+	border: 1px solid var(--color-brand-dark);
+}
+
+.btn-secondary-dark:hover {
 	background-color: var(--color-brand-dark);
-	transform: translateY(-2px);
+	color: #ffffff !important;
 }
 
-/* 5. AJUSTE PARA NAV Y FOOTER AZULES */
-/* Esto asegura que los textos dentro de fondos oscuros se vean bien */
-.bg-brand-dark h1,
-.bg-brand-dark h2,
-.bg-brand-dark h3,
-.bg-brand-dark p,
-.bg-brand-dark span {
-	color: white;
+.btn-secondary-light {
+	background-color: transparent;
+	color: #ffffff;
+	border: 1px solid #ffffff;
 }
 
-.bg-brand-dark a:not(.btn-primary) {
+.btn-secondary-light:hover {
+	background-color: #ffffff;
+	color: var(--color-brand-dark) !important;
+}
+
+/* 6. COMPONENTES ESPECÍFICOS */
+/* Busca la sección de .card-service en tu index.css y actualízala así: */
+
+.card-service {
+	@apply bg-white flex flex-col h-full transition-all duration-300;
+	overflow: hidden;
+	border-radius: 0px;
+	position: relative;
+	shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+}
+
+.card-service:hover {
+	/* Al hacer hover, la sombra se intensifica */
+	box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+	transform: translateY(-5px);
+}
+
+/* 7. SECCIONES OSCURAS (FOOTER, ÁREAS, ETC.) */
+.section-dark,
+footer {
+	background-color: var(--color-brand-dark) !important;
+}
+
+/* Aplicación automática a títulos dentro de secciones oscuras */
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+footer h4 {
+	color: #ffffff !important;
+}
+
+/* Links en secciones oscuras */
+.section-dark p,
+.section-dark span {
 	color: rgba(255, 255, 255, 0.8);
-}
-
-.bg-brand-dark a:hover {
-	color: var(--color-brand-action);
 }

@@ -15,6 +15,8 @@ import ServicioTemplate from './pages/ServicioTemplate';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad'; // Asegúrate que el archivo se llame así
 import NotFound from './pages/NotFound';
 
+import AreasTrabajoHub from './pages/AreasTrabajoHub';
+
 // Función para resetear el scroll al cambiar de página
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
@@ -49,6 +51,7 @@ function App() {
 						{/* Página de Políticas Legales */}
 						<Route path='/politica-de-privacidad' element={<PoliticaPrivacidad />} />
 
+						<Route path='/areas-de-trabajo' element={<AreasTrabajoHub />} />
 						{/* Error 404 - Si la ruta no existe */}
 						<Route path='*' element={<NotFound />} />
 					</Routes>

@@ -1,34 +1,32 @@
-const CTASection = ({ variant = 'full' }) => {
-	// Variante para el Sidebar (más compacto)
-	if (variant === 'sidebar') {
-		return (
-			<div className='bg-[#2c3e50] p-8 text-center text-white shadow-lg'>
-				<p className='text-[10px] uppercase tracking-widest mb-4 opacity-60 font-bold'>¿Necesita asesoría?</p>
-				<h4 className='font-display font-semibold text-lg mb-6 leading-tight !text-white'>Evaluamos la viabilidad técnica de su caso.</h4>
-				<a
-					href='#contacto'
-					className='inline-block w-full py-3 border border-[#e67e22] text-[#e67e22] text-xs font-bold uppercase tracking-widest hover:bg-[#e67e22] hover:text-white transition-all duration-300'>
-					Iniciar Consulta
-				</a>
-			</div>
-		);
-	}
+import { Link } from 'react-router-dom';
 
-	// Variante Full Width (para el final de las páginas)
+const CTASection = () => {
 	return (
-		<section className='mt-24 bg-white border-t-4 border-[#e67e22] p-12 md:p-20 text-center shadow-sm'>
-			<div className='max-w-3xl mx-auto space-y-8'>
-				<h2 className='font-display text-3xl md:text-4xl font-semibold text-[#2c3e50] uppercase tracking-tighter leading-none'>¿Iniciamos la revisión de su caso?</h2>
-				<p className='text-[#778696] font-light text-lg md:text-xl max-w-2xl mx-auto'>
-					Analizamos los antecedentes técnicos y jurídicos para determinar la viabilidad de su requerimiento legal bajo los más altos estándares éticos.
-				</p>
-				<div className='pt-6'>
-					<a
-						href='#contacto'
-						className='inline-block bg-[#2c3e50] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#e67e22] transition-all duration-300 shadow-xl'>
+		<section className='mt-32 mb-20 px-6'>
+			<div className='max-w-5xl mx-auto py-20 border-t border-gray-100 flex flex-col items-center text-center'>
+				{/* Etiqueta superior sutil */}
+				<span className='text-[#778696] font-light uppercase tracking-[0.5em] text-[10px] mb-8'>Consulta Profesional</span>
+
+				{/* Título minimalista pero de gran escala */}
+				<h2 className='font-display text-4xl md:text-6xl text-[#2c3e50] font-light uppercase tracking-tighter leading-tight mb-12'>
+					¿Iniciamos la revisión <br />
+					<span className='font-bold italic'>de su caso?</span>
+				</h2>
+
+				{/* El Botón es el protagonista absoluto */}
+				<div className='relative group'>
+					{/* Sombra de acento naranja que solo aparece en hover */}
+					<div className='absolute inset-0 bg-[#e67e22] blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500'></div>
+
+					<Link
+						to='/contacto'
+						className='relative inline-block bg-[#e67e22] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-[#2c3e50] transition-all duration-500 shadow-xl'>
 						Solicitar Entrevista Técnica
-					</a>
+					</Link>
 				</div>
+
+				{/* Bajada de texto muy ligera */}
+				<p className='mt-12 text-[#778696] font-light text-sm max-w-md tracking-wide'>Evaluación exhaustiva de antecedentes jurídicos bajo estricta confidencialidad.</p>
 			</div>
 		</section>
 	);
