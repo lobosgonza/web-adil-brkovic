@@ -17,11 +17,9 @@ const CTASection = () => {
 						<span className='text-[#e67e22] font-bold uppercase tracking-[0.4em] text-[10px]'>Atención Inmediata</span>
 					</div>
 
-					<h2 className='font-display text-4xl md:text-5xl !text-white font-medium leading-[1.1] tracking-tighter'>¿Necesita asesoría legal urgente?</h2>
+					<h2 className='uppercase font-display text-4xl md:text-5xl !text-white font-medium leading-[1.1] tracking-tighter'>¿Necesitas asesoría legal?</h2>
 
-					<p className='mt-8 text-gray-400 font-light text-sm max-w-md leading-relaxed'>
-						Hable directamente con nuestra oficina técnica para una evaluación preliminar de su caso vía WhatsApp.
-					</p>
+					<p className='mt-8 text-gray-400 font-light text-sm max-w-md leading-relaxed'>Hablemos directamente para una evaluación preliminar de tu caso vía WhatsApp.</p>
 				</div>
 
 				<div className='flex flex-col sm:flex-row items-center gap-6'>

@@ -86,7 +86,7 @@ Especialista en litigios indemnizatorios, su práctica combina el rigor técnico
 			</section>
 
 			{/* CTA DE CIERRE */}
-			<CTASection variant='full' />
+			{/* <CTASection variant='full' /> */}
 		</div>
 	);
 };

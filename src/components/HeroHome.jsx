@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 export const HeroHome = () => (
-	<section className='px-8 py-20 md:py-32 bg-white overflow-hidden'>
+	<section className='px-8 bg-white overflow-hidden'>
 		<div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center'>
-			<div>
+			<div className='py-20'>
 				<div className='w-12 h-1 bg-brand-gold mb-6'></div>
 				<h1 className='text-6xl md:text-6xl font-black text-brand-blue leading-[0.9] tracking-tighter'>
 					ADIL <br /> BRKOVIC

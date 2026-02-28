@@ -120,14 +120,13 @@ h6 {
 /* 7. SECCIONES OSCURAS (FOOTER, ÁREAS, ETC.) */
 .section-dark,
 footer {
-	background-color: var(--color-brand-dark) !important;
+	background-color: var(--color-brand-dark);
 }
 
 /* Aplicación automática a títulos dentro de secciones oscuras */
 .section-dark h2,
 .section-dark h3,
-.section-dark h4,
-footer h4 {
+.section-dark h4 {
 	color: #ffffff !important;
 }
 
@@ -135,4 +134,12 @@ footer h4 {
 .section-dark p,
 .section-dark span {
 	color: rgba(255, 255, 255, 0.8);
+}
+.section-light {
+	background-color: var(--color-brand-bg);
+}
+.section-light h2,
+.section-light h3,
+.section-light h4 {
+	color: var(--color-brand-dark);
 }
