@@ -22,7 +22,7 @@ export const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed top-0 w-full z-50 bg-[#2c3e50] shadow-xl font-sans border-b border-white/5'>
+		<nav className='fixed top-0 w-full z-70 bg-[#2c3e50] shadow-xl font-sans border-b border-white/5'>
 			<div className='max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center'>
 				{/* LOGO */}
 				<Link to='/' className='flex flex-col group' onClick={closeMenus}>
@@ -87,21 +87,21 @@ export const Navbar = () => {
 			</div>
 
 			{/* MOBILE MENU */}
-			<div className={`fixed inset-0 top-20 bg-[#2c3e50] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden z-40 overflow-y-auto`}>
-				<div className='flex flex-col p-10 gap-8 text-white'>
-					<Link to='/' onClick={closeMenus} className='text-3xl font-display font-semibold uppercase tracking-tighter'>
+			<div className={`fixed inset-0 top-20 bg-[#2c3e50]  transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden overflow-y-auto`}>
+				<div className='flex flex-col p-10 gap-4 text-white'>
+					<Link to='/' onClick={closeMenus} className='pt-1 text-xl font-display font-semibold uppercase tracking-tighter'>
 						Inicio
 					</Link>
-					<Link to='/trayectoria' onClick={closeMenus} className='text-3xl font-display font-semibold uppercase tracking-tighter'>
+					<Link to='/trayectoria' onClick={closeMenus} className='pt-1 text-xl font-display font-semibold uppercase tracking-tighter'>
 						Trayectoria
 					</Link>
-					<Link to='/areas-de-trabajo' onClick={closeMenus} className='text-3xl font-display font-semibold uppercase tracking-tighter text-[#e67e22]'>
+					<Link to='/areas-de-trabajo' onClick={closeMenus} className='pt-1 text-xl font-display font-semibold uppercase tracking-tighter text-[#e67e22]'>
 						Áreas de Trabajo
 					</Link>
 
 					<div className='flex flex-col gap-4 border-t border-white/10 pt-6'>
 						{servicios.map((s) => (
-							<Link key={s.path} to={s.path} onClick={closeMenus} className='text-white/70 text-lg font-light'>
+							<Link key={s.path} to={s.path} onClick={closeMenus} className='pt-1 text-white/70 text-lg font-light'>
 								{s.name}
 							</Link>
 						))}

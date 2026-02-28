@@ -46,47 +46,46 @@ const Trayectoria = () => {
 			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' />
 
-			{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
-			<section className='py-20 px-6  border-b border-gray-100'>
-				<div className='max-w-7xl mx-auto'>
-					<ImageText
-						title='Adil Brkovic Almonte'
-						text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
+			<section className=' max-w-7xl mx-auto'>
+				{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
+
+				<ImageText
+					title='Adil Brkovic Almonte'
+					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
 
 Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, indemnizaciones emblemáticas contra el Estado y grandes Corporaciones, como los casos conocidos como Casas COPEVA y la Planta la Farfana de Aguas Andinas.
 
 Especialista en litigios indemnizatorios, su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de calidad a sus representados.`}
-						buttonText='Contactar ahora'
-						buttonLink='/contacto'
-						image='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop'
-						imageAlt='Adil Brkovic Almonte - Abogado Litigante'
-						imageSide='left'
-						buttonType='primary' // <--- AQUÍ ELIGES EL ESTILO
-						buttonVariant='dark'
-					/>
-				</div>
-			</section>
+					buttonText='Contactar ahora'
+					buttonLink='/contacto'
+					image='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop'
+					imageAlt='Adil Brkovic Almonte - Abogado Litigante'
+					imageSide='left'
+					buttonType='primary' // <--- AQUÍ ELIGES EL ESTILO
+					buttonVariant='dark'
+				/>
 
-			{/* SECCIÓN 2: EVIDENCIA JURÍDICA (ESTANDARIZADA) */}
-			<section className='py-24 px-6 md:px-12 max-w-7xl mx-auto'>
-				<div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch'>
-					{/* COLUMNA DERECHA: HITOS (Usando el nuevo ContentBox) */}
-					<div className='flex flex-col h-full'>
-						<ContentBox title='Hitos Judiciales' subtitle='Casos que transformaron la jurisprudencia' icon={Gavel} borderColor='border-[#2c3e50]'>
-							<div className='pt-6'>
-								<Timeline items={hitos} />
-							</div>
-						</ContentBox>
+				{/* SECCIÓN 2: EVIDENCIA JURÍDICA (ESTANDARIZADA) */}
+				<section className='max-md:mt-0 max-md:mb-0 mt-16 mb-16 max-w-7xl mx-auto'>
+					<div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch'>
+						{/* COLUMNA DERECHA: HITOS (Usando el nuevo ContentBox) */}
+						<div className='flex flex-col h-full'>
+							<ContentBox title='Hitos Judiciales' subtitle='Casos que transformaron la jurisprudencia' icon={Gavel} borderColor='border-[#778696]'>
+								<div className='pt-6'>
+									<Timeline items={hitos} />
+								</div>
+							</ContentBox>
+						</div>
+						{/* COLUMNA IZQUIERDA: PRENSA (Ya usa ContentBox internamente) */}
+						<div className='flex flex-col h-full'>
+							<PressSection noticiasFiltradas={noticias} />
+						</div>
 					</div>
-					{/* COLUMNA IZQUIERDA: PRENSA (Ya usa ContentBox internamente) */}
-					<div className='flex flex-col h-full'>
-						<PressSection noticiasFiltradas={noticias} />
-					</div>
-				</div>
+				</section>
 			</section>
 
 			{/* CTA DE CIERRE */}
-			{/* <CTASection variant='full' /> */}
+			<CTASection backTo='/' backText='Volver al Home' />
 		</div>
 	);
 };

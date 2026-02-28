@@ -16,7 +16,7 @@ export const ServiceCard = ({ title, description, link, image, imageAlt }) => (
 			<p className='!text-slate-600 text-sm font-light leading-relaxed mb-8 flex-grow'>{description}</p>
 
 			{/* Botón estandarizado */}
-			<Link to={link} className='btn-primary w-full md:w-fit'>
+			<Link to={link} className='btn-secondary btn-secondary-dark w-full md:w-fit'>
 				Ver Área
 			</Link>
 		</div>

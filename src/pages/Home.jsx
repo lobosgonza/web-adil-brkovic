@@ -2,7 +2,7 @@ import { HeroHome } from '../components/HeroHome';
 import { ServiceCard } from '../components/ServiceCard';
 import { WhatsAppCTA } from '../components/WhatsAppCTA'; // SIN llaves
 import { ImageText } from '../components/ImageText';
-
+import CTASection from '../components/CTASection'; // SIN llaves
 // Datos centralizados para las imágenes y contenido (SEO: Alt texts incluidos)
 const serviciosData = {
 	ddhh: {
@@ -98,23 +98,23 @@ const Home = () => {
 			</section>
 
 			{/* LÁMINA 3: TEASER DE TRAYECTORIA */}
-			<section className='py-24 bg-[#F4F7F6] px-8'>
-				<div className='container mx-auto max-w-7xl'>
-					<ImageText
-						title='Trayectoria Profesional'
-						subtitle='Sobre Adil Brkovic'
-						text='Con más de 30 años de experiencia, Adil Brkovic ha liderado hitos judiciales que transformaron la jurisprudencia en Chile. Su enfoque combina rigor técnico con un profundo compromiso social.'
-						buttonText='Ver Trayectoria Completa'
-						buttonLink='/trayectoria'
-						imageSide='right'
-						image={serviciosData.trayectoria.url}
-						imageAlt={serviciosData.trayectoria.alt}
-						buttonVariant='dark'
-					/>
-				</div>
-			</section>
 
-			<WhatsAppCTA />
+			<div className='container mx-auto max-w-7xl'>
+				<ImageText
+					title='Trayectoria Profesional'
+					subtitle='Sobre Adil Brkovic'
+					text='Con más de 30 años de experiencia, Adil Brkovic ha liderado hitos judiciales que transformaron la jurisprudencia en Chile. Su enfoque combina rigor técnico con un profundo compromiso social.'
+					buttonText='Ver Trayectoria Completa'
+					buttonLink='/trayectoria'
+					imageSide='right'
+					image={serviciosData.trayectoria.url}
+					imageAlt={serviciosData.trayectoria.alt}
+					buttonVariant='dark'
+				/>
+			</div>
+
+			{/* LÁMINA 4: CTA FINAL (Sin botón de volver) */}
+			<CTASection />
 		</div>
 	);
 };

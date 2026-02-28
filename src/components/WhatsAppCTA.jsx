@@ -11,7 +11,7 @@ export const WhatsAppCTA = () => {
 			target='_blank'
 			rel='noopener noreferrer'
 			/* Posicionado en el 75% de la altura (cuadrante inferior) pegado a la derecha */
-			className='fixed right-0 top-[75%] -translate-y-1/2 z-[60] group flex items-center'
+			className='fixed right-0 top-[75%] -translate-y-1/2 z-60 group flex items-center'
 			aria-label='Contactar por WhatsApp'>
 			{/* ETIQUETA: Fondo oscuro con sombra fuerte para contraste total sobre blanco */}
 			<span className='absolute right-full  px-4 py-3 bg-[#1a252f] text-white text-[10px]  uppercase tracking-[0.2em] shadow-2xl rounded-l-sm opacity-0 group-hover:opacity-90 transition-all duration-300  group-hover:translate-x-0 whitespace-nowrap hidden md:block'>

@@ -27,10 +27,11 @@ export const ImageText = ({
 	const paragraphs = typeof text === 'string' ? text.split('\n\n') : [text];
 
 	return (
-		<div className={`flex flex-col md:flex-row items-center gap-16 ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
+		<div
+			className={`max-md:mt-0 max-md:mb-0 mt-16 mb-16 shadow-sm rounded-sm p-10 md:p-16 bg-white flex flex-col md:flex-row items-center gap-16 ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
 			{/* CONTENEDOR DE IMAGEN */}
 			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group'>
-				<img src={image} alt={imageAlt} className='w-full object-cover aspect-video grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700' />
+				<img src={image} alt={imageAlt} className='w-full object-cover aspect-video transition-all duration-700' />
 			</div>
 
 			{/* CONTENEDOR DE TEXTO */}

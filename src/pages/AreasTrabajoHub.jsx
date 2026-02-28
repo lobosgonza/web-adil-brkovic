@@ -81,7 +81,8 @@ const ServiciosHub = () => {
 			</section>
 
 			{/* 3. CIERRE DE PÁGINA (CTA COMPLETO) */}
-			<CTASection variant='full' />
+			{/* CTA DE CIERRE */}
+			<CTASection backTo='/' backText='Volver al Home' />
 		</div>
 	);
 };

@@ -55,25 +55,24 @@ const ServicioTemplate = () => {
 	}
 
 	return (
-		<div className='pb-20 min-h-screen bg-[#F4F7F6] font-sans'>
+		<div>
 			{/* 1. HERO SECUNDARIO OSCURO */}
 			<HeroSecondary title={data.titulo} subtitle='Área de Especialidad' />
 
-			<div className='max-w-7xl mx-auto px-6 pt-24'>
+			<div className='max-w-7xl mx-auto'>
 				{/* 2. BLOQUE PRINCIPAL */}
-				<section className='bg-white p-10 md:p-16 shadow-sm rounded-sm mb-16'>
-					<ImageText
-						title={data.titulo}
-						titleSecondary={data.titleSecondary}
-						text={data.descripcion}
-						buttonText='Solicitar Consulta'
-						buttonLink='/contacto'
-						imageSide='left'
-						image={data.imagen}
-						imageAlt={`Imagen representativa de ${data.titulo}`}
-						buttonVariant='dark'
-					/>
-				</section>
+
+				<ImageText
+					title={data.titulo}
+					titleSecondary={data.titleSecondary}
+					text={data.descripcion}
+					buttonText='Solicitar Consulta'
+					buttonLink='/contacto'
+					imageSide='left'
+					image={data.imagen}
+					imageAlt={`Imagen representativa de ${data.titulo}`}
+					buttonVariant='dark'
+				/>
 
 				{/* 3. PRENSA RELACIONADA */}
 				{noticiasRelacionadas.length > 0 && (
@@ -83,20 +82,9 @@ const ServicioTemplate = () => {
 						<PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />
 					</div>
 				)}
-
-				{/* 4. CTA DE CIERRE */}
-				<CTASection variant='full' />
-
-				{/* 5. BOTÓN VOLVER SIMPLIFICADO */}
-				<div className='mt-20 flex justify-center'>
-					<Link
-						to='/areas-de-trabajo'
-						className='group flex items-center gap-2 text-[#778696] hover:text-[#e67e22] transition-colors text-xs uppercase tracking-[0.2em] font-medium'>
-						<ArrowLeft size={14} className='group-hover:-translate-x-1 transition-transform' />
-						Volver a Áreas de Trabajo
-					</Link>
-				</div>
 			</div>
+			{/* 4. CTA DE CIERRE */}
+			<CTASection backTo='/areas-de-trabajo' backText='Volver a Áreas de Trabajo' />
 		</div>
 	);
 };

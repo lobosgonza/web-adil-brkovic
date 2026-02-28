@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 // --- IMPORTACIONES DE COMPONENTES ---
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppCTA from './components/CTASection';
+import WhatsAppCTA from './components/WhatsAppCTA';
 
 // --- IMPORTACIONES DE PÁGINAS ---
 import Home from './pages/Home';
