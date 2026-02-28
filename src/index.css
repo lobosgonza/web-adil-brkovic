@@ -12,7 +12,21 @@
 	--font-sans: 'Noto Sans', sans-serif;
 	--font-display: 'Gabarito', sans-serif;
 }
+@theme {
+	/* Si esto falta, calc(var(--spacing) * 16) no tiene valor base */
+	--spacing: 0.25rem;
+}
 
+html {
+	scroll-behavior: smooth;
+}
+
+/* Evita que el contenido "salte" cuando AnimatePresence quita un elemento */
+.overflow-x-hidden-entire-app {
+	overflow-x: hidden;
+	width: 100%;
+	position: relative;
+}
 /* 2. ESTILOS BASE */
 body {
 	background-color: var(--color-brand-bg);

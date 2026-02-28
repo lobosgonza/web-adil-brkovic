@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, Newspaper } from 'lucide-react';
 import { PressSection } from '../components/PressSection';
 import { ImageText } from '../components/ImageText';
@@ -49,7 +50,12 @@ const ServicioTemplate = () => {
 
 	const data = contenidos[id];
 	const noticiasRelacionadas = noticias.filter((n) => n.tag === id);
-
+	// Actualiza el título de la pestaña automáticamente
+	useEffect(() => {
+		if (data) {
+			document.title = `${data.titulo} | Adil Brkovic`;
+		}
+	}, [data]);
 	if (!data) {
 		return <div className='pt-40 text-center font-display text-[#2c3e50] uppercase'>Área no encontrada</div>;
 	}
@@ -59,7 +65,7 @@ const ServicioTemplate = () => {
 			{/* 1. HERO SECUNDARIO OSCURO */}
 			<HeroSecondary title={data.titulo} subtitle='Área de Especialidad' />
 
-			<div className='max-w-7xl mx-auto'>
+			<div className='sm:px-12 max-w-7xl mx-auto'>
 				{/* 2. BLOQUE PRINCIPAL */}
 
 				<ImageText
@@ -76,7 +82,7 @@ const ServicioTemplate = () => {
 
 				{/* 3. PRENSA RELACIONADA */}
 				{noticiasRelacionadas.length > 0 && (
-					<div className='mb-24'>
+					<div className=''>
 						{' '}
 						{/* Quitamos border-t y border-gray-200 */}
 						<PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />

@@ -13,7 +13,7 @@ const Footer = () => {
 	];
 
 	return (
-		<footer className='section-light pt-10 pb-10 px-6 font-sans border-t border-white/5'>
+		<footer className='section-light py-10 px-6 max-w-7xl mx-auto '>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16'>
 				{/* COLUMNA 1: IDENTIDAD Y TRAYECTORIA */}
 				<div className='space-y-6'>
@@ -90,8 +90,16 @@ const Footer = () => {
 					className='text-[10px] text-[#778696] hover: uppercase tracking-[0.1em] font-light transition-colors underline underline-offset-4 decoration-white/10'>
 					Política de Privacidad
 				</Link>
+
 				<p className='text-[10px] uppercase tracking-[0.2em] text-[#778696] font-light italic'>
-					Diseño y estrategia por <span className='text-[#e67e22] font-semibold not-italic'>Expansis Pro</span>
+					Diseño y estrategia por{' '}
+					<a
+						href='https://expansispro.com' // Asegúrate de que esta sea la URL correcta
+						target='_blank'
+						rel='noopener noreferrer'
+						className='font-semibold text-brand-gold text-[#e67e22] transition-colors duration-300 underline-offset-4 hover:underline'>
+						Expansis Pro
+					</a>
 				</p>
 			</div>
 		</footer>

@@ -10,6 +10,7 @@ import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber cr
 
 const Trayectoria = () => {
 	useEffect(() => {
+		document.title = 'Trayectoria | Adil Brkovic';
 		window.scrollTo(0, 0);
 	}, []);
 
@@ -42,11 +43,11 @@ const Trayectoria = () => {
 	];
 
 	return (
-		<div className='bg-[#F4F7F6] min-h-screen font-sans'>
+		<div className=' min-h-screen font-sans'>
 			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' />
 
-			<section className=' max-w-7xl mx-auto'>
+			<section className='sm:px-12 py-12 max-w-7xl mx-auto'>
 				{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
 
 				<ImageText
@@ -66,7 +67,7 @@ Especialista en litigios indemnizatorios, su práctica combina el rigor técnico
 				/>
 
 				{/* SECCIÓN 2: EVIDENCIA JURÍDICA (ESTANDARIZADA) */}
-				<section className='max-md:mt-0 max-md:mb-0 mt-16 mb-16 max-w-7xl mx-auto'>
+				<section className=' my-16 max-w-7xl mx-auto'>
 					<div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch'>
 						{/* COLUMNA DERECHA: HITOS (Usando el nuevo ContentBox) */}
 						<div className='flex flex-col h-full'>

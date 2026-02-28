@@ -1,23 +1,18 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-// Importación de Componentes Globales
-// (Martín deberá crear estos archivos en src/components/)
-// --- IMPORTACIONES DE COMPONENTES ---
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppCTA from './components/WhatsAppCTA';
+import { WhatsAppCTA } from './components/WhatsAppCTA'; // Verifica si es exportación nombrada o default
 
-// --- IMPORTACIONES DE PÁGINAS ---
 import Home from './pages/Home';
 import Trayectoria from './pages/Trayectoria';
 import ServicioTemplate from './pages/ServicioTemplate';
-import PoliticaPrivacidad from './pages/PoliticaPrivacidad'; // Asegúrate que el archivo se llame así
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import NotFound from './pages/NotFound';
-
 import AreasTrabajoHub from './pages/AreasTrabajoHub';
 
-// Función para resetear el scroll al cambiar de página
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
 	useEffect(() => {
@@ -26,44 +21,91 @@ const ScrollToTop = () => {
 	return null;
 };
 
-function App() {
-	return (
-		<Router>
-			<ScrollToTop />
+const pageVariants = {
+	initial: { opacity: 0, scale: 0.99 },
+	animate: { opacity: 1, scale: 1 },
+	exit: { opacity: 0, scale: 1.01 },
+};
 
-			{/* Contenedor principal con Flexbox para que el footer siempre esté abajo */}
-			<div className='flex flex-col min-h-screen antialiased font-sans selection:bg-brand-gold/30'>
-				{/* Navegación Superior */}
+const pageTransition = {
+	duration: 0.4,
+	ease: [0.43, 0.13, 0.23, 0.96],
+};
+
+const PageWrapper = ({ children }) => (
+	<motion.div initial='initial' animate='animate' exit='exit' variants={pageVariants} transition={pageTransition}>
+		{children}
+	</motion.div>
+);
+
+function App() {
+	const location = useLocation();
+
+	return (
+		<>
+			<ScrollToTop />
+			<div className='flex flex-col min-h-screen antialiased font-sans selection:bg-orange-500/30'>
 				<Navbar />
 
-				{/* Contenido Dinámico */}
 				<main className='flex-grow'>
-					<Routes>
-						{/* Página de Inicio */}
-						<Route path='/' element={<Home />} />
-
-						{/* Página de Trayectoria e Hitos */}
-						<Route path='/trayectoria' element={<Trayectoria />} />
-
-						{/* Template para los 5 servicios (Usa el ID del CSV) */}
-						<Route path='/servicio/:id' element={<ServicioTemplate />} />
-
-						{/* Página de Políticas Legales */}
-						<Route path='/politica-de-privacidad' element={<PoliticaPrivacidad />} />
-
-						<Route path='/areas-de-trabajo' element={<AreasTrabajoHub />} />
-						{/* Error 404 - Si la ruta no existe */}
-						<Route path='*' element={<NotFound />} />
-					</Routes>
+					<AnimatePresence mode='wait'>
+						<Routes location={location} key={location.pathname}>
+							<Route
+								path='/'
+								element={
+									<PageWrapper>
+										<Home />
+									</PageWrapper>
+								}
+							/>
+							<Route
+								path='/trayectoria'
+								element={
+									<PageWrapper>
+										<Trayectoria />
+									</PageWrapper>
+								}
+							/>
+							<Route
+								path='/areas-de-trabajo'
+								element={
+									<PageWrapper>
+										<AreasTrabajoHub />
+									</PageWrapper>
+								}
+							/>
+							<Route
+								path='/servicio/:id'
+								element={
+									<PageWrapper>
+										<ServicioTemplate />
+									</PageWrapper>
+								}
+							/>
+							<Route
+								path='/politica-de-privacidad'
+								element={
+									<PageWrapper>
+										<PoliticaPrivacidad />
+									</PageWrapper>
+								}
+							/>
+							<Route
+								path='*'
+								element={
+									<PageWrapper>
+										<NotFound />
+									</PageWrapper>
+								}
+							/>
+						</Routes>
+					</AnimatePresence>
 				</main>
 
-				{/* Botón de WhatsApp flotante */}
 				<WhatsAppCTA />
-
-				{/* Pie de página */}
 				<Footer />
 			</div>
-		</Router>
+		</>
 	);
 }
 

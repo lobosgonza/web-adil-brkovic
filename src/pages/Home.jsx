@@ -34,13 +34,13 @@ const serviciosData = {
 
 const Home = () => {
 	return (
-		<div className='flex flex-col'>
+		<div className=' flex flex-col'>
 			{/* LÁMINA 1: HERO PRINCIPAL */}
 			<HeroHome />
 
 			{/* LÁMINA 2: GRILLA DE SERVICIOS (Cards) */}
-			<section id='areas' className='py-24 section-dark px-8'>
-				<div className='container mx-auto max-w-7xl'>
+			<section id='areas' className='px-12 py-24 section-dark'>
+				<div className=' mx-auto max-w-7xl'>
 					<div className='mb-20 text-center'>
 						<h2 className='text-4xl font-semibold uppercase tracking-widest'>Áreas de Trabajo</h2>
 						<div className='w-24 h-1 bg-[#e67e22] mx-auto mt-6'></div>
@@ -99,7 +99,7 @@ const Home = () => {
 
 			{/* LÁMINA 3: TEASER DE TRAYECTORIA */}
 
-			<div className='container mx-auto max-w-7xl'>
+			<div className='px-12 container mx-auto max-w-7xl'>
 				<ImageText
 					title='Trayectoria Profesional'
 					subtitle='Sobre Adil Brkovic'

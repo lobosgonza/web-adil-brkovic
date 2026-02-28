@@ -2,7 +2,7 @@ import { ExternalLink, CheckCircle2 } from 'lucide-react';
 
 export const PressItem = ({ noticia }) => {
 	return (
-		<a href={noticia.link} target='_blank' rel='noopener noreferrer' className='group block py-6 transition-all duration-300 border-b border-gray-100 last:border-0'>
+		<a href={noticia.link} target='_blank' rel='noopener noreferrer' className=' group block py-6 transition-all duration-300 border-b border-gray-100 last:border-0'>
 			{/* Cambiamos a flex-col en mobile y flex-row en desktop */}
 			<div className='flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6'>
 				<div className='space-y-3 flex-grow'>

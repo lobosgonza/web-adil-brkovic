@@ -5,6 +5,7 @@ import CTASection from '../components/CTASection';
 
 const ServiciosHub = () => {
 	useEffect(() => {
+		document.title = 'Areas de Trabajo | Adil Brkovic';
 		window.scrollTo(0, 0);
 	}, []);
 
@@ -22,7 +23,7 @@ const ServiciosHub = () => {
 			{/* 1. HERO OSCURO INSTITUCIONAL */}
 			<HeroSecondary title='ÁREAS DE ESPECIALIZACIÓN' subtitle='SOLUCIONES JURÍDICAS DE ALTA COMPLEJIDAD' />
 
-			<section className='py-24 px-6 md:px-12 max-w-7xl mx-auto'>
+			<section className='py-24 sm:px-12 max-w-7xl mx-auto'>
 				{/* Introducción de la página */}
 				<div className='mb-20 max-w-3xl'>
 					<h2 className='text-3xl md:text-4xl font-display font-semibold text-[#2c3e50] uppercase tracking-tighter mb-6'>Experiencia técnica al servicio de la justicia</h2>

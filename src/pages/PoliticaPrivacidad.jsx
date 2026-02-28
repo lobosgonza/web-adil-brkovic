@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
+import CTASection from '../components/CTASection';
 
 const PoliticaPrivacidad = () => {
 	// Asegura que al entrar la página esté al inicio
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		document.title = 'Política de Privacidad | Adil Brkovic';
 	}, []);
 
 	const secciones = [
@@ -30,29 +32,32 @@ const PoliticaPrivacidad = () => {
 	];
 
 	return (
-		<div className='pt-40 pb-20 px-6 bg-[#F4F7F6] min-h-screen font-sans'>
-			<div className='max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-sm border-t-4 border-[#e67e22]'>
-				<h1 className='font-display text-4xl font-semibold text-[#2c3e50] mb-2 tracking-tighter uppercase'>Políticas de Privacidad</h1>
+		<>
+			<div className='pt-40 pb-20 px-6 bg-[#F4F7F6] min-h-screen font-sans'>
+				<div className='max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-sm border-t-4 border-[#e67e22]'>
+					<h1 className='font-display text-4xl font-semibold text-[#2c3e50] mb-2 tracking-tighter uppercase'>Políticas de Privacidad</h1>
 
-				<p className='text-[#e67e22] font-semibold text-xs mb-12 tracking-widest uppercase'>Última actualización: Febrero, 2026</p>
+					<p className='text-[#e67e22] font-semibold text-xs mb-12 tracking-widest uppercase'>Última actualización: Febrero, 2026</p>
 
-				<div className='space-y-12'>
-					{secciones.map((seccion, index) => (
-						<div key={index} className='border-l-2 border-[#778696]/20 pl-8'>
-							<h2 className='font-display text-lg font-semibold text-[#2c3e50] mb-3 uppercase tracking-tight'>{seccion.titulo}</h2>
-							<p className='text-[#778696] leading-relaxed text-sm font-light italic'>{seccion.contenido}</p>
-						</div>
-					))}
-				</div>
+					<div className='space-y-12'>
+						{secciones.map((seccion, index) => (
+							<div key={index} className='border-l-2 border-[#778696]/20 pl-8'>
+								<h2 className='font-display text-lg font-semibold text-[#2c3e50] mb-3 uppercase tracking-tight'>{seccion.titulo}</h2>
+								<p className='text-[#778696] leading-relaxed text-sm font-light italic'>{seccion.contenido}</p>
+							</div>
+						))}
+					</div>
 
-				<div className='mt-20 p-8 bg-[#F4F7F6] border border-gray-100'>
-					<p className='text-xs text-[#778696] font-light italic'>
-						Para cualquier duda respecto a sus datos, puede comunicarse directamente a:
-						<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>adilbrkovic@gmail.com</span>
-					</p>
+					<div className='mt-20 p-8 bg-[#F4F7F6] border border-gray-100'>
+						<p className='text-xs text-[#778696] font-light italic'>
+							Para cualquier duda respecto a sus datos, puede comunicarse directamente a:
+							<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>adilbrkovic@gmail.com</span>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
+			<CTASection backTo='/' backText='Volver al Inicio' />
+		</>
 	);
 };
 

@@ -19,7 +19,7 @@ export const HeroHome = () => (
 					</Link>
 				</div>
 			</div>
-			<div className='hidden md:block bg-brand-gray aspect-[4/5] shadow-2xl overflow-hidden'>
+			<div className='hidden md:block bg-brand-gray aspect-[5/5] shadow-2xl overflow-hidden'>
 				{' '}
 				{/* Added overflow-hidden */}
 				{/* NUEVA IMAGEN DE RETRATO A COLOR AJUSTADA */}

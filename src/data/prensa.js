@@ -68,5 +68,22 @@ export const noticias = [
         link: 'https://www.elmostrador.cl/noticias/pais/2004/10/08/el-secreto-mejor-guardado-del-ex-edecan-de-la-camara-de-diputados/',
         tag: 'defensa-administrativa', // <-- Vinculado correctamente
         highlight: false
+    }, {
+        id: '8', // ID único para la noticia
+        fecha: '2016-01-07',
+        medio: 'Radio Cooperativa',
+        titulo: 'Crimen de Marta Ugarte: Justicia dicta condena contra 28 ex agentes de la DINA',
+        logro: 'Un hito en la justicia transicional chilena. Tras décadas de impunidad, el fallo establece la responsabilidad penal de una estructura jerárquica en el secuestro y homicidio de la profesora Marta Ugarte, cuyo caso conmovió al país.',
+        link: 'https://www.cooperativa.cl/noticias/pais/dd-hh/judicial/crimen-de-marta-ugarte-familia-valoro-condena-contra-28-ex-agentes/2016-07-01/115922.html',
+        tag: 'reparacion-ddhh', highlight: false
+    }, {
+        id: 9,
+        fecha: '2009-11-27',
+        medio: 'Radio Cooperativa',
+        titulo: 'Indemnización Casas Copeva: Gobierno reconoce deber de compensar a víctimas',
+        logro: 'Precedente fundamental en la defensa del derecho a una vivienda digna frente a negligencias del Estado.',
+        link: 'https://www.cooperativa.cl/noticias/pais/vivienda/gobierno-es-indispensable-compensar-a-victimas-de-las-casas-copeva/2009-11-27/143247.html',
+        tag: 'defensa-comunidades',
+        highlight: false
     }
 ];
