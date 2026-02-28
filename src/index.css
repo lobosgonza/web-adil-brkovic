@@ -1,7 +1,6 @@
-@import 'tailwindcss';
-
 /* 1. IMPORTACIÓN DE FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Noto+Sans:wght@300;400;600&display=swap');
+@import 'tailwindcss';
 
 @theme {
 	--color-brand-dark: #2c3e50;
