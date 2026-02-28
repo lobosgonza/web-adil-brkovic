@@ -1,14 +1,23 @@
+import { Link } from 'react-router-dom';
+
 const NotFound = () => {
 	return (
-		<section className='min-h-screen flex flex-col items-center justify-center bg-brand-gray px-6 text-center'>
-			<h1 className='text-9xl font-black text-brand-blue/20'>404</h1>
-			<h2 className='text-3xl font-bold text-brand-blue -mt-12 mb-6'>Página no encontrada</h2>
-			<p className='text-gray-600 mb-8 max-w-md'>Lo sentimos, la sección que buscas no existe o ha sido movida.</p>
-			<a href='/' className='bg-brand-blue text-white px-8 py-3 font-bold uppercase tracking-widest hover:bg-brand-gold transition-all'>
+		<section className='min-h-screen flex flex-col items-center justify-center bg-[#fcfcfc] px-6 text-center'>
+			{/* Divisor sutil con el color de la marca */}
+			<div className='w-16 h-1 bg-brand-orange mb-8 mx-auto'></div>
+
+			<h1 className='text-2xl md:text-3xl font-light text-brand-blue tracking-tight mb-4'>Contenido no disponible</h1>
+
+			<p className='text-gray-500 mb-10 max-w-sm font-light leading-relaxed text-sm md:text-base'>
+				La sección que intentas consultar no se encuentra disponible o ha sido reubicada permanentemente.
+			</p>
+
+			{/* Uso de Link para navegación interna sin recarga */}
+			<Link to='/' className='btn-primary'>
 				Volver al inicio
-			</a>
+			</Link>
 		</section>
 	);
 };
 
-export default NotFound; // <--- ESTA LÍNEA ES LA QUE FALTA
+export default NotFound;

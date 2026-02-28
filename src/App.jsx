@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 // --- IMPORTACIONES DE COMPONENTES ---
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CTASection from './components/CTASection';
+import WhatsAppCTA from './components/CTASection';
 
 // --- IMPORTACIONES DE PÁGINAS ---
 import Home from './pages/Home';
@@ -58,7 +58,7 @@ function App() {
 				</main>
 
 				{/* Botón de WhatsApp flotante */}
-				<CTASection />
+				<WhatsAppCTA />
 
 				{/* Pie de página */}
 				<Footer />
