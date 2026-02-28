@@ -1,34 +1,42 @@
-import { Link } from 'react-router-dom';
+import { MessageCircle } from 'lucide-react';
 
 const CTASection = () => {
 	return (
-		<section className='mt-32 mb-20 px-6'>
-			<div className='max-w-5xl mx-auto py-20 border-t border-gray-100 flex flex-col items-center text-center'>
-				{/* Etiqueta superior sutil */}
-				<span className='text-[#778696] font-light uppercase tracking-[0.5em] text-[10px] mb-8'>Consulta Profesional</span>
+		/* Eliminamos la sección con padding y fondo gris para evitar la caja blanca/gris exterior */
+		<div className='w-full overflow-hidden relative bg-[#2c3e50]'>
+			{/* FONDO: Degradado Azul Muy Profundo para dar dimensión */}
+			<div className='absolute inset-0 bg-gradient-to-br from-[#2c3e50] via-[#1a252f] to-[#2c3e50] opacity-100'></div>
 
-				{/* Título minimalista pero de gran escala */}
-				<h2 className='font-display text-4xl md:text-6xl text-[#2c3e50] font-light uppercase tracking-tighter leading-tight mb-12'>
-					¿Iniciamos la revisión <br />
-					<span className='font-bold italic'>de su caso?</span>
-				</h2>
+			{/* Elementos decorativos sutiles (Marca de agua) */}
+			<div className='absolute -right-20 -bottom-20 w-80 h-80 bg-[#e67e22]/5 rounded-full blur-3xl'></div>
 
-				{/* El Botón es el protagonista absoluto */}
-				<div className='relative group'>
-					{/* Sombra de acento naranja que solo aparece en hover */}
-					<div className='absolute inset-0 bg-[#e67e22] blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500'></div>
+			<div className='max-w-7xl mx-auto relative z-10 px-8 py-20 md:px-20 md:py-24 flex flex-col lg:flex-row items-center justify-between gap-12'>
+				<div className='text-left max-w-2xl'>
+					<div className='flex items-center gap-3 mb-6'>
+						<span className='w-12 h-[1px] bg-[#e67e22]'></span>
+						<span className='text-[#e67e22] font-bold uppercase tracking-[0.4em] text-[10px]'>Atención Inmediata</span>
+					</div>
 
-					<Link
-						to='/contacto'
-						className='relative inline-block bg-[#e67e22] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-[#2c3e50] transition-all duration-500 shadow-xl'>
-						Solicitar Entrevista Técnica
-					</Link>
+					<h2 className='font-display text-4xl md:text-5xl !text-white font-medium leading-[1.1] tracking-tighter'>¿Necesita asesoría legal urgente?</h2>
+
+					<p className='mt-8 text-gray-400 font-light text-sm max-w-md leading-relaxed'>
+						Hable directamente con nuestra oficina técnica para una evaluación preliminar de su caso vía WhatsApp.
+					</p>
 				</div>
 
-				{/* Bajada de texto muy ligera */}
-				<p className='mt-12 text-[#778696] font-light text-sm max-w-md tracking-wide'>Evaluación exhaustiva de antecedentes jurídicos bajo estricta confidencialidad.</p>
+				<div className='flex flex-col sm:flex-row items-center gap-6'>
+					{/* BOTÓN PRINCIPAL: NARANJA WHATSAPP */}
+					<a
+						href='https://wa.me/569XXXXXXXX'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='group relative inline-flex items-center gap-4 bg-[#e67e22] text-white px-10 py-5 text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white hover:text-[#e67e22] shadow-xl'>
+						<MessageCircle size={18} className='fill-current' />
+						Contactar vía WhatsApp
+					</a>
+				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 

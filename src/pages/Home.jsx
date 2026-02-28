@@ -1,6 +1,6 @@
 import { HeroHome } from '../components/HeroHome';
 import { ServiceCard } from '../components/ServiceCard';
-import { WhatsAppCTA } from '../components/WhatsAppCTA';
+import { WhatsAppCTA } from '../components/WhatsAppCTA'; // SIN llaves
 import { ImageText } from '../components/ImageText';
 
 // Datos centralizados para las imágenes y contenido (SEO: Alt texts incluidos)

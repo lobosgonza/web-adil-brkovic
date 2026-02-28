@@ -77,18 +77,10 @@ const ServicioTemplate = () => {
 
 				{/* 3. PRENSA RELACIONADA */}
 				{noticiasRelacionadas.length > 0 && (
-					<div className='pt-12 border-t border-gray-200 mb-16'>
-						<div className='flex items-center gap-3 mb-8'>
-							<Newspaper size={20} className='text-[#e67e22]' />
-							<h2 className='font-display font-semibold text-[#2c3e50] uppercase tracking-widest text-sm'>Casos en la Prensa Relacionados</h2>
-						</div>
-						<div className='mt-16'>
-							<PressSection
-								title='Casos Relacionados'
-								subtitle='Hitos Judiciales en la Prensa'
-								noticiasFiltradas={noticiasRelacionadas} // Muestra solo las del tag
-							/>
-						</div>
+					<div className='mb-24'>
+						{' '}
+						{/* Quitamos border-t y border-gray-200 */}
+						<PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />
 					</div>
 				)}
 

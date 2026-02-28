@@ -3,18 +3,27 @@ import { Link } from 'react-router-dom';
 export const ImageText = ({
 	title,
 	subtitle,
-	titleSecondary, // Nueva propiedad
+	titleSecondary,
 	text,
 	buttonText,
 	buttonLink,
 	imageSide,
 	image,
 	imageAlt,
-	buttonVariant,
+	buttonVariant = 'dark', // 'dark' o 'light'
+	buttonType = 'secondary', // 'primary' o 'secondary' (por defecto)
 }) => {
 	const subtitleColor = buttonVariant === 'dark' ? 'text-[#d35400]' : 'text-[#e67e22]';
 
-	// Lógica para separar el texto en párrafos si contiene saltos de línea
+	// Lógica de clases para el botón
+	const getButtonClass = () => {
+		if (buttonType === 'primary') {
+			return 'btn-primary'; // Tu clase global para botones sólidos
+		}
+		// Si es secundario, usa la lógica que ya tenías
+		return `btn-secondary btn-secondary-${buttonVariant}`;
+	};
+
 	const paragraphs = typeof text === 'string' ? text.split('\n\n') : [text];
 
 	return (
@@ -28,17 +37,13 @@ export const ImageText = ({
 			<div className='w-full md:w-1/2 space-y-8'>
 				<div className='space-y-4'>
 					<div className='space-y-2'>
-						{/* El subtítulo pequeño de arriba */}
-						<span className={`${subtitleColor} font-bold uppercase tracking-[0.3em] text-[10px]`}>{subtitle}</span>
-						{/* Título Principal */}
-						<h2 className='text-4xl font-semibold heading-light-bg uppercase tracking-tight leading-none'>{title}</h2>
+						{subtitle && <span className={`${subtitleColor} font-bold uppercase tracking-[0.3em] text-[10px]`}>{subtitle}</span>}
+						<h2 className='text-4xl font-semibold heading-light-bg uppercase tracking-tight leading-none text-[#2c3e50]'>{title}</h2>
 					</div>
 
-					{/* NUEVO: Título Secundario (Estilo bajada de título) */}
 					{titleSecondary && <p className='text-[#e67e22] font-display text-xl md:text-2xl italic leading-snug'>{titleSecondary}</p>}
 				</div>
 
-				{/* RENDERIZADO DE PÁRRAFOS */}
 				<div className='space-y-4'>
 					{paragraphs.map((p, index) => (
 						<p key={index} className='text-[#546e7a] font-light text-base md:text-lg leading-relaxed'>
@@ -48,7 +53,7 @@ export const ImageText = ({
 				</div>
 
 				<div className='pt-4'>
-					<Link to={buttonLink} className={`btn-secondary btn-secondary-${buttonVariant}`}>
+					<Link to={buttonLink} className={getButtonClass()}>
 						{buttonText}
 					</Link>
 				</div>
