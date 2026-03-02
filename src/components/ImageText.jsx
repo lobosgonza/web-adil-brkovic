@@ -46,7 +46,7 @@ export const ImageText = ({
 
 				<div className='space-y-4'>
 					{paragraphs.map((p, index) => (
-						<p key={index} className='text-[#546e7a] font-light text-base md:text-lg leading-relaxed'>
+						<p key={index} className='text-justify text-[#546e7a] font-light text-base md:text-lg leading-relaxed'>
 							{p}
 						</p>
 					))}

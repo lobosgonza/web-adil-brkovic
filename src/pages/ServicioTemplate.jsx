@@ -65,7 +65,7 @@ const ServicioTemplate = () => {
 			{/* 1. HERO SECUNDARIO OSCURO */}
 			<HeroSecondary title={data.titulo} subtitle='Área de Especialidad' />
 
-			<div className='sm:px-12 max-w-7xl mx-auto'>
+			<div className='max-w-7xl mx-auto'>
 				{/* 2. BLOQUE PRINCIPAL */}
 
 				<ImageText
@@ -81,13 +81,7 @@ const ServicioTemplate = () => {
 				/>
 
 				{/* 3. PRENSA RELACIONADA */}
-				{noticiasRelacionadas.length > 0 && (
-					<div className=''>
-						{' '}
-						{/* Quitamos border-t y border-gray-200 */}
-						<PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />
-					</div>
-				)}
+				{noticiasRelacionadas.length > 0 && <PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />}
 			</div>
 			{/* 4. CTA DE CIERRE */}
 			<CTASection backTo='/areas-de-trabajo' backText='Volver a Áreas de Trabajo' />

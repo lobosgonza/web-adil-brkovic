@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 // Añadimos ChevronRight a la lista de iconos importados
-import { Mail, Phone, MapPin, ChevronRight, User } from 'lucide-react';
+import { Mail, Phone, MapPin, ChevronRight, User, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
 	// Cambiamos el nombre a 'areas' para que coincida con el .map de abajo
@@ -11,7 +11,12 @@ const Footer = () => {
 		{ name: 'Defensa Administrativa', path: '/servicio/defensa-administrativa' },
 		{ name: 'Justicia Previsional', path: '/servicio/justicia-previsional' },
 	];
-
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
 	return (
 		<footer className='section-light py-10 px-6 max-w-7xl mx-auto '>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16'>
@@ -54,7 +59,7 @@ const Footer = () => {
 
 				{/* COLUMNA 3: CONTACTO */}
 				<div className='space-y-6'>
-					<h4 className='! font-display font-semibold uppercase tracking-widest text-xs border-b border-[#e67e22] pb-2 w-fit'>Contacto</h4>
+					<h4 className='font-display font-semibold uppercase tracking-widest text-xs border-b border-[#e67e22] pb-2 w-fit'>Contacto</h4>
 					<ul className='space-y-5'>
 						<li className='flex items-start gap-4'>
 							<Mail size={18} className='text-[#e67e22] shrink-0' />
@@ -84,23 +89,29 @@ const Footer = () => {
 			</div>
 
 			{/* CRÉDITOS FINALES */}
-			<div className='max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left'>
-				<Link
-					to='/politica-de-privacidad'
-					className='text-[10px] text-[#778696] hover: uppercase tracking-[0.1em] font-light transition-colors underline underline-offset-4 decoration-white/10'>
-					Política de Privacidad
-				</Link>
+			<div className='max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 relative'>
+				{/* BOTÓN IR ARRIBA (Centrado en móvil, derecha en desktop) */}
+				<button onClick={scrollToTop} className='group flex flex-col items-center gap-2 text-[#778696] hover:text-[#e67e22] transition-all duration-300'>
+					<div className='p-2 rounded-full border border-gray-100 group-hover:border-[#e67e22] transition-colors'>
+						<ArrowUp size={16} />
+					</div>
+					<span className='text-[9px] uppercase tracking-[0.3em] font-bold'>Ir al top</span>
+				</button>
 
-				<p className='text-[10px] uppercase tracking-[0.2em] text-[#778696] font-light italic'>
-					Diseño y estrategia por{' '}
-					<a
-						href='https://expansispro.com' // Asegúrate de que esta sea la URL correcta
-						target='_blank'
-						rel='noopener noreferrer'
-						className='font-semibold text-brand-gold text-[#e67e22] transition-colors duration-300 underline-offset-4 hover:underline'>
-						Expansis Pro
-					</a>
-				</p>
+				<div className='flex flex-col md:flex-row items-center gap-4 md:gap-8'>
+					<Link
+						to='/politica-de-privacidad'
+						className='text-[10px] text-[#778696] hover:text-[#2c3e50] uppercase tracking-[0.1em] font-light transition-colors underline underline-offset-4 decoration-gray-200'>
+						Política de Privacidad
+					</Link>
+
+					<p className='text-[10px] uppercase tracking-[0.2em] text-[#778696] font-light italic'>
+						Diseño y estrategia por{' '}
+						<a href='https://expansispro.com' target='_blank' rel='noopener noreferrer' className='font-semibold text-[#e67e22] transition-colors duration-300 hover:underline'>
+							Expansis Pro
+						</a>
+					</p>
+				</div>
 			</div>
 		</footer>
 	);

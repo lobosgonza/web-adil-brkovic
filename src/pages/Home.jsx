@@ -39,7 +39,7 @@ const Home = () => {
 			<HeroHome />
 
 			{/* LÁMINA 2: GRILLA DE SERVICIOS (Cards) */}
-			<section id='areas' className='px-12 py-24 section-dark'>
+			<section id='areas' className='px-8 sm:px-0 py-24 section-dark'>
 				<div className=' mx-auto max-w-7xl'>
 					<div className='mb-20 text-center'>
 						<h2 className='text-4xl font-semibold uppercase tracking-widest'>Áreas de Trabajo</h2>
@@ -99,7 +99,7 @@ const Home = () => {
 
 			{/* LÁMINA 3: TEASER DE TRAYECTORIA */}
 
-			<div className='px-12 container mx-auto max-w-7xl'>
+			<div className='px-0 md:px-8 container mx-auto max-w-7xl'>
 				<ImageText
 					title='Trayectoria Profesional'
 					subtitle='Sobre Adil Brkovic'

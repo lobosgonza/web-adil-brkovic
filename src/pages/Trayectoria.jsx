@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { HeroSecondary } from '../components/HeroSecondary';
 import { Timeline } from '../components/Timeline';
 import { PressSection } from '../components/PressSection';
 import { ImageText } from '../components/ImageText';
 import { noticias } from '../data/prensa';
 import CTASection from '../components/CTASection';
-import { Gavel } from 'lucide-react';
+import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber creado este archivo
 
 const Trayectoria = () => {
@@ -13,6 +13,12 @@ const Trayectoria = () => {
 		document.title = 'Trayectoria | Adil Brkovic';
 		window.scrollTo(0, 0);
 	}, []);
+
+	const [currentPage, setCurrentPage] = useState(1);
+	const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3;
+
+	const totalPages = Math.ceil(noticias.length / itemsPerPage);
+	const currentNoticias = noticias.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 	const hitos = [
 		{
@@ -47,7 +53,7 @@ const Trayectoria = () => {
 			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' />
 
-			<section className='sm:px-12 py-12 max-w-7xl mx-auto'>
+			<section className='sm:px-12 md:py-8 max-w-7xl mx-auto'>
 				{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
 
 				<ImageText
@@ -62,24 +68,50 @@ Especialista en litigios indemnizatorios, su práctica combina el rigor técnico
 					image='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop'
 					imageAlt='Adil Brkovic Almonte - Abogado Litigante'
 					imageSide='left'
-					buttonType='primary' // <--- AQUÍ ELIGES EL ESTILO
+					buttonType='primary'
 					buttonVariant='dark'
 				/>
 
-				{/* SECCIÓN 2: EVIDENCIA JURÍDICA (ESTANDARIZADA) */}
-				<section className=' my-16 max-w-7xl mx-auto'>
-					<div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch'>
-						{/* COLUMNA DERECHA: HITOS (Usando el nuevo ContentBox) */}
-						<div className='flex flex-col h-full'>
+				{/* SECCIÓN 2: LINEA DE TIEMPO EVIDENCIA JURÍDICA */}
+				<section className='md:my-16 max-w-7xl mx-auto' id='prensa-busqueda'>
+					<div className='grid md:grid-cols-2  md:gap-16 items-start'>
+						{/* COLUMNA: HITOS JUDICIALES */}
+						<div className='flex flex-col'>
 							<ContentBox title='Hitos Judiciales' subtitle='Casos que transformaron la jurisprudencia' icon={Gavel} borderColor='border-[#778696]'>
 								<div className='pt-6'>
 									<Timeline items={hitos} />
 								</div>
 							</ContentBox>
 						</div>
-						{/* COLUMNA IZQUIERDA: PRENSA (Ya usa ContentBox internamente) */}
-						<div className='flex flex-col h-full'>
-							<PressSection noticiasFiltradas={noticias} />
+
+						{/* COLUMNA: PRENSA */}
+						<div className='flex flex-col'>
+							<PressSection
+								noticiasFiltradas={currentNoticias}
+								renderPagination={
+									totalPages > 1 && (
+										<div className='flex justify-between p-2 '>
+											<button
+												onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+												disabled={currentPage === 1}
+												className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest disabled:opacity-20 hover:text-[#e67e22] transition-colors'>
+												<ChevronLeft size={14} /> Anterior
+											</button>
+
+											<span className='text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]'>
+												{currentPage} / {totalPages}
+											</span>
+
+											<button
+												onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+												disabled={currentPage === totalPages}
+												className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest disabled:opacity-20 hover:text-[#e67e22] transition-colors'>
+												Siguiente <ChevronRight size={14} />
+											</button>
+										</div>
+									)
+								}
+							/>
 						</div>
 					</div>
 				</section>

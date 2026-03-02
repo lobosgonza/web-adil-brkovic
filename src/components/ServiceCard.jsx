@@ -13,7 +13,7 @@ export const ServiceCard = ({ title, description, link, image, imageAlt }) => (
 			<h3 className='text-xl mb-4 uppercase tracking-tight !text-[#2c3e50] font-semibold'>{title}</h3>
 
 			{/* Forzamos un gris legible para la descripción */}
-			<p className='!text-slate-600 text-sm font-light leading-relaxed mb-8 flex-grow'>{description}</p>
+			<p className='md:text-justify !text-slate-600 text-sm font-light leading-relaxed mb-8 flex-grow'>{description}</p>
 
 			{/* Botón estandarizado */}
 			<Link to={link} className='btn-secondary btn-secondary-dark w-full md:w-fit'>

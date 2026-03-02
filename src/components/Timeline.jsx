@@ -1,7 +1,7 @@
 export const Timeline = ({ items }) => (
 	<div className='relative ml-4'>
 		{items.map((item, index) => (
-			<div key={index} className='relative pl-10 pb-12 last:pb-0 group'>
+			<div key={index} className='relative pl-10 pb-12  group'>
 				{/* LÍNEA CONECTORA: Solo se dibuja si no es el último elemento */}
 				{index !== items.length - 1 && <div className='absolute left-[7px] top-[16px] bottom-[-16px] w-[2px] bg-[#e67e22]/30 z-10'></div>}
 
