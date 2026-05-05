@@ -10,10 +10,14 @@ export const ImageText = ({
 	imageSide,
 	image,
 	imageAlt,
+	attribution,
 	buttonVariant = 'dark', // 'dark' o 'light'
 	buttonType = 'secondary', // 'primary' o 'secondary' (por defecto)
 }) => {
 	const subtitleColor = buttonVariant === 'dark' ? 'text-[#d35400]' : 'text-[#e67e22]';
+
+	// Lógica para detectar si el link es a WhatsApp o externo
+	const isExternal = buttonLink?.startsWith('http');
 
 	// Lógica de clases para el botón
 	const getButtonClass = () => {
@@ -24,13 +28,36 @@ export const ImageText = ({
 		return `btn-secondary btn-secondary-${buttonVariant}`;
 	};
 
+	// Función mágica para formatear negritas y saltos simples dentro de cada párrafo
+	const formatText = (content) => {
+		return content.split('**').map((part, i) => {
+			// Si el índice es impar, significa que estaba rodeado de **
+			if (i % 2 === 1) {
+				return (
+					<strong key={i} className='font-bold text-[#2c3e50]'>
+						{part}
+					</strong>
+				);
+			}
+			// Para las partes normales, respetamos saltos de línea simples si los hay
+			return part;
+		});
+	};
+	// Dividimos por doble salto de línea para crear párrafos independientes
 	const paragraphs = typeof text === 'string' ? text.split('\n\n') : [text];
-
 	return (
 		<div className={`sm:my-16 shadow-none rounded-sm p-8 bg-white flex flex-col md:flex-row items-center gap-10 md:gap-16 ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
 			{/* CONTENEDOR DE IMAGEN */}
-			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group'>
+			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group relative'>
+				{' '}
+				{/* <--- Agregado 'relative' aquí */}
 				<img src={image} alt={imageAlt} className='w-full object-cover aspect-video transition-all duration-700' />
+				{/* CRÉDITO DE IMAGEN */}
+				{attribution && (
+					<span className='absolute bottom-1 right-2 text-[7px] text-white/40 uppercase tracking-tighter pointer-events-none group-hover:text-white/70 transition-opacity italic z-10'>
+						{attribution}
+					</span>
+				)}
 			</div>
 
 			{/* CONTENEDOR DE TEXTO */}
@@ -46,16 +73,23 @@ export const ImageText = ({
 
 				<div className='space-y-4'>
 					{paragraphs.map((p, index) => (
-						<p key={index} className='text-justify text-[#546e7a] font-light text-base md:text-lg leading-relaxed'>
-							{p}
+						<p key={index} className='text-justify text-[#546e7a] font-light text-base md:text-lg leading-relaxed whitespace-pre-line'>
+							{formatText(p)}
 						</p>
 					))}
 				</div>
 
+				{/* Reemplaza el bloque del botón por este: */}
 				<div className='pt-4'>
-					<Link to={buttonLink} className={getButtonClass()}>
-						{buttonText}
-					</Link>
+					{isExternal ? (
+						<a href={buttonLink} target='_blank' rel='noopener noreferrer' className={getButtonClass()}>
+							{buttonText}
+						</a>
+					) : (
+						<Link to={buttonLink} className={getButtonClass()}>
+							{buttonText}
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 import { MessageCircle } from 'lucide-react';
+import { WHATSAPP_URL } from '../constants/contact'; // <--- Importamos la fuente de verdad
 
 export const WhatsAppCTA = () => {
 	const phoneNumber = '56922222222'; // Número de Adil
@@ -16,8 +17,8 @@ export const WhatsAppCTA = () => {
 				Asesoría Directa
 			</span>
 
-			{/* ENLACE: Ahora solo envuelve al botón verde */}
-			<a href={whatsappUrl} target='_blank' rel='noopener noreferrer' className='block' aria-label='Contactar por WhatsApp'>
+			{/* ENLACE AL WHATSAPP CENTRALIZADO */}
+			<a href={WHATSAPP_URL} target='_blank' rel='noopener noreferrer' className='block' aria-label='Contactar por WhatsApp'>
 				<div
 					className='bg-[#2e7d32] text-white p-4 rounded-l-xl shadow-[-10px_0_20px_rgba(0,0,0,0.15)] 
                     group-hover:pr-6 group-hover:pl-8 transition-all duration-300 

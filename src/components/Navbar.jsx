@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { WHATSAPP_URL } from '../constants/contact';
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,9 @@ export const Navbar = () => {
 			<div className='max-w-7xl mx-auto px-6 md:px-12 h-20 flex justify-between items-center'>
 				{/* LOGO */}
 				<Link to='/' className='flex flex-col group' onClick={closeMenus}>
-					<span className='font-display text-2xl tracking-tighter text-white leading-none group-hover:text-[#e67e22] transition-colors font-semibold'>ADIL BRKOVIC</span>
+					<span className='font-display text-2xl tracking-tighter text-white leading-none group-hover:text-[#e67e22] transition-colors font-semibold'>
+						ESTUDIO JURÍDICO BRKOVIC
+					</span>
 				</Link>
 
 				{/* DESKTOP NAV */}
@@ -73,11 +76,13 @@ export const Navbar = () => {
 						</div>
 					</div>
 
-					<Link
-						to='/contacto'
+					<a
+						href={WHATSAPP_URL}
+						target='_blank'
+						rel='noopener noreferrer'
 						className='border border-[#e67e22] text-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#e67e22] transition-all duration-300'>
 						Contacto
-					</Link>
+					</a>
 				</div>
 
 				{/* MOBILE BURGER */}

@@ -9,6 +9,8 @@ import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber creado este archivo
 
 const Trayectoria = () => {
+	const imagenTrayectoria = 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop';
+
 	useEffect(() => {
 		document.title = 'Trayectoria | Adil Brkovic';
 		window.scrollTo(0, 0);
@@ -51,7 +53,7 @@ const Trayectoria = () => {
 	return (
 		<div className=' min-h-screen font-sans'>
 			{/* HERO UNIFICADO */}
-			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' />
+			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' image={imagenTrayectoria} />
 
 			<section className='sm:px-12 md:py-8 max-w-7xl mx-auto'>
 				{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
@@ -65,7 +67,7 @@ Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por li
 Especialista en litigios indemnizatorios, su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de calidad a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink='/contacto'
-					image='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop'
+					image={imagenTrayectoria}
 					imageAlt='Adil Brkovic Almonte - Abogado Litigante'
 					imageSide='left'
 					buttonType='primary'

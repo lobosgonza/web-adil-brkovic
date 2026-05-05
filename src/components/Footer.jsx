@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 // Añadimos ChevronRight a la lista de iconos importados
 import { Mail, Phone, MapPin, ChevronRight, User, ArrowUp } from 'lucide-react';
 
+import { WHATSAPP_URL, CONTACT_EMAIL, PHONE_NUMBER } from '../constants/contact';
+
 const Footer = () => {
 	// Cambiamos el nombre a 'areas' para que coincida con el .map de abajo
 	const areas = [
@@ -23,7 +25,7 @@ const Footer = () => {
 				{/* COLUMNA 1: IDENTIDAD Y TRAYECTORIA */}
 				<div className='space-y-6'>
 					<div className='flex flex-col'>
-						<span className='font-display text-3xl font-semibold tracking-tighter leading-none '>ADIL</span>
+						<span className='font-display text-3xl font-semibold tracking-tighter leading-none '>ESTUDIO JURÍDICO</span>
 						<span className='font-display text-3xl font-semibold tracking-tighter leading-none '>BRKOVIC</span>
 						<span className='text-[#e67e22] text-[10px] font-bold uppercase tracking-[0.3em] mt-2'>Abogado</span>
 					</div>
@@ -65,8 +67,8 @@ const Footer = () => {
 							<Mail size={18} className='text-[#e67e22] shrink-0' />
 							<div className='flex flex-col gap-1'>
 								<span className='uppercase text-[9px] tracking-widest font-bold'>Correo Electrónico</span>
-								<a href='mailto:adilbrkovic@gmail.com' className='hover:text-[#e67e22] transition-colors text-sm /90 font-light'>
-									adilbrkovic@gmail.com
+								<a href={`mailto:${CONTACT_EMAIL}`} className='hover:text-[#e67e22] transition-colors text-sm font-light'>
+									{CONTACT_EMAIL}
 								</a>
 							</div>
 						</li>
@@ -74,7 +76,9 @@ const Footer = () => {
 							<Phone size={18} className='text-[#e67e22] shrink-0' />
 							<div className='flex flex-col gap-1'>
 								<span className='/40 uppercase text-[9px] tracking-widest font-bold'>Teléfono</span>
-								<span className='text-sm /90 font-light'>+56 9 2222 2222</span>
+								<a href={WHATSAPP_URL} target='_blank' rel='noopener noreferrer' className='hover:text-[#e67e22] transition-colors text-sm font-light'>
+									+{PHONE_NUMBER}
+								</a>
 							</div>
 						</li>
 						<li className='flex items-start gap-4'>

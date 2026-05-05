@@ -1,89 +1,101 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { ArrowLeft, Newspaper } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react'; // FIX: Agregado useRef aquí
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PressSection } from '../components/PressSection';
 import { ImageText } from '../components/ImageText';
 import { HeroSecondary } from '../components/HeroSecondary';
 import { noticias } from '../data/prensa';
 import CTASection from '../components/CTASection';
+import { contenidos } from '../data/areasDeTrabajo';
+import { WHATSAPP_URL } from '../constants/contact'; // Importamos la URL de contacto
 
 const ServicioTemplate = () => {
 	const { id } = useParams();
 
-	const contenidos = {
-		'reparacion-ddhh': {
-			titulo: 'Reparación y Derechos Humanos',
-			titleSecondary: 'Justicia civil y reparaciones económicas para víctimas históricas.',
-			descripcion:
-				'Representamos judicialmente desde hace más tres décadas a víctimas de graves violaciones a los derechos humanos cometidas principalmente durante la dictadura militar (1973-1990), sus familias y organizaciones. Nuestro enfoque combina la dignidad de las víctimas con el rigor técnico necesario para obtener reparaciones justas ante el Estado.',
-			imagen: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop',
-		},
-		'defensa-comunidades': {
-			titulo: 'Defensa de Comunidades',
-			titleSecondary: 'Litigación estratégica frente a daños socioambientales y colectivos.',
-			descripcion:
-				'Representamos judicialmente a grupos humanos que se ven vulnerados en su derecho a vivir en un medioambiente libre de contaminación o afectados por proyectos mineros, sanitarios o inmobiliarios. Buscamos el equilibrio entre el desarrollo y el respeto a la salud pública y el entorno social.',
-			imagen: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop',
-		},
-		'litigios-indemnizatorios': {
-			titulo: 'Litigios Indemnizatorios',
-			titleSecondary: 'Especialistas en obtener justicia frente a negligencias y accidentes.',
-			descripcion:
-				'Representación judicial en todo tipo de litigios indemnizatorios ya sea en materia civil, penal, laboral o administrativa, tales como Accidentes en el trabajo, tránsito, aéreos y negligencias médicas.',
-			imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
-		},
-		'defensa-administrativa': {
-			titulo: 'Defensa Administrativa',
-			titleSecondary: 'Resguardo frente al poder sancionador del Estado y sumarios.',
-			descripcion:
-				'Representación y defensa jurídica en sumarios administrativos contra funcionarios públicos y en procesos sancionatorios seguidos en contra de empresas reguladas.',
-			imagen: 'https://images.unsplash.com/photo-1423592707957-3b212afa6733?q=80&w=1200&auto=format&fit=crop',
-		},
-		'justicia-previsional': {
-			titulo: 'Justicia Previsional y PGU',
-			titleSecondary: 'Gestión de pensiones y derechos de seguridad social ante el IPS.',
-			descripcion:
-				'Representamos judicialmente a personas beneficiarias de la Ley Valech y Exonerados Políticos a quienes el Estado les ha denegado la PGU, buscando el pago retroactivo desde 2022.',
-			imagen: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1200&auto=format&fit=crop',
-		},
-	};
+	const [currentPage, setCurrentPage] = useState(1);
+	const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3;
+
+	const totalPages = Math.ceil(noticias.length / itemsPerPage);
+	const currentNoticias = noticias.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
 	const data = contenidos[id];
-	const noticiasRelacionadas = noticias.filter((n) => n.tag === id);
-	// Actualiza el título de la pestaña automáticamente
+
+	// Efecto para cambiar de servicio
 	useEffect(() => {
 		if (data) {
 			document.title = `${data.titulo} | Adil Brkovic`;
+			window.scrollTo(0, 0);
+			setCurrentPage(1);
 		}
-	}, [data]);
-	if (!data) {
-		return <div className='pt-40 text-center font-display text-[#2c3e50] uppercase'>Área no encontrada</div>;
-	}
+	}, [id]); // Solo cuando cambia el ID de la URL
+
+	// Efecto para scroll suave al cambiar página de prensa
+	const prensaRef = useRef(null);
+	useEffect(() => {
+		// Solo scrolleamos si el usuario no está en la página 1 (para evitar scroll al cargar)
+		if (currentPage > 1 && prensaRef.current) {
+			prensaRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	}, [currentPage]);
+
+	if (!data) return <div className='pt-40 text-center font-display text-[#2c3e50] uppercase'>Área no encontrada</div>;
 
 	return (
 		<div>
-			{/* 1. HERO SECUNDARIO OSCURO */}
-			<HeroSecondary title={data.titulo} subtitle='Área de Especialidad' />
+			<HeroSecondary
+				title={data.titulo}
+				subtitle='Área de Especialidad'
+				image={data.imagen} // <-- Pasamos la imagen del área de trabajo
+			/>
 
 			<div className='max-w-7xl mx-auto'>
-				{/* 2. BLOQUE PRINCIPAL */}
-
 				<ImageText
 					title={data.titulo}
 					titleSecondary={data.titleSecondary}
 					text={data.descripcion}
 					buttonText='Solicitar Consulta'
-					buttonLink='/contacto'
+					buttonLink={WHATSAPP_URL}
 					imageSide='left'
 					image={data.imagen}
+					attribution={data.creditoFoto} // <-- PASAR ESTO AQUÍ
 					imageAlt={`Imagen representativa de ${data.titulo}`}
+					buttonType='primary'
 					buttonVariant='dark'
 				/>
 
-				{/* 3. PRENSA RELACIONADA */}
-				{noticiasRelacionadas.length > 0 && <PressSection title='Casos Relacionados' subtitle='Hitos Judiciales en la Prensa' noticiasFiltradas={noticiasRelacionadas} />}
+				{/* FIX: Agregada la ref={prensaRef} aquí para que el scroll sepa dónde ir */}
+				<div className='py-12 px-4' ref={prensaRef}>
+					<PressSection
+						title='Presencia en Medios'
+						subtitle='Impacto y Opinión Pública'
+						noticiasFiltradas={currentNoticias}
+						renderPagination={
+							totalPages > 1 && (
+								<div className='flex justify-between items-center py-2'>
+									<button
+										onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+										disabled={currentPage === 1}
+										className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-20 hover:enabled:text-[#e67e22]'>
+										<ChevronLeft size={14} /> Anterior
+									</button>
+
+									<span className='text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]'>
+										{currentPage} / {totalPages}
+									</span>
+
+									<button
+										onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+										disabled={currentPage === totalPages}
+										className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest transition-colors cursor-pointer disabled:cursor-not-allowed disabled:opacity-20 hover:enabled:text-[#e67e22]'>
+										Siguiente <ChevronRight size={14} />
+									</button>
+								</div>
+							)
+						}
+					/>
+				</div>
 			</div>
-			{/* 4. CTA DE CIERRE */}
+
 			<CTASection backTo='/areas-de-trabajo' backText='Volver a Áreas de Trabajo' />
 		</div>
 	);

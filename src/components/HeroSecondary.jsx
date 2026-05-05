@@ -1,6 +1,19 @@
-export const HeroSecondary = ({ title, subtitle }) => {
+export const HeroSecondary = ({ title, subtitle, image }) => {
 	return (
 		<section className='bg-[#2c3e50] pt-40 pb-24 px-6 relative overflow-hidden'>
+			{/* Imagen de fondo con Ken Burns effect (opcional) o estática */}
+			{image && (
+				<div className='absolute inset-0 z-0'>
+					<img
+						src={image}
+						alt={title}
+						className='w-full h-full object-cover opacity-40' // Ajusta la opacidad aquí
+					/>
+					{/* Overlay gradiente para asegurar contraste del texto */}
+					<div className='absolute inset-0 bg-gradient-to-t from-[#2c3e50] via-[#2c3e50]/60 to-transparent'></div>
+				</div>
+			)}
+
 			{/* Sutil gradiente para dar profundidad y que no sea un color plano */}
 			<div className='absolute inset-0 bg-gradient-to-br from-black/20 to-transparent pointer-events-none'></div>
 
