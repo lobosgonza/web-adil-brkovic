@@ -13,6 +13,8 @@ export const ImageText = ({
 	attribution,
 	buttonVariant = 'dark', // 'dark' o 'light'
 	buttonType = 'secondary', // 'primary' o 'secondary' (por defecto)
+
+	aspect = 'aspect-video', // <--- Nuevo prop: por defecto es horizontal
 }) => {
 	const subtitleColor = buttonVariant === 'dark' ? 'text-[#d35400]' : 'text-[#e67e22]';
 
@@ -51,7 +53,7 @@ export const ImageText = ({
 			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group relative'>
 				{' '}
 				{/* <--- Agregado 'relative' aquí */}
-				<img src={image} alt={imageAlt} className='w-full object-cover aspect-video transition-all duration-700' />
+				<img src={image} alt={imageAlt} className='w-full object-cover ${aspect} transition-all duration-700' />
 				{/* CRÉDITO DE IMAGEN */}
 				{attribution && (
 					<span className='absolute bottom-1 right-2 text-[7px] text-white/40 uppercase tracking-tighter pointer-events-none group-hover:text-white/70 transition-opacity italic z-10'>

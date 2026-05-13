@@ -22,7 +22,8 @@ export const HeroHome = () => (
 				{/* Added overflow-hidden */}
 				{/* NUEVA IMAGEN DE RETRATO A COLOR AJUSTADA */}
 				<img
-					src='https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop'
+					src='/img/Hero-adil.webp'
+					// src='/img/trayectoria-adil.PNG'
 					alt='Adil Brkovic - Retrato Profesional'
 					className='w-full h-full object-cover object-top' // Standard portrait fit, prioritizing the top/face
 				/>

@@ -67,7 +67,8 @@ Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por li
 Especialista en litigios indemnizatorios, su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de calidad a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink='/contacto'
-					image={imagenTrayectoria}
+					image='/img/Hero-adil.webp'
+					aspect='aspect-[3/4]'
 					imageAlt='Adil Brkovic Almonte - Abogado Litigante'
 					imageSide='left'
 					buttonType='primary'
