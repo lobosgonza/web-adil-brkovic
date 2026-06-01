@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AREAS_TRABAJO } from '../constants/routes';
 // Añadimos ChevronRight a la lista de iconos importados
 import { Mail, Phone, MapPin, ChevronRight, User, ArrowUp } from 'lucide-react';
 
@@ -6,13 +7,11 @@ import { WHATSAPP_URL, CONTACT_EMAIL, PHONE_NUMBER } from '../constants/contact'
 
 const Footer = () => {
 	// Cambiamos el nombre a 'areas' para que coincida con el .map de abajo
-	const areas = [
-		{ name: 'Justicia y DD.HH.', path: '/servicio/reparacion-ddhh' },
-		{ name: 'Defensa de Comunidades', path: '/servicio/defensa-comunidades' },
-		{ name: 'Litigios Indemnizatorios', path: '/servicio/litigios-indemnizatorios' },
-		{ name: 'Defensa Administrativa', path: '/servicio/defensa-administrativa' },
-		{ name: 'Justicia Previsional', path: '/servicio/justicia-previsional' },
-	];
+	const servicios = AREAS_TRABAJO.map((area) => ({
+		name: area.name,
+		path: `/areas-de-trabajo/${area.id}`,
+	}));
+
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -49,7 +48,7 @@ const Footer = () => {
 					</Link>
 
 					<ul className='space-y-3'>
-						{areas.map((a) => (
+						{servicios.map((a) => (
 							<li key={a.path}>
 								<Link to={a.path} className=' text-[11px] hover:text-[#e67e22] transition-colors font-light uppercase tracking-wider'>
 									{a.name}

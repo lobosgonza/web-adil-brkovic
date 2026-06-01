@@ -4,7 +4,7 @@ export const ServiceCard = ({ title, description, link, image, imageAlt, attribu
 	<div className='card-service bg-white flex flex-col h-full shadow-lg group'>
 		{/* 1. Imagen que toca los bordes */}
 		<div className='aspect-video overflow-hidden w-full relative'>
-			<img src={image} alt={imageAlt || title} className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 block' />
+			<img src={image} alt={imageAlt || title} className='w-full h-full object-cover  group-hover:scale-105 transition-all duration-700 block' />
 			{/* CRÉDITO DE IMAGEN: Sutil y elegante en la esquina */}
 			{attribution && (
 				<span className='absolute bottom-1 right-2 text-[7px] text-white/50 uppercase tracking-tighter pointer-events-none group-hover:text-white/80 transition-opacity italic'>

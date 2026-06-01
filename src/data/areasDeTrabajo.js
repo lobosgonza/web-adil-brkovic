@@ -1,5 +1,12 @@
 export const contenidos = {
-    'reparacion-ddhh': {
+    'litigios-indemnizatorios': {
+        titulo: 'Litigios Indemnizatorios',
+        titleSecondary: 'Litigación especializada orientada a la reparación integral del daño',
+        resumenHome: 'Litigación especializada orientada a la reparación integral del daño',
+        descripcion: '**Brindamos representación judicial de alta complejidad en todo tipo de litigios indemnizatorios, ya sea en materia civil, penal, laboral o administrativa.**\n\n',
+        imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
+        creditoFoto: 'Unsplash',
+    }, 'reparacion-ddhh': {
         titulo: 'Reparación y Derechos Humanos',
         titleSecondary: 'Justicia civil y reparaciones económicas para víctimas históricas.',
         resumenHome: 'Lideramos procesos de reparación civil para víctimas de violaciones a los DD.HH., con una trayectoria de más de 30 años en causas históricas contra el Estado.',
@@ -15,19 +22,12 @@ export const contenidos = {
         imagen: '/img/defensa-comunidades-carretera-austral.webp',
         creditoFoto: 'M M (Padmanaba01) / Wikimedia (CC BY-SA 2.0)',
     },
-    'litigios-indemnizatorios': {
-        titulo: 'Litigios Indemnizatorios',
-        titleSecondary: 'Especialistas en obtener justicia frente a negligencias y accidentes.',
-        resumenHome: 'Especialistas en negligencias médicas, accidentes laborales y responsabilidad civil para obtener restituciones justas.',
-        descripcion: '**Brindamos representación judicial de alta complejidad en todo tipo de litigios indemnizatorios, ya sea en materia civil, penal, laboral o administrativa.**\n\nContamos con vasta experiencia obteniendo compensaciones por daños y perjuicios derivados de accidentes laborales, accidentes de tránsito de gravedad, siniestros aéreos y negligencias médicas, asegurando que la responsabilidad de las grandes corporaciones o instituciones sea debidamente sancionada.',
-        imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
-        creditoFoto: 'Unsplash',
-    },
+
     'defensa-administrativa': {
         titulo: 'Defensa Administrativa',
-        titleSecondary: 'Resguardo frente al poder sancionador del Estado y sumarios.',
+        titleSecondary: 'Resguardo frente al poder sancionador del Estado.',
         resumenHome: 'Asesoría técnica en sumarios administrativos y procesos sancionatorios frente a organismos del Estado y entes reguladores.',
-        descripcion: '**Entregamos representación y defensa jurídica técnica en sumarios administrativos instruidos contra funcionarios públicos**, así como en procesos sancionatorios seguidos por organismos del Estado en contra de empresas reguladas.\n\nProtegemos el debido proceso y la honra profesional frente al ejercicio de la potestad disciplinaria, asegurando que las sanciones no sean arbitrarias ni desproporcionadas respecto a la normativa vigente.',
+        descripcion: '**Ofrecemos una defensa jurídica técnica en sumarios administrativos e investigaciones sumarias**, instruidos en contra funcionarios públicos, protegiendo el debido proceso y la honra profesional frente al ejercicio de la potestad disciplinaria, asegurando que las sanciones no sean arbitrarias ni desproporcionadas respecto a la normativa vigente\n\nEntregamos asesoría jurídica especializada en procesos sancionatorios seguidos por organismos del Estado en contra de empresas reguladas o en sumarios sanitarios.',
         imagen: 'https://images.unsplash.com/photo-1423592707957-3b212afa6733?q=80&w=1200&auto=format&fit=crop',
         creditoFoto: 'Unsplash',
     },

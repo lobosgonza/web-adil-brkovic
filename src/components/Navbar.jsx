@@ -2,19 +2,17 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { WHATSAPP_URL } from '../constants/contact';
+import { AREAS_TRABAJO } from '../constants/routes';
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const location = useLocation();
 
-	const servicios = [
-		{ name: 'Justicia y DD.HH.', path: '/servicio/reparacion-ddhh' },
-		{ name: 'Defensa de Comunidades', path: '/servicio/defensa-comunidades' },
-		{ name: 'Litigios Indemnizatorios', path: '/servicio/litigios-indemnizatorios' },
-		{ name: 'Defensa Administrativa', path: '/servicio/defensa-administrativa' },
-		{ name: 'Justicia Previsional', path: '/servicio/justicia-previsional' },
-	];
+	const servicios = AREAS_TRABAJO.map((area) => ({
+		name: area.name,
+		path: `/areas-de-trabajo/${area.id}`,
+	}));
 
 	// Función para cerrar todo al navegar
 	const closeMenus = () => {

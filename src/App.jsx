@@ -75,7 +75,7 @@ function App() {
 								}
 							/>
 							<Route
-								path='/servicio/:id'
+								path='/areas-de-trabajo/:id'
 								element={
 									<PageWrapper>
 										<ServicioTemplate />

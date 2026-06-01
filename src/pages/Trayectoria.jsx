@@ -60,11 +60,11 @@ const Trayectoria = () => {
 
 				<ImageText
 					title='Adil Brkovic Almonte'
-					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
+					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
 
-Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, indemnizaciones emblemáticas contra el Estado y grandes Corporaciones, como los casos conocidos como Casas COPEVA y la Planta la Farfana de Aguas Andinas.
+Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, como los casos conocidos como Casas COPEVA y la Planta La Farfana de Aguas Andinas.
 
-Especialista en litigios indemnizatorios, su práctica combina el rigor técnico con el compromiso profesional, consolidando una oficina que se destaca por entregar un servicio cercano y de calidad a sus representados.`}
+A partir de esta sólida experiencia, decidió fundar un estudio jurídico especializado en litigios indemnizatorios, tributarios y administrativos. Hoy, la firma combina el rigor técnico con el compromiso ético de un equipo de profesionales cuya misión principal es entregar una representación legal cercana, estratégica y de excelencia a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink='/contacto'
 					image='/img/Hero-adil.webp'

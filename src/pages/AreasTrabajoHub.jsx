@@ -12,7 +12,7 @@ const ServiciosHub = () => {
 
 	const renderCard = (id) => {
 		const data = contenidos[id];
-		return <ServiceCard title={data.titulo} description={data.titleSecondary} link={`/servicio/${id}`} image={data.imagen} attribution={data.creditoFoto} />;
+		return <ServiceCard title={data.titulo} description={data.titleSecondary} link={`/areas-de-trabajo/${id}`} image={data.imagen} attribution={data.creditoFoto} />;
 	};
 
 	return (
@@ -32,10 +32,10 @@ const ServiciosHub = () => {
 
 				{/* 2. GRILLA EQUIVALENTE AL HOME (MD:6) */}
 				<div className='grid grid-cols-1 md:grid-cols-6 gap-8'>
+					<div className='md:col-span-3'>{renderCard('litigios-indemnizatorios')}</div>
 					<div className='md:col-span-3'>{renderCard('reparacion-ddhh')}</div>
-					<div className='md:col-span-3'>{renderCard('defensa-comunidades')}</div>
+					<div className='md:col-span-2'>{renderCard('defensa-comunidades')}</div>
 
-					<div className='md:col-span-2'>{renderCard('litigios-indemnizatorios')}</div>
 					<div className='md:col-span-2'>{renderCard('defensa-administrativa')}</div>
 					<div className='md:col-span-2'>{renderCard('justicia-previsional')}</div>
 				</div>

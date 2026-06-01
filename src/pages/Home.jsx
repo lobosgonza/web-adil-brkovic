@@ -48,12 +48,24 @@ const Home = () => {
 					</div>
 
 					<div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
+						{/* 3. LITIGIOS INDEMNIZATORIOS (Ocupa 2 columnas) */}
+						<div className='md:col-span-3'>
+							<ServiceCard
+								title={contenidos['litigios-indemnizatorios'].titulo}
+								description={contenidos['litigios-indemnizatorios'].resumenHome}
+								link='/areas-de-trabajo/litigios-indemnizatorios'
+								image={contenidos['litigios-indemnizatorios'].imagen}
+								imageAlt={contenidos['litigios-indemnizatorios'].titulo}
+								attribution={contenidos['litigios-indemnizatorios'].creditoFoto}
+							/>
+						</div>
+
 						{/* 1. REPARACIÓN Y DD.HH. (Ocupa 3 columnas) */}
 						<div className='md:col-span-3'>
 							<ServiceCard
 								title={contenidos['reparacion-ddhh'].titulo}
 								description={contenidos['reparacion-ddhh'].resumenHome}
-								link='/servicio/reparacion-ddhh'
+								link='/areas-de-trabajo/reparacion-ddhh'
 								image={contenidos['reparacion-ddhh'].imagen}
 								imageAlt={contenidos['reparacion-ddhh'].titulo}
 								attribution={contenidos['reparacion-ddhh'].creditoFoto}
@@ -61,26 +73,14 @@ const Home = () => {
 						</div>
 
 						{/* 2. DEFENSA DE COMUNIDADES (Ocupa 3 columnas) */}
-						<div className='md:col-span-3'>
+						<div className='md:col-span-2'>
 							<ServiceCard
 								title={contenidos['defensa-comunidades'].titulo}
 								description={contenidos['defensa-comunidades'].resumenHome}
-								link='/servicio/defensa-comunidades'
+								link='/areas-de-trabajo/defensa-comunidades'
 								image={contenidos['defensa-comunidades'].imagen}
 								imageAlt={contenidos['defensa-comunidades'].titulo}
 								attribution={contenidos['defensa-comunidades'].creditoFoto}
-							/>
-						</div>
-
-						{/* 3. LITIGIOS INDEMNIZATORIOS (Ocupa 2 columnas) */}
-						<div className='md:col-span-2'>
-							<ServiceCard
-								title={contenidos['litigios-indemnizatorios'].titulo}
-								description={contenidos['litigios-indemnizatorios'].resumenHome}
-								link='/servicio/litigios-indemnizatorios'
-								image={contenidos['litigios-indemnizatorios'].imagen}
-								imageAlt={contenidos['litigios-indemnizatorios'].titulo}
-								attribution={contenidos['litigios-indemnizatorios'].creditoFoto}
 							/>
 						</div>
 
@@ -89,7 +89,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['defensa-administrativa'].titulo}
 								description={contenidos['defensa-administrativa'].resumenHome}
-								link='/servicio/defensa-administrativa'
+								link='/areas-de-trabajo/defensa-administrativa'
 								image={contenidos['defensa-administrativa'].imagen}
 								imageAlt={contenidos['defensa-administrativa'].titulo}
 								attribution={contenidos['defensa-administrativa'].creditoFoto}
@@ -101,7 +101,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['justicia-previsional'].titulo}
 								description={contenidos['justicia-previsional'].resumenHome}
-								link='/servicio/justicia-previsional'
+								link='/areas-de-trabajo/justicia-previsional'
 								image={contenidos['justicia-previsional'].imagen}
 								imageAlt={contenidos['justicia-previsional'].titulo}
 								attribution={contenidos['justicia-previsional'].creditoFoto}

@@ -8,7 +8,7 @@ export const HeroHome = () => (
 				<h1 className='text-6xl md:text-6xl font-black text-brand-blue leading-[0.9] tracking-tighter'>ESTUDIO JURÍDICO BRKOVIC</h1>
 				{/* <p className='text-brand-gold font-bold uppercase tracking-[0.3em] text-xs mt-4'>Abogado</p> */}
 				<p className='mt-8 text-gray-600 text-lg border-l-4 border-brand-blue pl-6 max-w-md italic'>
-					Defensa jurídica con más de 30 años de trayectoria. Especialista en litigios indemnizatorios individuales y colectivos.
+					Defensa jurídica con más de 30 años de trayectoria. Especialistas en litigios indemnizatorios individuales y colectivos.
 				</p>
 				{/* BOTÓN PRIMARIO AÑADIDO */}
 				<div className='mt-10'>
