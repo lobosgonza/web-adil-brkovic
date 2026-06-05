@@ -60,11 +60,11 @@ const Trayectoria = () => {
 
 				<ImageText
 					title='Adil Brkovic Almonte'
-					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios indemnizatorios de alta complejidad.
+					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad.
 
-Licenciado en la Universidad Católica de Valparaíso, su carrera destaca por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, como los casos conocidos como Casas COPEVA y la Planta La Farfana de Aguas Andinas.
+Egresado de la facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por  la Corte Suprema de Chile y  Magíster en Derecho Tributario por la  Universidad Andrés Bello. Su carrera  profesional en el ámbito de los litigios  se  ha destacado  por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, como los casos conocidos como Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico  ha sido profesor de pregrado en los cursos  de derechos humanos y  derecho tributario.
 
-A partir de esta sólida experiencia, decidió fundar un estudio jurídico especializado en litigios indemnizatorios, tributarios y administrativos. Hoy, la firma combina el rigor técnico con el compromiso ético de un equipo de profesionales cuya misión principal es entregar una representación legal cercana, estratégica y de excelencia a sus representados.`}
+Su estudio jurídico  cuenta con profesionales  especializados en litigios indemnizatorios, tributarios y administrativos,  combinando  el rigor técnico con el compromiso ético  cuya misión principal es entregar una representación legal cercana, estratégica y de calidad  a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink='/contacto'
 					image='/img/Hero-adil.webp'

@@ -1,7 +1,7 @@
 export const contenidos = {
     'litigios-indemnizatorios': {
         titulo: 'Litigios Indemnizatorios',
-        titleSecondary: 'Litigación especializada orientada a la reparación integral del daño',
+        titleSecondary: '',
         resumenHome: 'Litigación especializada orientada a la reparación integral del daño',
         descripcion: '**Brindamos representación judicial de alta complejidad en todo tipo de litigios indemnizatorios, ya sea en materia civil, penal, laboral o administrativa.**\n\n',
         imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
