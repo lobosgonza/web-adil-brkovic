@@ -10,17 +10,20 @@ import DynamicSchema from '../components/DynamicSchema';
 const homeSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'LegalService',
-	name: 'Estudio Brkovic',
-	url: 'https://estudiobrkovic.cl/',
-	logo: 'https://estudiobrkovic.cl/logo.png', // Reemplaza por la ruta real de tu logo para mejor SEO
-	description:
-		'Estudio jurídico con más de 30 años de trayectoria liderado por Adil Brkovic, especializado en derechos humanos, litigios indemnizatorios y defensa de comunidades.',
+	name: 'Estudio Jurídico Brkovic',
+	url: 'https://brkovicabogados.cl/', // 👈 Usa el dominio real de tus meta tags
+	logo: 'https://brkovicabogados.cl/apple-touch-icon.png', // Reutiliza el icono como logo temporal
+	image: 'https://brkovicabogados.cl/og-image.jpg',
+	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+	telephone: '+56953960666',
+	email: 'adilbrkovic@gmail.com',
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'Santiago',
 		addressCountry: 'CL',
 	},
-	// Vinculamos de manera formal las áreas de trabajo al Schema de la Home
+	priceRange: '$$',
+	// Conexión oficial con tus 5 áreas de trabajo extraídas del menú de navegación
 	hasOfferCatalog: {
 		'@type': 'OfferCatalog',
 		name: 'Áreas de Trabajo',
@@ -29,14 +32,8 @@ const homeSchema = {
 				'@type': 'Offer',
 				itemOffered: {
 					'@type': 'Service',
-					name: 'Litigios Indemnizatorios',
-				},
-			},
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Reparación y Derechos Humanos',
+					name: 'Justicia y DD.HH.',
+					description: 'Procesos de reparación civil para víctimas de violaciones a los DD.HH.',
 				},
 			},
 			{
@@ -44,6 +41,15 @@ const homeSchema = {
 				itemOffered: {
 					'@type': 'Service',
 					name: 'Defensa de Comunidades',
+					description: 'Protección jurídica de grupos humanos frente a daños socioambientales o conflictos.',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Litigios Indemnizatorios',
+					description: 'Litigación especializada orientada a la reparación integral del daño.',
 				},
 			},
 			{
@@ -51,6 +57,7 @@ const homeSchema = {
 				itemOffered: {
 					'@type': 'Service',
 					name: 'Defensa Administrativa',
+					description: 'Asesoría técnica en sumarios administrativos y procesos sancionatorios.',
 				},
 			},
 			{
@@ -58,6 +65,7 @@ const homeSchema = {
 				itemOffered: {
 					'@type': 'Service',
 					name: 'Justicia Previsional',
+					description: 'Regularización de PGU y pensiones para Ley Valech y Exonerados Políticos.',
 				},
 			},
 		],
