@@ -5,6 +5,65 @@ import { ImageText } from '../components/ImageText';
 import CTASection from '../components/CTASection'; // SIN llaves
 import { contenidos } from '../data/areasDeTrabajo';
 // Datos centralizados para las imágenes y contenido (SEO: Alt texts incluidos)
+import DynamicSchema from '../components/DynamicSchema';
+
+const homeSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'LegalService',
+	name: 'Estudio Brkovic',
+	url: 'https://estudiobrkovic.cl/',
+	logo: 'https://estudiobrkovic.cl/logo.png', // Reemplaza por la ruta real de tu logo para mejor SEO
+	description:
+		'Estudio jurídico con más de 30 años de trayectoria liderado por Adil Brkovic, especializado en derechos humanos, litigios indemnizatorios y defensa de comunidades.',
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Santiago',
+		addressCountry: 'CL',
+	},
+	// Vinculamos de manera formal las áreas de trabajo al Schema de la Home
+	hasOfferCatalog: {
+		'@type': 'OfferCatalog',
+		name: 'Áreas de Trabajo',
+		itemListElement: [
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Litigios Indemnizatorios',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Reparación y Derechos Humanos',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Defensa de Comunidades',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Defensa Administrativa',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Justicia Previsional',
+				},
+			},
+		],
+	},
+};
+
 const serviciosData = {
 	ddhh: {
 		url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600&auto=format&fit=crop',
@@ -36,6 +95,9 @@ const serviciosData = {
 const Home = () => {
 	return (
 		<div className=' flex flex-col'>
+			{/* INYECCIÓN DEL SCHEMA DINÁMICO */}
+			<DynamicSchema schemaData={homeSchema} />
+
 			{/* LÁMINA 1: HERO PRINCIPAL */}
 			<HeroHome />
 
