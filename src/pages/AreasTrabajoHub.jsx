@@ -32,6 +32,8 @@ const ServiciosHub = () => {
 
 	return (
 		<div className='bg-[#F4F7F6] min-h-screen font-sans'>
+			{/* 🌟 INYECCIÓN SÍNCRONA DEL SCHEMA */}
+			<DynamicSchema schemaData={hubSchema} />
 			{/* 1. HERO OSCURO INSTITUCIONAL */}
 			<HeroSecondary title='ÁREAS DE ESPECIALIZACIÓN' subtitle='SOLUCIONES JURÍDICAS DE ALTA COMPLEJIDAD' image='/img/justicia-previsional-corte-suprema.webp' />
 
