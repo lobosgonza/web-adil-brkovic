@@ -1,30 +1,25 @@
 // src/components/DynamicSchema.jsx
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function DynamicSchema({ schemaData }) {
+	const [mounted, setMounted] = useState(false);
+
 	useEffect(() => {
-		// 1. Limpiar esquemas previos si existen (evita duplicados al navegar)
-		const existingScript = document.getElementById('dynamic-schema');
-		if (existingScript) {
-			existingScript.remove();
-		}
-
-		// 2. Crear el nuevo script con el schema de la página actual
-		const script = document.createElement('script');
-		script.id = 'dynamic-schema';
-		script.type = 'application/ld+json';
-		script.innerHTML = JSON.stringify(schemaData);
-
-		document.head.appendChild(script);
-
-		// Limpieza cuando el componente se desmonta
+		setMounted(true);
 		return () => {
 			const scriptToRemove = document.getElementById('dynamic-schema');
-			if (scriptToRemove) {
-				scriptToRemove.remove();
-			}
+			if (scriptToRemove) scriptToRemove.remove();
 		};
-	}, [schemaData]);
+	}, [schemaData]); // Se ejecuta si cambia el schemaData
 
-	return null; // Este componente no renderiza nada visual
+	const scriptTag = <script id='dynamic-schema' type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />;
+
+	// Si estamos en el servidor/prerenderizador, document.head existe síncronamente
+	if (typeof window === 'undefined') {
+		return createPortal(scriptTag, document.head);
+	}
+
+	// Si estamos en el navegador del cliente
+	return mounted ? createPortal(scriptTag, document.head) : null;
 }
