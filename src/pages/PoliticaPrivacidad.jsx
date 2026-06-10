@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import CTASection from '../components/CTASection';
+import DynamicSchema from '../components/DynamicSchema'; // 👈 Importar
 
 const PoliticaPrivacidad = () => {
 	// Asegura que al entrar la página esté al inicio
@@ -7,7 +8,13 @@ const PoliticaPrivacidad = () => {
 		window.scrollTo(0, 0);
 		document.title = 'Política de Privacidad | Adil Brkovic';
 	}, []);
-
+	const privacidadSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: 'Políticas de Privacidad | Estudio Jurídico Brkovic',
+		url: 'https://brkovicabogados.cl/politica-de-privacidad',
+		description: 'Información legal sobre el tratamiento de datos personales, propiedad intelectual y condiciones generales de Estudio Jurídico Brkovic.',
+	};
 	const secciones = [
 		{
 			titulo: '1. INFORMACIÓN GENERAL',
@@ -33,6 +40,9 @@ const PoliticaPrivacidad = () => {
 
 	return (
 		<>
+			{/* 🌟 INYECCIÓN DEL SCHEMA */}
+			<DynamicSchema schemaData={privacidadSchema} />
+
 			<div className='pt-40 pb-20 px-6 bg-[#F4F7F6] min-h-screen font-sans'>
 				<div className='max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-sm border-t-4 border-[#e67e22]'>
 					<h1 className='font-display text-4xl font-semibold text-[#2c3e50] mb-2 tracking-tighter uppercase'>Políticas de Privacidad</h1>

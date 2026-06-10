@@ -8,6 +8,7 @@ import { noticias } from '../data/prensa';
 import CTASection from '../components/CTASection';
 import { contenidos } from '../data/areasDeTrabajo';
 import { WHATSAPP_URL } from '../constants/contact'; // Importamos la URL de contacto
+import DynamicSchema from '../components/DynamicSchema';
 
 const ServicioTemplate = () => {
 	const { id } = useParams();
@@ -40,8 +41,26 @@ const ServicioTemplate = () => {
 
 	if (!data) return <div className='pt-40 text-center font-display text-[#2c3e50] uppercase'>Área no encontrada</div>;
 
+	// 🛠️ Construcción dinámica del Schema según el ID del servicio
+	const serviceSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'Service',
+		name: data.titulo,
+		description: data.resumenHome,
+		provider: {
+			'@type': 'LegalService',
+			name: 'Estudio Jurídico Brkovic',
+			url: 'https://brkovicabogados.cl/',
+		},
+		serviceType: 'LegalService',
+		url: `https://brkovicabogados.cl/areas-de-trabajo/${id}`,
+	};
+
 	return (
 		<div>
+			{/* 🌟 INYECCIÓN DINÁMICA BASADA EN LA URL ACTUAL */}
+			<DynamicSchema schemaData={serviceSchema} />
+
 			<HeroSecondary
 				title={data.titulo}
 				subtitle='Área de Especialidad'

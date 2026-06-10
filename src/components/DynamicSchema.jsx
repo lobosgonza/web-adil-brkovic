@@ -1,25 +1,16 @@
 // src/components/DynamicSchema.jsx
-import { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 
 export default function DynamicSchema({ schemaData }) {
-	const [mounted, setMounted] = useState(false);
-
+	// Limpieza en el cliente cuando cambies de página (SPA)
 	useEffect(() => {
-		setMounted(true);
 		return () => {
-			const scriptToRemove = document.getElementById('dynamic-schema');
-			if (scriptToRemove) scriptToRemove.remove();
+			const oldScript = document.getElementById('dynamic-schema');
+			if (oldScript) oldScript.remove();
 		};
-	}, [schemaData]); // Se ejecuta si cambia el schemaData
+	}, [schemaData]);
 
-	const scriptTag = <script id='dynamic-schema' type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />;
-
-	// Si estamos en el servidor/prerenderizador, document.head existe síncronamente
-	if (typeof window === 'undefined') {
-		return createPortal(scriptTag, document.head);
-	}
-
-	// Si estamos en el navegador del cliente
-	return mounted ? createPortal(scriptTag, document.head) : null;
+	// Esto se ejecuta SÍNCRONAMENTE durante el render, tanto en Node como en el navegador.
+	// Al prerenderizar, el script se inyectará exactamente en el lugar donde llames al componente.
+	return <script id='dynamic-schema' type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />;
 }

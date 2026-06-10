@@ -7,6 +7,7 @@ import { noticias } from '../data/prensa';
 import CTASection from '../components/CTASection';
 import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber creado este archivo
+import DynamicSchema from '../components/DynamicSchema';
 
 const Trayectoria = () => {
 	const imagenTrayectoria = 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop';
@@ -15,6 +16,21 @@ const Trayectoria = () => {
 		document.title = 'Trayectoria | Adil Brkovic';
 		window.scrollTo(0, 0);
 	}, []);
+
+	// Schema Profesional para potenciar la marca personal del Abogado Titular
+	const trayectoriaSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'Attorney',
+		name: 'Adil Brkovic Almonte',
+		url: 'https://brkovicabogados.cl/trayectoria',
+		image: 'https://brkovicabogados.cl/img/Hero-adil.webp',
+		description: 'Abogado egresado de la Universidad Católica de Valparaíso, Magíster en Derecho Tributario y referente en la defensa de los Derechos Humanos en Chile.',
+		alumniOf: [
+			{ '@type': 'EducationalOrganization', name: 'Universidad Católica de Valparaíso' },
+			{ '@type': 'EducationalOrganization', name: 'Universidad de Salamanca' },
+			{ '@type': 'EducationalOrganization', name: 'Universidad Andrés Bello' },
+		],
+	};
 
 	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3;
@@ -52,6 +68,9 @@ const Trayectoria = () => {
 
 	return (
 		<div className=' min-h-screen font-sans'>
+			{/* 🌟 INYECCIÓN SÍNCRONA EN EL BODY */}
+			<DynamicSchema schemaData={trayectoriaSchema} />
+
 			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' image={imagenTrayectoria} />
 
