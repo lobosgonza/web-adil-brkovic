@@ -9,7 +9,7 @@ const PoliticaPrivacidad = () => {
 		'@context': 'https://schema.org',
 		'@type': 'WebPage',
 		name: 'Políticas de Privacidad | Estudio Jurídico Brkovic',
-		url: 'https://brkovicabogados.cl/politica-de-privacidad',
+		url: 'https://estudiobrkovic.cl/politica-de-privacidad',
 		description: 'Información legal sobre el tratamiento de datos personales, propiedad intelectual y condiciones generales de Estudio Jurídico Brkovic.',
 	};
 	const secciones = [

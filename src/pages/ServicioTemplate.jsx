@@ -50,10 +50,10 @@ const ServicioTemplate = () => {
 		provider: {
 			'@type': 'LegalService',
 			name: 'Estudio Jurídico Brkovic',
-			url: 'https://brkovicabogados.cl/',
+			url: 'https://estudiobrkovic.cl/',
 		},
 		serviceType: 'LegalService',
-		url: `https://brkovicabogados.cl/areas-de-trabajo/${id}`,
+		url: `https://estudiobrkovic.cl/areas-de-trabajo/${id}`,
 	};
 
 	return (
