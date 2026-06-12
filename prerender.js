@@ -62,14 +62,25 @@ async function run() {
 
         // 2. Iterar por cada ruta del sitio web
         for (const url of routesToPrerender) {
-            const appHtml = render(url)
+            const helmetContext = {};
+            const appHtml = render(url, helmetContext)
+            const { helmet } = helmetContext;
+
             console.log(`🔍 Ruta [${url}] ➜ Renderizados ${appHtml ? appHtml.length : 0} caracteres.`);
 
             // Inyectar el árbol de React en el contenedor root
-            const finalHtml = cleanTemplate.replace(
+            let finalHtml = cleanTemplate.replace(
                 '<div id="root"></div>',
                 `<div id="root">${appHtml}</div>`
             )
+
+            // Inyectar etiquetas del <head> (título, meta, canonical)
+            if (helmet) {
+                finalHtml = finalHtml.replace(
+                    '</head>',
+                    `${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}</head>`
+                );
+            }
 
             // Determinar ruta del archivo final (ejemplo: /trayectoria se convierte en /trayectoria/index.html)
             const fileName = url === '/' ? 'index.html' : `${url}/index.html`

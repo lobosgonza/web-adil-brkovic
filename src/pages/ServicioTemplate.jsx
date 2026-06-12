@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react'; // FIX: Agregado useRef aquí
+import { useEffect, useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PressSection } from '../components/PressSection';
 import { ImageText } from '../components/ImageText';
@@ -21,10 +22,9 @@ const ServicioTemplate = () => {
 
 	const data = contenidos[id];
 
-	// Efecto para cambiar de servicio
+	// Efecto solo para scroll y reset de página de noticias
 	useEffect(() => {
 		if (data) {
-			document.title = `${data.titulo} | Adil Brkovic`;
 			window.scrollTo(0, 0);
 			setCurrentPage(1);
 		}
@@ -58,6 +58,14 @@ const ServicioTemplate = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>{`${data.titulo} | Adil Brkovic`}</title>
+				<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}`} />
+				<meta name='description' content={data.resumenHome} />
+				<meta property='og:title' content={`${data.titulo} | Adil Brkovic`} />
+				<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}`} />
+			</Helmet>
+
 			{/* 🌟 INYECCIÓN DINÁMICA BASADA EN LA URL ACTUAL */}
 			<DynamicSchema schemaData={serviceSchema} />
 
