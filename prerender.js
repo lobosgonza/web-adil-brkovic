@@ -64,7 +64,6 @@ async function run() {
         for (const url of routesToPrerender) {
             const helmetContext = {};
             const appHtml = render(url, helmetContext)
-            const { helmet } = helmetContext;
 
             console.log(`🔍 Ruta [${url}] ➜ Renderizados ${appHtml ? appHtml.length : 0} caracteres.`);
 
@@ -74,51 +73,49 @@ async function run() {
                 `<div id="root">${appHtml}</div>`
             )
 
-            // 🌟 CORRECCIÓN CRÍTICA 1: Reemplazar metadatos en el <head> evitando duplicados genéricos
-            if (helmet) {
-                const titleHtml = helmet.title.toString();
-                const metaHtml = helmet.meta.toString();
-                const linkHtml = helmet.link.toString();
+            // 🌟 ESTRATEGIA EXCLUSIVA PARA REACT 19: Extraer del Body y Mudar al Head
+            const bodyTagMatch = finalHtml.match(/<body[^>]*>/i);
+            if (bodyTagMatch) {
+                const splitIndex = finalHtml.indexOf(bodyTagMatch[0]) + bodyTagMatch[0].length;
+                const headPart = finalHtml.substring(0, splitIndex);
+                let bodyPart = finalHtml.substring(splitIndex);
 
-                // Si Helmet generó datos específicos, removemos los tags por defecto de index.html
-                if (titleHtml) {
-                    finalHtml = finalHtml.replace(/<title>.*?<\/title>/i, '');
-                }
-                if (metaHtml.includes('description')) {
-                    finalHtml = finalHtml.replace(/<meta name="description"[-_a-zA-Z0-9="' ]*content=".*?"\s*\/?>/i, '');
-                }
+                // 1. Capturar las etiquetas reales que React 19 escribió en el cuerpo
+                const extractedTitle = bodyPart.match(/<title>.*?<\/title>/i);
+                const extractedDesc = bodyPart.match(/<meta[^>]*name="description"[^>]*>/i);
+                const extractedOgTitle = bodyPart.match(/<meta[^>]*property="og:title"[^>]*>/i);
+                const extractedOgUrl = bodyPart.match(/<meta[^>]*property="og:url"[^>]*>/i);
+                const extractedCanonical = bodyPart.match(/<link[^>]*rel="canonical"[^>]*>/i);
 
-                // Limpiar keywords y canonicals antiguos del head base para evitar ruido
-                finalHtml = finalHtml.replace(/<meta name="keywords".*?\/?>/i, '');
+                // 2. Limpiar el cuerpo por completo (Evita duplicados en el body)
+                bodyPart = bodyPart.replace(/<title>.*?<\/title>/gi, '');
+                bodyPart = bodyPart.replace(/<meta[^>]*name="description"[^>]*>/gi, '');
+                bodyPart = bodyPart.replace(/<meta[^>]*property="og:[^>]*>/gi, '');
+                bodyPart = bodyPart.replace(/<link[^>]*rel="canonical"[^>]*>/gi, '');
+
+                // Reconstruir estructura intermedia
+                finalHtml = `${headPart}${bodyPart}`;
+
+                // 3. Limpiar los metadatos genéricos antiguos del <head> de index.html
+                if (extractedTitle) finalHtml = finalHtml.replace(/<title>.*?<\/title>/i, '');
+                if (extractedDesc) finalHtml = finalHtml.replace(/<meta name="description"[-_a-zA-Z0-9="' ]*content=".*?"\s*\/?>/i, '');
                 finalHtml = finalHtml.replace(/<link rel="canonical".*?\/?>/i, '');
                 finalHtml = finalHtml.replace(/<meta property="og:url".*?\/?>/i, '');
+                finalHtml = finalHtml.replace(/<meta property="og:title".*?\/?>/i, '');
+                finalHtml = finalHtml.replace(/<meta name="keywords".*?\/?>/i, ''); // Limpieza preventiva de keywords obsoletas
 
-                // Inyectamos las nuevas etiquetas limpias justo antes del cierre de </head>
-                finalHtml = finalHtml.replace(
-                    '</head>',
-                    `${titleHtml}${metaHtml}${linkHtml}</head>`
-                );
+                // 4. Inyectar las etiquetas específicas rescatadas dentro del <head> legítimo
+                let headInjections = '';
+                if (extractedTitle) headInjections += extractedTitle[0];
+                if (extractedDesc) headInjections += extractedDesc[0];
+                if (extractedOgTitle) headInjections += extractedOgTitle[0];
+                if (extractedOgUrl) headInjections += extractedOgUrl[0];
+                if (extractedCanonical) headInjections += extractedCanonical[0];
+
+                finalHtml = finalHtml.replace('</head>', `${headInjections}</head>`);
             }
 
-            // 🌟 CORRECCIÓN CRÍTICA 2: Sanear el <body> de etiquetas SEO duplicadas por React 19
-            const [headPart, bodyPart] = finalHtml.split('<body>');
-            if (bodyPart) {
-                let sanitizedBody = bodyPart;
-
-                // Removemos de forma selectiva del body cualquier tag que deba existir únicamente en el head
-                sanitizedBody = sanitizedBody.replace(/<title>.*?<\/title>/gi, '');
-                sanitizedBody = sanitizedBody.replace(/<meta[^>]*name="description"[^>]*>/gi, '');
-                sanitizedBody = sanitizedBody.replace(/<meta[^>]*property="og:[^>]*>/gi, '');
-                sanitizedBody = sanitizedBody.replace(/<link[^>]*rel="canonical"[^>]*>/gi, '');
-
-                finalHtml = `${headPart}<body>${sanitizedBody}`;
-            }
-
-
-
-
-
-            // Determinar ruta del archivo final (ejemplo: /trayectoria se convierte en /trayectoria/index.html)
+            // Determinar ruta del archivo final
             const fileName = url === '/' ? 'index.html' : `${url}/index.html`
             const outputPath = toAbsolute(`dist/${fileName}`)
 
