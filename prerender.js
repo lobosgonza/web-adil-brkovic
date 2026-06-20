@@ -98,12 +98,18 @@ async function run() {
 
                 // 3. Limpiar los metadatos genéricos antiguos del <head> de index.html
                 if (extractedTitle) finalHtml = finalHtml.replace(/<title>.*?<\/title>/i, '');
-                if (extractedDesc) finalHtml = finalHtml.replace(/<meta name="description"[-_a-zA-Z0-9="' ]*content=".*?"\s*\/?>/i, '');
+                if (extractedDesc) {
+                    // Borra la descripción vieja sin importar cuántos espacios tenga dentro
+                    finalHtml = finalHtml.replace(/<meta[^>]*name="description"[^>]*>/i, '');
+                }
+
+                // Limpieza absoluta de keywords y descripciones duplicadas de redes sociales en el head base
+                finalHtml = finalHtml.replace(/<meta[^>]*name="keywords"[^>]*>/i, '');
+                finalHtml = finalHtml.replace(/<meta[^>]*property="og:description"[^>]*>/i, '');
+                finalHtml = finalHtml.replace(/<meta[^>]*name="twitter:description"[^>]*>/i, '');
                 finalHtml = finalHtml.replace(/<link rel="canonical".*?\/?>/i, '');
                 finalHtml = finalHtml.replace(/<meta property="og:url".*?\/?>/i, '');
                 finalHtml = finalHtml.replace(/<meta property="og:title".*?\/?>/i, '');
-                finalHtml = finalHtml.replace(/<meta name="keywords".*?\/?>/i, ''); // Limpieza preventiva de keywords obsoletas
-
                 // 4. Inyectar las etiquetas específicas rescatadas dentro del <head> legítimo
                 let headInjections = '';
                 if (extractedTitle) headInjections += extractedTitle[0];
