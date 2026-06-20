@@ -74,13 +74,49 @@ async function run() {
                 `<div id="root">${appHtml}</div>`
             )
 
-            // Inyectar etiquetas del <head> (título, meta, canonical)
+            // 🌟 CORRECCIÓN CRÍTICA 1: Reemplazar metadatos en el <head> evitando duplicados genéricos
             if (helmet) {
+                const titleHtml = helmet.title.toString();
+                const metaHtml = helmet.meta.toString();
+                const linkHtml = helmet.link.toString();
+
+                // Si Helmet generó datos específicos, removemos los tags por defecto de index.html
+                if (titleHtml) {
+                    finalHtml = finalHtml.replace(/<title>.*?<\/title>/i, '');
+                }
+                if (metaHtml.includes('description')) {
+                    finalHtml = finalHtml.replace(/<meta name="description"[-_a-zA-Z0-9="' ]*content=".*?"\s*\/?>/i, '');
+                }
+
+                // Limpiar keywords y canonicals antiguos del head base para evitar ruido
+                finalHtml = finalHtml.replace(/<meta name="keywords".*?\/?>/i, '');
+                finalHtml = finalHtml.replace(/<link rel="canonical".*?\/?>/i, '');
+                finalHtml = finalHtml.replace(/<meta property="og:url".*?\/?>/i, '');
+
+                // Inyectamos las nuevas etiquetas limpias justo antes del cierre de </head>
                 finalHtml = finalHtml.replace(
                     '</head>',
-                    `${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}</head>`
+                    `${titleHtml}${metaHtml}${linkHtml}</head>`
                 );
             }
+
+            // 🌟 CORRECCIÓN CRÍTICA 2: Sanear el <body> de etiquetas SEO duplicadas por React 19
+            const [headPart, bodyPart] = finalHtml.split('<body>');
+            if (bodyPart) {
+                let sanitizedBody = bodyPart;
+
+                // Removemos de forma selectiva del body cualquier tag que deba existir únicamente en el head
+                sanitizedBody = sanitizedBody.replace(/<title>.*?<\/title>/gi, '');
+                sanitizedBody = sanitizedBody.replace(/<meta[^>]*name="description"[^>]*>/gi, '');
+                sanitizedBody = sanitizedBody.replace(/<meta[^>]*property="og:[^>]*>/gi, '');
+                sanitizedBody = sanitizedBody.replace(/<link[^>]*rel="canonical"[^>]*>/gi, '');
+
+                finalHtml = `${headPart}<body>${sanitizedBody}`;
+            }
+
+
+
+
 
             // Determinar ruta del archivo final (ejemplo: /trayectoria se convierte en /trayectoria/index.html)
             const fileName = url === '/' ? 'index.html' : `${url}/index.html`
