@@ -8,12 +8,13 @@ import CTASection from '../components/CTASection';
 import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber creado este archivo
 import DynamicSchema from '../components/DynamicSchema';
+import { Helmet } from 'react-helmet-async';
 
 const Trayectoria = () => {
 	const imagenTrayectoria = 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop';
 
 	useEffect(() => {
-		document.title = 'Trayectoria | Adil Brkovic';
+		// document.title = 'Trayectoria | Adil Brkovic';
 		window.scrollTo(0, 0);
 	}, []);
 
@@ -22,8 +23,8 @@ const Trayectoria = () => {
 		'@context': 'https://schema.org',
 		'@type': 'Attorney',
 		name: 'Adil Brkovic Almonte',
-		url: 'https://brkovicabogados.cl/trayectoria',
-		image: 'https://brkovicabogados.cl/img/Hero-adil.webp',
+		url: 'https://estudiobrkovic.cl/trayectoria/',
+		image: 'https://estudiobrkovic.cl/img/Hero-adil.webp',
 		description: 'Abogado egresado de la Universidad Católica de Valparaíso, Magíster en Derecho Tributario y referente en la defensa de los Derechos Humanos en Chile.',
 		alumniOf: [
 			{ '@type': 'EducationalOrganization', name: 'Universidad Católica de Valparaíso' },
@@ -68,6 +69,18 @@ const Trayectoria = () => {
 
 	return (
 		<div className=' min-h-screen font-sans'>
+			{/* 🛠️ BLOQUE HELMET AGREGADO PARA GENERACIÓN SÍNCRONA DE METADATOS */}
+			<Helmet>
+				<title>Trayectoria Profesional | Adil Brkovic Almonte</title>
+				<link rel='canonical' href='https://estudiobrkovic.cl/trayectoria/' />
+				<meta
+					name='description'
+					content='Conoce los más de 30 años de trayectoria del abogado Adil Brkovic Almonte. Hitos judiciales, casos complejos y defensa de derechos fundamentales en Chile.'
+				/>
+				<meta property='og:title' content='Trayectoria Profesional | Adil Brkovic Almonte' />
+				<meta property='og:url' content='https://estudiobrkovic.cl/trayectoria/' />
+			</Helmet>
+
 			{/* 🌟 INYECCIÓN SÍNCRONA EN EL BODY */}
 			<DynamicSchema schemaData={trayectoriaSchema} />
 

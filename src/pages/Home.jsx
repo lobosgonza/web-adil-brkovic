@@ -12,9 +12,9 @@ const homeSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'LegalService',
 	name: 'Estudio Jurídico Brkovic',
-	url: 'https://brkovicabogados.cl/', // 👈 Usa el dominio real de tus meta tags
-	logo: 'https://brkovicabogados.cl/apple-touch-icon.png', // Reutiliza el icono como logo temporal
-	image: 'https://brkovicabogados.cl/og-image.jpg',
+	url: 'https://estudiobrkovic.cl/',
+	logo: 'https://estudiobrkovic.cl/apple-touch-icon.png',
+	image: 'https://estudiobrkovic.cl/og-image.jpg',
 	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
 	telephone: '+56953960666',
 	email: 'adilbrkovic@gmail.com',
@@ -131,7 +131,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['litigios-indemnizatorios'].titulo}
 								description={contenidos['litigios-indemnizatorios'].resumenHome}
-								link='/areas-de-trabajo/litigios-indemnizatorios'
+								link='/areas-de-trabajo/litigios-indemnizatorios/'
 								image={contenidos['litigios-indemnizatorios'].imagen}
 								imageAlt={contenidos['litigios-indemnizatorios'].titulo}
 								attribution={contenidos['litigios-indemnizatorios'].creditoFoto}
@@ -143,7 +143,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['reparacion-ddhh'].titulo}
 								description={contenidos['reparacion-ddhh'].resumenHome}
-								link='/areas-de-trabajo/reparacion-ddhh'
+								link='/areas-de-trabajo/reparacion-ddhh/'
 								image={contenidos['reparacion-ddhh'].imagen}
 								imageAlt={contenidos['reparacion-ddhh'].titulo}
 								attribution={contenidos['reparacion-ddhh'].creditoFoto}
@@ -155,7 +155,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['defensa-comunidades'].titulo}
 								description={contenidos['defensa-comunidades'].resumenHome}
-								link='/areas-de-trabajo/defensa-comunidades'
+								link='/areas-de-trabajo/defensa-comunidades/'
 								image={contenidos['defensa-comunidades'].imagen}
 								imageAlt={contenidos['defensa-comunidades'].titulo}
 								attribution={contenidos['defensa-comunidades'].creditoFoto}
@@ -167,7 +167,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['defensa-administrativa'].titulo}
 								description={contenidos['defensa-administrativa'].resumenHome}
-								link='/areas-de-trabajo/defensa-administrativa'
+								link='/areas-de-trabajo/defensa-administrativa/'
 								image={contenidos['defensa-administrativa'].imagen}
 								imageAlt={contenidos['defensa-administrativa'].titulo}
 								attribution={contenidos['defensa-administrativa'].creditoFoto}
@@ -179,7 +179,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['justicia-previsional'].titulo}
 								description={contenidos['justicia-previsional'].resumenHome}
-								link='/areas-de-trabajo/justicia-previsional'
+								link='/areas-de-trabajo/justicia-previsional/'
 								image={contenidos['justicia-previsional'].imagen}
 								imageAlt={contenidos['justicia-previsional'].titulo}
 								attribution={contenidos['justicia-previsional'].creditoFoto}
@@ -197,7 +197,7 @@ const Home = () => {
 					subtitle='Sobre Adil Brkovic'
 					text='Con más de 30 años de experiencia, Adil Brkovic ha liderado hitos judiciales que transformaron la jurisprudencia en Chile. Su enfoque combina rigor técnico con un profundo compromiso social.'
 					buttonText='Ver Trayectoria Completa'
-					buttonLink='/trayectoria'
+					buttonLink='/trayectoria/'
 					imageSide='right'
 					image='/img/trayectoria-adil.webp'
 					imageAlt='abogado Adil Brkovic - trayectoria profesional'

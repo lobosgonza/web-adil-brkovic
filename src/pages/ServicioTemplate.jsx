@@ -53,17 +53,17 @@ const ServicioTemplate = () => {
 			url: 'https://estudiobrkovic.cl/',
 		},
 		serviceType: 'LegalService',
-		url: `https://estudiobrkovic.cl/areas-de-trabajo/${id}`,
+		url: `https://estudiobrkovic.cl/areas-de-trabajo/${id}/`,
 	};
 
 	return (
 		<div>
 			<Helmet>
 				<title>{`${data.titulo} | Adil Brkovic`}</title>
-				<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}`} />
+				<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
 				<meta name='description' content={data.resumenHome} />
 				<meta property='og:title' content={`${data.titulo} | Adil Brkovic`} />
-				<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}`} />
+				<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
 			</Helmet>
 
 			{/* 🌟 INYECCIÓN DINÁMICA BASADA EN LA URL ACTUAL */}

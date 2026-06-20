@@ -7,7 +7,7 @@ import { contenidos } from '../data/areasDeTrabajo';
 import DynamicSchema from '../components/DynamicSchema'; // 👈 Importar
 
 const ServiciosHub = () => {
-	const pageUrl = 'https://estudiobrkovic.cl/areas-de-trabajo';
+	const pageUrl = 'https://estudiobrkovic.cl/areas-de-trabajo/';
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -16,20 +16,20 @@ const ServiciosHub = () => {
 	const hubSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'WebPage',
-		name: 'Áreas de Especialización | Estudio Jurídico Brkovic',
-		url: 'https://brkovicabogados.cl/areas-de-trabajo',
+		name: 'Áreas de Especialización Jurídica | Estudio Jurídico Brkovic',
+		url: 'https://estudiobrkovic.cl/areas-de-trabajo/',
 		description: 'Despacho especializado en litigación estratégica, defensa administrativa y causas de alto impacto social en Chile.',
 		breadcrumb: {
 			'@type': 'BreadcrumbList',
 			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://brkovicabogados.cl/' },
-				{ '@type': 'ListItem', position: 2, name: 'Áreas de Trabajo', item: 'https://brkovicabogados.cl/areas-de-trabajo' },
+				{ '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://estudiobrkovic.cl/' },
+				{ '@type': 'ListItem', position: 2, name: 'Áreas de Trabajo', item: 'https://estudiobrkovic.cl/areas-de-trabajo/' },
 			],
 		},
 	};
 	const renderCard = (id) => {
 		const data = contenidos[id];
-		return <ServiceCard title={data.titulo} description={data.titleSecondary} link={`/areas-de-trabajo/${id}`} image={data.imagen} attribution={data.creditoFoto} />;
+		return <ServiceCard title={data.titulo} description={data.titleSecondary} link={`/areas-de-trabajo/${id}/`} image={data.imagen} attribution={data.creditoFoto} />;
 	};
 
 	return (
