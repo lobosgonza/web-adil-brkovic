@@ -17,7 +17,7 @@ const homeSchema = {
 	image: 'https://estudiobrkovic.cl/og-image.jpg',
 	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
 	telephone: '+56953960666',
-	email: 'adilbrkovic@gmail.com',
+	email: 'estudiobrkovic@gmail.com',
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'Santiago',

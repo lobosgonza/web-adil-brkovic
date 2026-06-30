@@ -66,7 +66,7 @@ const PoliticaPrivacidad = () => {
 					<div className='mt-20 p-8 bg-[#F4F7F6] border border-gray-100'>
 						<p className='text-xs text-[#778696] font-light italic'>
 							Para cualquier duda respecto a sus datos, puede comunicarse directamente a:
-							<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>adilbrkovic@gmail.com</span>
+							<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>estudiobrkovic@gmail.com</span>
 						</p>
 					</div>
 				</div>
