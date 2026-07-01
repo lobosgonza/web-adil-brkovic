@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
+
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PressSection } from '../components/PressSection';
 import { ImageText } from '../components/ImageText';
@@ -58,13 +58,11 @@ const ServicioTemplate = () => {
 
 	return (
 		<div>
-			<Helmet>
-				<title>{`${data.titulo} | Adil Brkovic`}</title>
-				<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
-				<meta name='description' content={data.resumenHome} />
-				<meta property='og:title' content={`${data.titulo} | Adil Brkovic`} />
-				<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
-			</Helmet>
+			<title>{`${data.titulo} | Adil Brkovic`}</title>
+			<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
+			<meta name='description' content={data.resumenHome} />
+			<meta property='og:title' content={`${data.titulo} | Adil Brkovic`} />
+			<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
 
 			{/* 🌟 INYECCIÓN DINÁMICA BASADA EN LA URL ACTUAL */}
 			<DynamicSchema schemaData={serviceSchema} />

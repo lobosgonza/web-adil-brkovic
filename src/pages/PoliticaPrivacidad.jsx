@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import CTASection from '../components/CTASection';
 import DynamicSchema from '../components/DynamicSchema'; // 👈 Importar
 
@@ -37,13 +36,11 @@ const PoliticaPrivacidad = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Política de Privacidad | Adil Brkovic</title>
-				<link rel='canonical' href={pageUrl} />
-				<meta name='description' content='Información legal sobre el tratamiento de datos personales y condiciones de Estudio Jurídico Brkovic.' />
-				<meta property='og:title' content='Política de Privacidad | Adil Brkovic' />
-				<meta property='og:url' content={pageUrl} />
-			</Helmet>
+			<title>Política de Privacidad | Adil Brkovic</title>
+			<link rel='canonical' href={pageUrl} />
+			<meta name='description' content='Información legal sobre el tratamiento de datos personales y condiciones de Estudio Jurídico Brkovic.' />
+			<meta property='og:title' content='Política de Privacidad | Adil Brkovic' />
+			<meta property='og:url' content={pageUrl} />
 
 			{/* 🌟 INYECCIÓN DEL SCHEMA */}
 			<DynamicSchema schemaData={privacidadSchema} />

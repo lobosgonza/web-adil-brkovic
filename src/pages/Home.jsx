@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { HeroHome } from '../components/HeroHome';
 import { ServiceCard } from '../components/ServiceCard';
 import { WhatsAppCTA } from '../components/WhatsAppCTA'; // SIN llaves
@@ -104,12 +103,10 @@ const serviciosData = {
 const Home = () => {
 	return (
 		<div className=' flex flex-col'>
-			<Helmet>
-				<title>Estudio Jurídico Brkovic | Abogado & Consultor Jurídico</title>
-				<link rel='canonical' href='https://estudiobrkovic.cl/' />
-				<meta name='description' content='Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.' />
-				<meta property='og:url' content='https://estudiobrkovic.cl/' />
-			</Helmet>
+			<title>Estudio Jurídico Brkovic | Abogado & Consultor Jurídico</title>
+			<link rel='canonical' href='https://estudiobrkovic.cl/' />
+			<meta name='description' content='Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.' />
+			<meta property='og:url' content='https://estudiobrkovic.cl/' />
 
 			{/* INYECCIÓN DEL SCHEMA DINÁMICO */}
 			<DynamicSchema schemaData={homeSchema} />

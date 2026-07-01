@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+
 import { HeroSecondary } from '../components/HeroSecondary';
 import { ServiceCard } from '../components/ServiceCard';
 import CTASection from '../components/CTASection';
@@ -34,13 +34,11 @@ const ServiciosHub = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Áreas de Especialización | Adil Brkovic</title>
-				<link rel='canonical' href={pageUrl} />
-				<meta name='description' content='Despacho especializado en litigación estratégica, defensa administrativa y causas de alto impacto social en Chile.' />
-				<meta property='og:title' content='Áreas de Especialización | Adil Brkovic' />
-				<meta property='og:url' content={pageUrl} />
-			</Helmet>
+			<title>Áreas de Especialización | Adil Brkovic</title>
+			<link rel='canonical' href={pageUrl} />
+			<meta name='description' content='Despacho especializado en litigación estratégica, defensa administrativa y causas de alto impacto social en Chile.' />
+			<meta property='og:title' content='Áreas de Especialización | Adil Brkovic' />
+			<meta property='og:url' content={pageUrl} />
 
 			<div className='bg-[#F4F7F6] min-h-screen font-sans'>
 				{/* 🌟 INYECCIÓN SÍNCRONA DEL SCHEMA */}
