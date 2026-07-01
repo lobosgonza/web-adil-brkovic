@@ -26,7 +26,7 @@ const CTASection = ({ backTo, backText }) => {
 
 					<div className='flex flex-col sm:flex-row items-center gap-6'>
 						<a
-							href='https://wa.me/56922222222'
+							href='https://wa.me/56953960666'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='group relative inline-flex items-center gap-4 bg-[#e67e22] text-white px-10 py-5 text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:bg-white hover:text-[#e67e22] shadow-xl'>

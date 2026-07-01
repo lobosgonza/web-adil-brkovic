@@ -2,7 +2,7 @@ import { MessageCircle } from 'lucide-react';
 import { WHATSAPP_URL } from '../constants/contact'; // <--- Importamos la fuente de verdad
 
 export const WhatsAppCTA = () => {
-	const phoneNumber = '56922222222'; // Número de Adil
+	const phoneNumber = '56953960666'; // Número de Adil
 	const message = 'Hola, quisiera solicitar una asesoría jurídica.';
 	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
