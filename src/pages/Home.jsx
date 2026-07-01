@@ -91,7 +91,7 @@ const serviciosData = {
 	},
 	previsional: {
 		url: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=600&auto=format&fit=crop',
-		alt: 'Escritorio con anteojos y documentos de seguridad social',
+		alt: 'Escritorio con lentes y documentos de seguridad social',
 	},
 	trayectoria: {
 		// IMAGEN APAISADA SELECCIONADA (Oficina legal amplia)
