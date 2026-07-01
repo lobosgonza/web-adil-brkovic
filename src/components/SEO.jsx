@@ -8,8 +8,8 @@ export default function SEO({ title, description, canonical, ogUrl }) {
 		}
 	}, [title]);
 
-	// 2. Si ya estamos en el navegador, no renderizamos etiquetas HTML para evitar que React 19 las duplique
-	if (typeof window !== 'undefined') {
+	// 🌟 CORRECCIÓN: Si es el navegador REAL (no el prerender), no renderizamos HTML
+	if (typeof window !== 'undefined' && !window.__IS_PRERENDER__) {
 		return null;
 	}
 

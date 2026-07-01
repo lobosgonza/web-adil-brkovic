@@ -16,6 +16,7 @@ async function run() {
     console.log('📦 Iniciando Prerenderizado Optimizado para React 19...')
 
     globalThis.window = {
+        __IS_PRERENDER__: true,
         location: { pathname: '/' },
         innerWidth: 1920,
         innerHeight: 1080,
