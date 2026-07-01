@@ -8,6 +8,7 @@ import CTASection from '../components/CTASection';
 import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ContentBox } from '../components/ContentBox'; // Asegúrate de haber creado este archivo
 import DynamicSchema from '../components/DynamicSchema';
+import SEO from '../components/SEO';
 
 const Trayectoria = () => {
 	const imagenTrayectoria = 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop';
@@ -68,17 +69,12 @@ const Trayectoria = () => {
 
 	return (
 		<div className=' min-h-screen font-sans'>
-			{/* 🛠️ BLOQUE HELMET AGREGADO PARA GENERACIÓN SÍNCRONA DE METADATOS */}
-
-			<title>Trayectoria Profesional | Adil Brkovic Almonte</title>
-			<link rel='canonical' href='https://estudiobrkovic.cl/trayectoria/' />
-			<meta
-				name='description'
-				content='Conoce los más de 30 años de trayectoria del abogado Adil Brkovic Almonte. Hitos judiciales, casos complejos y defensa de derechos fundamentales en Chile.'
+			<SEO
+				title='Trayectoria Profesional | Adil Brkovic Almonte'
+				description='Conoce los más de 30 años de trayectoria del abogado Adil Brkovic Almonte. Hitos judiciales, casos complejos y defensa de derechos fundamentales en Chile.'
+				canonical='https://estudiobrkovic.cl/trayectoria/'
+				ogUrl='https://estudiobrkovic.cl/trayectoria/'
 			/>
-			<meta property='og:title' content='Trayectoria Profesional | Adil Brkovic Almonte' />
-			<meta property='og:url' content='https://estudiobrkovic.cl/trayectoria/' />
-
 			{/* 🌟 INYECCIÓN SÍNCRONA EN EL BODY */}
 			<DynamicSchema schemaData={trayectoriaSchema} />
 

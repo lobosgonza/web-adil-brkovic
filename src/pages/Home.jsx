@@ -6,6 +6,7 @@ import CTASection from '../components/CTASection'; // SIN llaves
 import { contenidos } from '../data/areasDeTrabajo';
 // Datos centralizados para las imágenes y contenido (SEO: Alt texts incluidos)
 import DynamicSchema from '../components/DynamicSchema';
+import SEO from '../components/SEO'; //
 
 const homeSchema = {
 	'@context': 'https://schema.org',
@@ -103,10 +104,13 @@ const serviciosData = {
 const Home = () => {
 	return (
 		<div className=' flex flex-col'>
-			<title>Estudio Jurídico Brkovic | Abogado & Consultor Jurídico</title>
-			<link rel='canonical' href='https://estudiobrkovic.cl/' />
-			<meta name='description' content='Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.' />
-			<meta property='og:url' content='https://estudiobrkovic.cl/' />
+			{/* 🌟 Reemplazas las etiquetas viejas por tu nuevo componente inteligente */}
+			<SEO
+				title='Estudio Jurídico Brkovic | Abogado & Consultor Jurídico'
+				description='Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.'
+				canonical='https://estudiobrkovic.cl/'
+				ogUrl='https://estudiobrkovic.cl/'
+			/>
 
 			{/* INYECCIÓN DEL SCHEMA DINÁMICO */}
 			<DynamicSchema schemaData={homeSchema} />

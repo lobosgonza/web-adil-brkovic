@@ -5,7 +5,7 @@ import { ServiceCard } from '../components/ServiceCard';
 import CTASection from '../components/CTASection';
 import { contenidos } from '../data/areasDeTrabajo';
 import DynamicSchema from '../components/DynamicSchema'; // 👈 Importar
-
+import SEO from '../components/SEO';
 const ServiciosHub = () => {
 	const pageUrl = 'https://estudiobrkovic.cl/areas-de-trabajo/';
 
@@ -34,11 +34,12 @@ const ServiciosHub = () => {
 
 	return (
 		<>
-			<title>Áreas de Especialización | Adil Brkovic</title>
-			<link rel='canonical' href={pageUrl} />
-			<meta name='description' content='Despacho especializado en litigación estratégica, defensa administrativa y causas de alto impacto social en Chile.' />
-			<meta property='og:title' content='Áreas de Especialización | Adil Brkovic' />
-			<meta property='og:url' content={pageUrl} />
+			<SEO
+				title='Áreas de Especialización | Adil Brkovic'
+				description='Despacho especializado en litigación estratégica, defensa administrativa y causas de alto impacto social en Chile.'
+				canonical={pageUrl}
+				ogUrl={pageUrl}
+			/>
 
 			<div className='bg-[#F4F7F6] min-h-screen font-sans'>
 				{/* 🌟 INYECCIÓN SÍNCRONA DEL SCHEMA */}

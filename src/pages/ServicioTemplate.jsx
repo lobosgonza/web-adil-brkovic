@@ -10,6 +10,7 @@ import CTASection from '../components/CTASection';
 import { contenidos } from '../data/areasDeTrabajo';
 import { WHATSAPP_URL } from '../constants/contact'; // Importamos la URL de contacto
 import DynamicSchema from '../components/DynamicSchema';
+import SEO from '../components/SEO'; //
 
 const ServicioTemplate = () => {
 	const { id } = useParams();
@@ -58,12 +59,12 @@ const ServicioTemplate = () => {
 
 	return (
 		<div>
-			<title>{`${data.titulo} | Adil Brkovic`}</title>
-			<link rel='canonical' href={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
-			<meta name='description' content={data.resumenHome} />
-			<meta property='og:title' content={`${data.titulo} | Adil Brkovic`} />
-			<meta property='og:url' content={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`} />
-
+			<SEO
+				title={`${data.titulo} | Adil Brkovic`}
+				description={data.resumenHome}
+				canonical={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`}
+				ogUrl={`https://estudiobrkovic.cl/areas-de-trabajo/${id}/`}
+			/>
 			{/* 🌟 INYECCIÓN DINÁMICA BASADA EN LA URL ACTUAL */}
 			<DynamicSchema schemaData={serviceSchema} />
 
