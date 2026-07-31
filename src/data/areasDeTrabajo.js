@@ -27,7 +27,7 @@ export const contenidos = {
         titulo: 'Defensa Administrativa',
         titleSecondary: 'Resguardo frente al poder sancionador del Estado.',
         resumenHome: 'Asesoría técnica en sumarios administrativos y procesos sancionatorios frente a organismos del Estado y entes reguladores.',
-        descripcion: '**Ofrecemos una defensa jurídica técnica en sumarios administrativos e investigaciones sumarias**, instruidos en contra funcionarios públicos, protegiendo el debido proceso y la honra profesional frente al ejercicio de la potestad disciplinaria, asegurando que las sanciones no sean arbitrarias ni desproporcionadas respecto a la normativa vigente\n\nEntregamos asesoría jurídica especializada en procesos sancionatorios seguidos por organismos del Estado en contra de empresas reguladas o en sumarios sanitarios.',
+        descripcion: '**Ofrecemos una defensa jurídica técnica en sumarios administrativos e investigaciones sumarias**, instruidos en contra de funcionarios públicos, protegiendo el debido proceso y la honra profesional frente al ejercicio de la potestad disciplinaria, asegurando que las sanciones no sean arbitrarias ni desproporcionadas respecto a la normativa vigente.\n\nEntregamos asesoría jurídica especializada en procesos sancionatorios seguidos por organismos del Estado en contra de empresas reguladas o en sumarios sanitarios.',
         imagen: 'https://images.unsplash.com/photo-1423592707957-3b212afa6733?q=80&w=1200&auto=format&fit=crop',
         creditoFoto: 'Unsplash',
     },

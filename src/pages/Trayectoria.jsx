@@ -86,11 +86,11 @@ const Trayectoria = () => {
 
 				<ImageText
 					title='Adil Brkovic Almonte'
-					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte, es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad.
+					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad.
 
-Egresado de la facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por  la Corte Suprema de Chile y  Magíster en Derecho Tributario por la  Universidad Andrés Bello. Su carrera  profesional en el ámbito de los litigios  se  ha destacado  por liderar hitos jurídicos como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, como los casos conocidos como Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico  ha sido profesor de pregrado en los cursos  de derechos humanos y  derecho tributario.
+Egresado de la Facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por la Corte Suprema de Chile y Magíster en Derecho Tributario por la Universidad Andrés Bello. Su carrera profesional en el ámbito de los litigios se ha destacado por liderar hitos jurídicos tales como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, destacando los casos denominados Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico ha sido profesor de pregrado en los cursos de derechos humanos y derecho tributario.
 
-Su estudio jurídico  cuenta con profesionales  especializados en litigios indemnizatorios, tributarios y administrativos,  combinando  el rigor técnico con el compromiso ético  cuya misión principal es entregar una representación legal cercana, estratégica y de calidad  a sus representados.`}
+Su estudio jurídico cuenta con profesionales especializados en litigios indemnizatorios, tributarios y administrativos, combinando el rigor técnico con el compromiso ético cuya misión principal es entregar una representación legal cercana, estratégica y de calidad a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink='/contacto'
 					image='/img/Hero-adil.webp'
@@ -103,7 +103,7 @@ Su estudio jurídico  cuenta con profesionales  especializados en litigios indem
 
 				{/* SECCIÓN 2: LINEA DE TIEMPO EVIDENCIA JURÍDICA */}
 				<section className='md:my-16 max-w-7xl mx-auto' id='prensa-busqueda'>
-					<div className='grid md:grid-cols-2  md:gap-16 items-start'>
+					<div className='grid md:grid-cols-2 md:gap-16 items-start'>
 						{/* COLUMNA: HITOS JUDICIALES */}
 						<div className='flex flex-col'>
 							<ContentBox title='Hitos Judiciales' subtitle='Casos que transformaron la jurisprudencia' icon={Gavel} borderColor='border-[#778696]'>

@@ -117,16 +117,6 @@ export const noticias = [
         tag: 'litigios-indemnizatorios', // <--- CAMBIADO: Es una indemnización contra el Fisco
         tagLabel: 'Litigios Indemnizatorios',
         highlight: false
-    }, {
-        id: 12,
-        fecha: '2004-10-08',
-        medio: 'El Mostrador',
-        titulo: 'El secreto del ex edecán de la Cámara de Diputados',
-        logro: 'Investigación estratégica sobre irregularidades en instituciones públicas.',
-        link: 'https://www.elmostrador.cl/noticias/pais/2004/10/08/el-secreto-mejor-guardado-del-ex-edecan-de-la-camara-de-diputados/',
-        tag: 'defensa-administrativa',
-        tagLabel: 'Defensa Administrativa',
-        highlight: false
     },
 
 ];
