@@ -39,5 +39,13 @@ export const contenidos = {
         imagen: '/img/justicia-previsional-corte-suprema.webp',
         creditoFoto: 'Corsario CL / Wikimedia (CC BY-SA 4.0)',
     },
+    'practica-tributaria': {
+        titulo: 'Práctica Tributaria',
+        titleSecondary: 'Asesoría y defensa tributaria para personas naturales y jurídicas.',
+        resumenHome: 'Asesoría corporativa, gestión patrimonial, auditoría de balances y litigación ante el SII y TTA.',
+        descripcion: '**Contamos con profesionales competentes y una amplia experiencia en asesoría y defensa tributaria tanto para personas naturales como jurídicas (empresas).**\n\nNuestras principales áreas de trabajo incluyen:\n\n• **Comercial:** Constitución, modificación y término de sociedades incorporando la variable tributaria.\n• **Gestión Patrimonial y Sucesoria:** Consultoría en la transferencia de bienes, herencias y organización de patrimonios familiares.\n• **Defensa Administrativa y Litigación Tributaria:** Representación especializada ante el Servicio de Impuestos Internos (SII) y Tribunales Tributarios y Aduaneros (TTA).\n• **Auditoría de Balances:** Revisión exhaustiva de balances para detectar y corregir contingencias tributarias.',
+        imagen: 'https://images.unsplash.com/photo-1638262052640-82e94d64664a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        creditoFoto: 'Unsplash',
+    }
 };
 

@@ -5,6 +5,10 @@ export const AREAS_TRABAJO = [
     { id: 'litigios-indemnizatorios', name: 'Litigios Indemnizatorios' },
     { id: 'defensa-administrativa', name: 'Defensa Administrativa' },
     { id: 'justicia-previsional', name: 'Justicia Previsional' },
+    {
+        id: 'practica-tributaria',
+        name: 'Práctica Tributaria',
+    },
 ];
 
 // Rutas estáticas básicas del sitio

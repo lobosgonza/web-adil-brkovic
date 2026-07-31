@@ -12,7 +12,7 @@ const homeSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'LegalService',
 	name: 'Estudio Jurídico Brkovic',
-	url: 'https://estudiobrkovic.cl/',
+	url: 'https://estudiobrkovic.cl',
 	logo: 'https://estudiobrkovic.cl/apple-touch-icon.png',
 	image: 'https://estudiobrkovic.cl/og-image.jpg',
 	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
@@ -69,6 +69,14 @@ const homeSchema = {
 					description: 'Regularización de PGU y pensiones para Ley Valech y Exonerados Políticos.',
 				},
 			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					name: 'Práctica Tributaria',
+					description: 'Asesoría corporativa, gestión patrimonial y litigación ante el SII y TTA.',
+				},
+			},
 		],
 	},
 };
@@ -108,8 +116,8 @@ const Home = () => {
 			<SEO
 				title='Estudio Jurídico Brkovic | Abogado & Consultor Jurídico'
 				description='Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.'
-				canonical='https://estudiobrkovic.cl/'
-				ogUrl='https://estudiobrkovic.cl/'
+				canonical='https://estudiobrkovic.cl'
+				ogUrl='https://estudiobrkovic.cl'
 			/>
 
 			{/* INYECCIÓN DEL SCHEMA DINÁMICO */}
@@ -127,36 +135,36 @@ const Home = () => {
 					</div>
 
 					<div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
-						{/* 3. LITIGIOS INDEMNIZATORIOS (Ocupa 2 columnas) */}
-						<div className='md:col-span-3'>
+						{/* 1. LITIGIOS INDEMNIZATORIOS */}
+						<div className='md:col-span-2'>
 							<ServiceCard
 								title={contenidos['litigios-indemnizatorios'].titulo}
 								description={contenidos['litigios-indemnizatorios'].resumenHome}
-								link='/areas-de-trabajo/litigios-indemnizatorios/'
+								link='/areas-de-trabajo/litigios-indemnizatorios'
 								image={contenidos['litigios-indemnizatorios'].imagen}
 								imageAlt={contenidos['litigios-indemnizatorios'].titulo}
 								attribution={contenidos['litigios-indemnizatorios'].creditoFoto}
 							/>
 						</div>
 
-						{/* 1. REPARACIÓN Y DD.HH. (Ocupa 3 columnas) */}
-						<div className='md:col-span-3'>
+						{/* 2. REPARACIÓN Y DD.HH. */}
+						<div className='md:col-span-2'>
 							<ServiceCard
 								title={contenidos['reparacion-ddhh'].titulo}
 								description={contenidos['reparacion-ddhh'].resumenHome}
-								link='/areas-de-trabajo/reparacion-ddhh/'
+								link='/areas-de-trabajo/reparacion-ddhh'
 								image={contenidos['reparacion-ddhh'].imagen}
 								imageAlt={contenidos['reparacion-ddhh'].titulo}
 								attribution={contenidos['reparacion-ddhh'].creditoFoto}
 							/>
 						</div>
 
-						{/* 2. DEFENSA DE COMUNIDADES (Ocupa 3 columnas) */}
+						{/* 3. DEFENSA DE COMUNIDADES */}
 						<div className='md:col-span-2'>
 							<ServiceCard
 								title={contenidos['defensa-comunidades'].titulo}
 								description={contenidos['defensa-comunidades'].resumenHome}
-								link='/areas-de-trabajo/defensa-comunidades/'
+								link='/areas-de-trabajo/defensa-comunidades'
 								image={contenidos['defensa-comunidades'].imagen}
 								imageAlt={contenidos['defensa-comunidades'].titulo}
 								attribution={contenidos['defensa-comunidades'].creditoFoto}
@@ -168,7 +176,7 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['defensa-administrativa'].titulo}
 								description={contenidos['defensa-administrativa'].resumenHome}
-								link='/areas-de-trabajo/defensa-administrativa/'
+								link='/areas-de-trabajo/defensa-administrativa'
 								image={contenidos['defensa-administrativa'].imagen}
 								imageAlt={contenidos['defensa-administrativa'].titulo}
 								attribution={contenidos['defensa-administrativa'].creditoFoto}
@@ -180,10 +188,20 @@ const Home = () => {
 							<ServiceCard
 								title={contenidos['justicia-previsional'].titulo}
 								description={contenidos['justicia-previsional'].resumenHome}
-								link='/areas-de-trabajo/justicia-previsional/'
+								link='/areas-de-trabajo/justicia-previsional'
 								image={contenidos['justicia-previsional'].imagen}
 								imageAlt={contenidos['justicia-previsional'].titulo}
 								attribution={contenidos['justicia-previsional'].creditoFoto}
+							/>
+						</div>
+						<div className='md:col-span-2'>
+							<ServiceCard
+								title={contenidos['practica-tributaria'].titulo}
+								description={contenidos['practica-tributaria'].resumenHome}
+								link='/areas-de-trabajo/practica-tributaria'
+								image={contenidos['practica-tributaria'].imagen}
+								imageAlt={contenidos['practica-tributaria'].titulo}
+								attribution={contenidos['practica-tributaria'].creditoFoto}
 							/>
 						</div>
 					</div>
@@ -198,7 +216,7 @@ const Home = () => {
 					subtitle='Sobre Adil Brkovic'
 					text='Con más de 30 años de experiencia, Adil Brkovic ha liderado hitos judiciales que transformaron la jurisprudencia en Chile. Su enfoque combina rigor técnico con un profundo compromiso social.'
 					buttonText='Ver Trayectoria Completa'
-					buttonLink='/trayectoria/'
+					buttonLink='/trayectoria'
 					imageSide='right'
 					image='/img/trayectoria-adil.webp'
 					imageAlt='abogado Adil Brkovic - trayectoria profesional'

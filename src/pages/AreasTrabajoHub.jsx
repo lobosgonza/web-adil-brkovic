@@ -60,12 +60,13 @@ const ServiciosHub = () => {
 
 					{/* 2. GRILLA EQUIVALENTE AL HOME (MD:6) */}
 					<div className='grid grid-cols-1 md:grid-cols-6 gap-8'>
-						<div className='md:col-span-3'>{renderCard('litigios-indemnizatorios')}</div>
-						<div className='md:col-span-3'>{renderCard('reparacion-ddhh')}</div>
+						<div className='md:col-span-2'>{renderCard('litigios-indemnizatorios')}</div>
+						<div className='md:col-span-2'>{renderCard('reparacion-ddhh')}</div>
 						<div className='md:col-span-2'>{renderCard('defensa-comunidades')}</div>
 
 						<div className='md:col-span-2'>{renderCard('defensa-administrativa')}</div>
 						<div className='md:col-span-2'>{renderCard('justicia-previsional')}</div>
+						<div className='md:col-span-2'>{renderCard('practica-tributaria')}</div>
 					</div>
 				</section>
 
