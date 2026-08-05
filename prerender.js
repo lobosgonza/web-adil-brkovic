@@ -66,6 +66,7 @@ async function run() {
             const titleMatch = appHtml.match(/<title>.*?<\/title>/i);
             const descMatch = appHtml.match(/<meta[^>]*name="description"[^>]*>/i);
             const ogTitleMatch = appHtml.match(/<meta[^>]*property="og:title"[^>]*>/i);
+            const ogDescMatch = appHtml.match(/<meta[^>]*property="og:description"[^>]*>/i);
             const ogUrlMatch = appHtml.match(/<meta[^>]*property="og:url"[^>]*>/i);
             const canonicalMatch = appHtml.match(/<link[^>]*rel="canonical"[^>]*>/i);
 
@@ -82,21 +83,21 @@ async function run() {
                 `<div id="root">${cleanAppHtml}</div>`
             )
 
-            // 5. Limpieza TOTAL de metadatos antiguos por defecto en el <head> del template usando /gi
-            finalHtml = finalHtml.replace(/<title>.*?<\/title>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*name="description"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<link[^>]*rel="canonical"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*property="og:url"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*property="og:title"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*name="keywords"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*property="og:description"[^>]*>/gi, '');
-            finalHtml = finalHtml.replace(/<meta[^>]*name="twitter:description"[^>]*>/gi, '');
+            // 4. Limpieza de metadatos por defecto en el <head> original
+            finalHtml = finalHtml
+                .replace(/<title>.*?<\/title>/gi, '')
+                .replace(/<meta[^>]*name="description"[^>]*>/gi, '')
+                .replace(/<link[^>]*rel="canonical"[^>]*>/gi, '')
+                .replace(/<meta[^>]*property="og:url"[^>]*>/gi, '')
+                .replace(/<meta[^>]*property="og:title"[^>]*>/gi, '')
+                .replace(/<meta[^>]*property="og:description"[^>]*>/gi, '');
 
             // 6. Construir el bloque único e higienizado de inyecciones para el Head
             let headInjections = '';
             if (titleMatch) headInjections += titleMatch[0];
             if (descMatch) headInjections += descMatch[0];
             if (ogTitleMatch) headInjections += ogTitleMatch[0];
+            if (ogDescMatch) headInjections += ogDescMatch[0];
             if (ogUrlMatch) headInjections += ogUrlMatch[0];
             if (canonicalMatch) headInjections += canonicalMatch[0];
 

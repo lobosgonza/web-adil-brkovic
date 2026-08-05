@@ -8,16 +8,11 @@ export default function SEO({ title, description, canonical, ogUrl }) {
 		}
 	}, [title]);
 
-	// 🌟 CORRECCIÓN: Si es el navegador REAL (no el prerender), no renderizamos HTML
-	if (typeof window !== 'undefined' && !window.__IS_PRERENDER__) {
-		return null;
-	}
-
-	// 3. En el servidor (Prerender), renderizamos las etiquetas para que tu script las capture e inyecte en el <head>
+	// Retornamos los metadatos para que renderToString() los genere en el string HTML
 	return (
 		<>
-			<title>{title}</title>
-			<meta name='description' content={description} />
+			{title && <title>{title}</title>}
+			{description && <meta name='description' content={description} />}
 			{canonical && <link rel='canonical' href={canonical} />}
 			{ogUrl && <meta property='og:url' content={ogUrl} />}
 		</>

@@ -9,17 +9,17 @@ const outputPath = path.resolve(__dirname, 'dist/sitemap.xml')
 
 // 1. Configura aquí las rutas que quieres que Google indexe
 const links = [
-    { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/trayectoria/', changefreq: 'monthly', priority: 0.8 },
-    { url: '/areas-de-trabajo/', changefreq: 'monthly', priority: 0.8 },
-    { url: '/politica-de-privacidad/', changefreq: 'yearly', priority: 0.3 },
-    // Tus servicios dinámicos
-    { url: '/areas-de-trabajo/litigios-indemnizatorios/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/areas-de-trabajo/reparacion-ddhh/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/areas-de-trabajo/defensa-comunidades/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/areas-de-trabajo/defensa-administrativa/', changefreq: 'monthly', priority: 0.7 },
-    { url: '/areas-de-trabajo/justicia-previsional/', changefreq: 'monthly', priority: 0.7 }
-]
+    ...STATIC_ROUTES.map(route => ({
+        url: route,
+        changefreq: route === '/' ? 'weekly' : 'monthly',
+        priority: route === '/' ? 1.0 : 0.8
+    })),
+    ...AREAS_TRABAJO.map(area => ({
+        url: `/areas-de-trabajo/${area.id}`,
+        changefreq: 'monthly',
+        priority: 0.7
+    }))
+];
 
 async function generate() {
     console.log('🗺️  Generando sitemap.xml para estudiobrkovic.cl...')

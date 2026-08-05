@@ -31,13 +31,21 @@ const pageTransition = {
 	duration: 0.4,
 	ease: [0.43, 0.13, 0.23, 0.96],
 };
+// En App.jsx
+const isServer = typeof window === 'undefined' || window.__IS_PRERENDER__;
 
-const PageWrapper = ({ children }) => (
-	<motion.div initial='initial' animate='animate' exit='exit' variants={pageVariants} transition={pageTransition}>
-		{children}
-	</motion.div>
-);
+const PageWrapper = ({ children }) => {
+	// Si estamos prerenderizando, devolvemos el HTML estático limpio sin opacidad 0
+	if (isServer) {
+		return <>{children}</>;
+	}
 
+	return (
+		<motion.div initial='initial' animate='animate' exit='exit' variants={pageVariants} transition={pageTransition}>
+			{children}
+		</motion.div>
+	);
+};
 function App() {
 	const location = useLocation();
 
