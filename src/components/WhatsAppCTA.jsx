@@ -1,14 +1,8 @@
-import { MessageCircle } from 'lucide-react';
-import { WHATSAPP_URL } from '../constants/contact'; // <--- Importamos la fuente de verdad
+import { WHATSAPP_URL } from '@/constants/contact';
 
 export const WhatsAppCTA = () => {
-	const phoneNumber = '56953960666'; // Número de Adil
-	const message = 'Hola, quisiera solicitar una asesoría jurídica.';
-	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
 	return (
-		<div className='fixed right-0 top-[75%] -translate-y-1/2 z-60 group flex items-center'>
-			{/* ETIQUETA: pointer-events-none es la clave aquí */}
+		<div className='fixed right-0 top-[75%] -translate-y-1/2 z-50 group flex items-center'>
 			<span
 				className='absolute right-full px-4 py-3 bg-[#1a252f] text-white text-[10px] uppercase tracking-[0.2em] shadow-2xl rounded-l-sm 
                 opacity-0 group-hover:opacity-90 transition-all duration-300 
@@ -17,7 +11,6 @@ export const WhatsAppCTA = () => {
 				Asesoría Directa
 			</span>
 
-			{/* ENLACE AL WHATSAPP CENTRALIZADO */}
 			<a href={WHATSAPP_URL} target='_blank' rel='noopener noreferrer' className='block' aria-label='Contactar por WhatsApp'>
 				<div
 					className='bg-[#2e7d32] text-white p-4 rounded-l-xl shadow-[-10px_0_20px_rgba(0,0,0,0.15)] 

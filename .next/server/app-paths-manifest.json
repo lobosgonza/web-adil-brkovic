@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/areas-de-trabajo/[id]/page": "app/areas-de-trabajo/[id]/page.js",
+  "/areas-de-trabajo/page": "app/areas-de-trabajo/page.js",
+  "/page": "app/page.js",
+  "/politica-de-privacidad/page": "app/politica-de-privacidad/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/trayectoria/page": "app/trayectoria/page.js"
+}

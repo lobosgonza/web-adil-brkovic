@@ -2,13 +2,10 @@ import { ExternalLink, CheckCircle2 } from 'lucide-react';
 
 export const PressItem = ({ noticia }) => {
 	return (
-		<a href={noticia.link} target='_blank' rel='noopener noreferrer' className=' group block py-6 transition-all duration-300 border-b border-gray-100 last:border-0'>
-			{/* Cambiamos a flex-col en mobile y flex-row en desktop */}
+		<a href={noticia.link} target='_blank' rel='noopener noreferrer' className='group block py-6 transition-all duration-300 border-b border-gray-100 last:border-0'>
 			<div className='flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6'>
 				<div className='space-y-3 flex-grow'>
-					{/* 1. TAG DEL ÁREA + METADATOS */}
 					<div className='space-y-1'>
-						{/* TAG DEL ÁREA (NUEVO) */}
 						{noticia.tagLabel && <span className='block text-[9px] font-black uppercase tracking-[0.25em] text-[#778696] mb-2'>{noticia.tagLabel}</span>}
 
 						<div className='flex items-center gap-3'>
@@ -17,10 +14,8 @@ export const PressItem = ({ noticia }) => {
 						</div>
 					</div>
 
-					{/* Título: Ajustamos el tamaño para que sea más legible en mobile */}
 					<h4 className='text-base md:text-lg font-display font-medium text-[#2c3e50] group-hover:text-[#e67e22] transition-colors leading-snug'>{noticia.titulo}</h4>
 
-					{/* Logro: En mobile le damos más aire y quitamos el italic si se siente muy cargado */}
 					{noticia.logro && (
 						<div className='flex items-start gap-2 text-sm text-gray-500 font-light bg-gray-50/80 p-3 rounded-sm border-l-2 border-[#e67e22]/30'>
 							<CheckCircle2 size={14} className='text-[#e67e22] mt-0.5 flex-shrink-0' />
@@ -29,7 +24,6 @@ export const PressItem = ({ noticia }) => {
 					)}
 				</div>
 
-				{/* Botón: En mobile lo movemos a la derecha/abajo de forma más integrada */}
 				<div className='flex justify-end md:block'>
 					<div className='flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#778696] font-bold md:hidden mb-2'>
 						Ver nota completa <ExternalLink size={12} />

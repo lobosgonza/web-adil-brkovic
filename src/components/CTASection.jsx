@@ -4,12 +4,8 @@ import { BackButton } from './BackButton';
 const CTASection = ({ backTo, backText }) => {
 	return (
 		<>
-			{/* 1. SECCIÓN CTA AZUL */}
 			<div className='w-full overflow-hidden relative bg-[#2c3e50]'>
-				{/* FONDO: Degradado Azul Muy Profundo para dar dimensión */}
 				<div className='absolute inset-0 bg-gradient-to-br from-[#2c3e50] via-[#1a252f] to-[#2c3e50] opacity-100'></div>
-
-				{/* Elementos decorativos sutiles (Marca de agua) */}
 				<div className='absolute -right-20 -bottom-20 w-80 h-80 bg-[#e67e22]/5 rounded-full blur-3xl'></div>
 
 				<div className='max-w-7xl mx-auto relative z-10 px-8 py-20 md:px-20 md:py-24 flex flex-col lg:flex-row items-center justify-between gap-12'>
@@ -20,8 +16,7 @@ const CTASection = ({ backTo, backText }) => {
 						</div>
 
 						<h2 className='uppercase font-display text-4xl md:text-5xl !text-white font-medium leading-[1.1] tracking-tighter'>¿Necesitas asesoría legal?</h2>
-
-						<p className='mt-8 text-gray-400  '>Hablemos directamente para una evaluación preliminar de tu caso vía WhatsApp.</p>
+						<p className='mt-8 text-gray-400'>Hablemos directamente para una evaluación preliminar de tu caso vía WhatsApp.</p>
 					</div>
 
 					<div className='flex flex-col sm:flex-row items-center gap-6'>
@@ -37,7 +32,6 @@ const CTASection = ({ backTo, backText }) => {
 				</div>
 			</div>
 
-			{/* 2. BOTÓN DE VOLVER (Fuera del bloque azul, sobre el fondo de la página) */}
 			{backTo && <BackButton to={backTo} text={backText} />}
 		</>
 	);

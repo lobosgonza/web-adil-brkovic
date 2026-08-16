@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/areas-de-trabajo/[id]/page": "/areas-de-trabajo/[id]",
+  "/areas-de-trabajo/page": "/areas-de-trabajo",
+  "/page": "/",
+  "/politica-de-privacidad/page": "/politica-de-privacidad",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/trayectoria/page": "/trayectoria"
+}

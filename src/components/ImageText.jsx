@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export const ImageText = ({
 	title,
@@ -11,29 +11,22 @@ export const ImageText = ({
 	image,
 	imageAlt,
 	attribution,
-	buttonVariant = 'dark', // 'dark' o 'light'
-	buttonType = 'secondary', // 'primary' o 'secondary' (por defecto)
-
-	aspect = 'aspect-video', // <--- Nuevo prop: por defecto es horizontal
+	buttonVariant = 'dark',
+	buttonType = 'secondary',
+	aspect = 'aspect-video',
 }) => {
 	const subtitleColor = buttonVariant === 'dark' ? 'text-[#d35400]' : 'text-[#e67e22]';
-
-	// Lógica para detectar si el link es a WhatsApp o externo
 	const isExternal = buttonLink?.startsWith('http');
 
-	// Lógica de clases para el botón
 	const getButtonClass = () => {
 		if (buttonType === 'primary') {
-			return 'btn-primary'; // Tu clase global para botones sólidos
+			return 'btn-primary';
 		}
-		// Si es secundario, usa la lógica que ya tenías
 		return `btn-secondary btn-secondary-${buttonVariant}`;
 	};
 
-	// Función mágica para formatear negritas y saltos simples dentro de cada párrafo
 	const formatText = (content) => {
 		return content.split('**').map((part, i) => {
-			// Si el índice es impar, significa que estaba rodeado de **
 			if (i % 2 === 1) {
 				return (
 					<strong key={i} className='font-bold text-[#2c3e50]'>
@@ -41,20 +34,16 @@ export const ImageText = ({
 					</strong>
 				);
 			}
-			// Para las partes normales, respetamos saltos de línea simples si los hay
 			return part;
 		});
 	};
-	// Dividimos por doble salto de línea para crear párrafos independientes
+
 	const paragraphs = typeof text === 'string' ? text.split('\n\n') : [text];
+
 	return (
 		<div className={`sm:my-16 shadow-none rounded-sm p-8 bg-white flex flex-col md:flex-row items-center gap-10 md:gap-16 ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
-			{/* CONTENEDOR DE IMAGEN */}
 			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group relative'>
-				{' '}
-				{/* <--- Agregado 'relative' aquí */}
-				<img src={image} alt={imageAlt} className='w-full object-cover ${aspect} transition-all duration-700' />
-				{/* CRÉDITO DE IMAGEN */}
+				<img src={image} alt={imageAlt} className={`w-full object-cover ${aspect} transition-all duration-700`} />
 				{attribution && (
 					<span className='absolute bottom-1 right-2 text-[7px] text-white/40 uppercase tracking-tighter pointer-events-none group-hover:text-white/70 transition-opacity italic z-10'>
 						{attribution}
@@ -62,7 +51,6 @@ export const ImageText = ({
 				)}
 			</div>
 
-			{/* CONTENEDOR DE TEXTO */}
 			<div className='w-full md:w-1/2 space-y-8'>
 				<div className='space-y-4'>
 					<div className='space-y-2'>
@@ -81,14 +69,13 @@ export const ImageText = ({
 					))}
 				</div>
 
-				{/* Reemplaza el bloque del botón por este: */}
 				<div className='pt-4'>
 					{isExternal ? (
 						<a href={buttonLink} target='_blank' rel='noopener noreferrer' className={getButtonClass()}>
 							{buttonText}
 						</a>
 					) : (
-						<Link to={buttonLink} className={getButtonClass()}>
+						<Link href={buttonLink || '#'} className={getButtonClass()}>
 							{buttonText}
 						</Link>
 					)}
