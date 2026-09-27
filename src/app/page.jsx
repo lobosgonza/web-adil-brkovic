@@ -7,6 +7,24 @@ import { contenidos } from '@/data/areasDeTrabajo';
 export const metadata = {
 	title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
 	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+	alternates: {
+		canonical: '/',
+	},
+	openGraph: {
+		type: 'website',
+		locale: 'es_CL',
+		url: 'https://estudiobrkovic.cl',
+		siteName: 'Estudio Jurídico Brkovic',
+		title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
+		description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+		images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Estudio Jurídico Brkovic' }],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
+		description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+		images: ['/og-image.jpg'],
+	},
 };
 
 export default function Home() {

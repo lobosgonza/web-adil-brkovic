@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/politica-de-privacidad/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__06h_7bk._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0801z_3._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_1n3w9lb._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__11amk28._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0j26pto._.js")
@@ -9,5 +9,5 @@ R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidde
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0l_sp0x.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0q-w892.js")
 R.c("server/chunks/ssr/_next-internal_server_app_politica-de-privacidad_page_actions_1kuswn8.js")
-R.m(7127)
-module.exports=R.m(7127).exports
+R.m(83347)
+module.exports=R.m(83347).exports

@@ -1,4 +1,7 @@
 {
-  "/areas-de-trabajo/[id]/page": "app/areas-de-trabajo/[id]/page.js",
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/trayectoria/page": "app/trayectoria/page.js"
 }

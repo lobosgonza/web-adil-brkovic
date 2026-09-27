@@ -3,8 +3,10 @@
   "/_not-found/page": "/_not-found",
   "/areas-de-trabajo/[id]/page": "/areas-de-trabajo/[id]",
   "/areas-de-trabajo/page": "/areas-de-trabajo",
+  "/favicon.ico/route": "/favicon.ico",
   "/page": "/",
   "/politica-de-privacidad/page": "/politica-de-privacidad",
+  "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
   "/trayectoria/page": "/trayectoria"
 }

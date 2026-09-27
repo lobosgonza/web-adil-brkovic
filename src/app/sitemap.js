@@ -1,28 +1,23 @@
 import { contenidos } from '@/data/areasDeTrabajo';
 
+const LAST_MODIFIED = '2026-09-01';
+
 export default async function sitemap() {
-    const baseUrl = 'https://estudiobrkovic.cl';
+	const baseUrl = 'https://estudiobrkovic.cl';
 
-    // 1. Rutas estáticas principales
-    const staticRoutes = [
-        '',
-        '/trayectoria',
-        '/areas-de-trabajo',
-        '/politica-de-privacidad',
-    ].map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: route === '' ? 'weekly' : 'monthly',
-        priority: route === '' ? 1.0 : 0.8,
-    }));
+	const staticRoutes = ['', '/trayectoria', '/areas-de-trabajo', '/politica-de-privacidad'].map((route) => ({
+		url: `${baseUrl}${route}`,
+		lastModified: LAST_MODIFIED,
+		changeFrequency: route === '' ? 'weekly' : 'monthly',
+		priority: route === '' ? 1.0 : 0.8,
+	}));
 
-    // 2. Rutas dinámicas generadas desde tu archivo contenidos
-    const areaRoutes = Object.keys(contenidos).map((slug) => ({
-        url: `${baseUrl}/areas-de-trabajo/${slug}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-    }));
+	const areaRoutes = Object.keys(contenidos).map((slug) => ({
+		url: `${baseUrl}/areas-de-trabajo/${slug}`,
+		lastModified: LAST_MODIFIED,
+		changeFrequency: 'monthly',
+		priority: 0.7,
+	}));
 
-    return [...staticRoutes, ...areaRoutes];
+	return [...staticRoutes, ...areaRoutes];
 }

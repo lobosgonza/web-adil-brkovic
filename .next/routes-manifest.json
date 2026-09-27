@@ -57,10 +57,22 @@
       "namedRegex": "^/areas\\-de\\-trabajo(?:/)?$"
     },
     {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
       "page": "/politica-de-privacidad",
       "regex": "^/politica\\-de\\-privacidad(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/politica\\-de\\-privacidad(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
     },
     {
       "page": "/sitemap.xml",

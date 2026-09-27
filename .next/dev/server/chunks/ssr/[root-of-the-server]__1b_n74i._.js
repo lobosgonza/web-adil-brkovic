@@ -46,7 +46,34 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabaj
 ;
 const metadata = {
     title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
-    description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.'
+    description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+    alternates: {
+        canonical: '/'
+    },
+    openGraph: {
+        type: 'website',
+        locale: 'es_CL',
+        url: 'https://estudiobrkovic.cl',
+        siteName: 'Estudio Jurídico Brkovic',
+        title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
+        description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Estudio Jurídico Brkovic'
+            }
+        ]
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
+        description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
+        images: [
+            '/og-image.jpg'
+        ]
+    }
 };
 function Home() {
     const homeSchema = {
@@ -75,7 +102,7 @@ function Home() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/app/page.jsx",
-                lineNumber: 33,
+                lineNumber: 51,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -83,7 +110,7 @@ function Home() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HeroHome$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["HeroHome"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.jsx",
-                        lineNumber: 36,
+                        lineNumber: 54,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -100,20 +127,20 @@ function Home() {
                                             children: "Áreas de Trabajo"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.jsx",
-                                            lineNumber: 41,
+                                            lineNumber: 59,
                                             columnNumber: 8
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "w-24 h-1 bg-[#e67e22] mx-auto mt-6"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/page.jsx",
-                                            lineNumber: 42,
+                                            lineNumber: 60,
                                             columnNumber: 8
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/page.jsx",
-                                    lineNumber: 40,
+                                    lineNumber: 58,
                                     columnNumber: 7
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -129,42 +156,6 @@ function Home() {
                                                 attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['litigios-indemnizatorios'].creditoFoto
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.jsx",
-                                                lineNumber: 47,
-                                                columnNumber: 9
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.jsx",
-                                            lineNumber: 46,
-                                            columnNumber: 8
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "md:col-span-2",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
-                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].titulo,
-                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].resumenHome,
-                                                link: "/areas-de-trabajo/reparacion-ddhh",
-                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].imagen,
-                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].creditoFoto
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/page.jsx",
-                                                lineNumber: 56,
-                                                columnNumber: 9
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/page.jsx",
-                                            lineNumber: 55,
-                                            columnNumber: 8
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "md:col-span-2",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
-                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].titulo,
-                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].resumenHome,
-                                                link: "/areas-de-trabajo/defensa-comunidades",
-                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].imagen,
-                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].creditoFoto
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/page.jsx",
                                                 lineNumber: 65,
                                                 columnNumber: 9
                                             }, this)
@@ -176,11 +167,11 @@ function Home() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "md:col-span-2",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
-                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].titulo,
-                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].resumenHome,
-                                                link: "/areas-de-trabajo/defensa-administrativa",
-                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].imagen,
-                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].creditoFoto
+                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].titulo,
+                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].resumenHome,
+                                                link: "/areas-de-trabajo/reparacion-ddhh",
+                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].imagen,
+                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['reparacion-ddhh'].creditoFoto
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.jsx",
                                                 lineNumber: 74,
@@ -194,11 +185,11 @@ function Home() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "md:col-span-2",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
-                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].titulo,
-                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].resumenHome,
-                                                link: "/areas-de-trabajo/justicia-previsional",
-                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].imagen,
-                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].creditoFoto
+                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].titulo,
+                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].resumenHome,
+                                                link: "/areas-de-trabajo/defensa-comunidades",
+                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].imagen,
+                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-comunidades'].creditoFoto
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.jsx",
                                                 lineNumber: 83,
@@ -212,11 +203,11 @@ function Home() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "md:col-span-2",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
-                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].titulo,
-                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].resumenHome,
-                                                link: "/areas-de-trabajo/practica-tributaria",
-                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].imagen,
-                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].creditoFoto
+                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].titulo,
+                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].resumenHome,
+                                                link: "/areas-de-trabajo/defensa-administrativa",
+                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].imagen,
+                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['defensa-administrativa'].creditoFoto
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/page.jsx",
                                                 lineNumber: 92,
@@ -226,22 +217,58 @@ function Home() {
                                             fileName: "[project]/src/app/page.jsx",
                                             lineNumber: 91,
                                             columnNumber: 8
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "md:col-span-2",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
+                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].titulo,
+                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].resumenHome,
+                                                link: "/areas-de-trabajo/justicia-previsional",
+                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].imagen,
+                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['justicia-previsional'].creditoFoto
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/page.jsx",
+                                                lineNumber: 101,
+                                                columnNumber: 9
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/page.jsx",
+                                            lineNumber: 100,
+                                            columnNumber: 8
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "md:col-span-2",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceCard$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ServiceCard"], {
+                                                title: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].titulo,
+                                                description: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].resumenHome,
+                                                link: "/areas-de-trabajo/practica-tributaria",
+                                                image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].imagen,
+                                                attribution: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$areasDeTrabajo$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["contenidos"]['practica-tributaria'].creditoFoto
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/page.jsx",
+                                                lineNumber: 110,
+                                                columnNumber: 9
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/page.jsx",
+                                            lineNumber: 109,
+                                            columnNumber: 8
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/page.jsx",
-                                    lineNumber: 45,
+                                    lineNumber: 63,
                                     columnNumber: 7
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/page.jsx",
-                            lineNumber: 39,
+                            lineNumber: 57,
                             columnNumber: 6
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.jsx",
-                        lineNumber: 38,
+                        lineNumber: 56,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -258,29 +285,29 @@ function Home() {
                             buttonVariant: "dark"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.jsx",
-                            lineNumber: 105,
+                            lineNumber: 123,
                             columnNumber: 6
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.jsx",
-                        lineNumber: 104,
+                        lineNumber: 122,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CTASection$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.jsx",
-                        lineNumber: 118,
+                        lineNumber: 136,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.jsx",
-                lineNumber: 35,
+                lineNumber: 53,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.jsx",
-        lineNumber: 32,
+        lineNumber: 50,
         columnNumber: 3
     }, this);
 }
