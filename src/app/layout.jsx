@@ -1,8 +1,21 @@
 import '@/app/globals.css';
+import { Noto_Sans, Gabarito } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { WhatsAppCTA } from '@/components/WhatsAppCTA';
 import Script from 'next/script';
+
+const fontSans = Noto_Sans({
+	subsets: ['latin'],
+	weight: ['300', '400', '600'],
+	variable: '--font-sans',
+});
+
+const fontDisplay = Gabarito({
+	subsets: ['latin'],
+	weight: ['400', '600'],
+	variable: '--font-display',
+});
 
 export const metadata = {
 	metadataBase: new URL('https://estudiobrkovic.cl'),
@@ -21,12 +34,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='es' data-scroll-behavior='smooth'>
-			<head>
-				<link href='https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Noto+Sans:wght@300;400;600&display=swap' rel='stylesheet' />
-			</head>
+		<html lang='es' className={`${fontSans.variable} ${fontDisplay.variable}`}>
 			<body className='flex flex-col min-h-screen antialiased font-sans'>
-				{/* Google Tag Manager */}
 				<Script id='gtm-script' strategy='afterInteractive'>
 					{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,7 +43,6 @@ export default function RootLayout({ children }) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-NR3F5T3M');`}
 				</Script>
-
 				<Navbar />
 				<main className='flex-grow'>{children}</main>
 				<WhatsAppCTA />

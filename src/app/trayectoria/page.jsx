@@ -1,22 +1,38 @@
-'use client'; // Requerido en Next.js App Router porque se usan hooks (useState, useEffect)
-
-import { useEffect, useState } from 'react';
 import { HeroSecondary } from '@/components/HeroSecondary';
 import { Timeline } from '@/components/Timeline';
-import { PressSection } from '@/components/PressSection';
 import { ImageText } from '@/components/ImageText';
-import { noticias } from '@/data/prensa';
 import CTASection from '@/components/CTASection';
-import { Gavel, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Gavel } from 'lucide-react';
 import { ContentBox } from '@/components/ContentBox';
 import { WHATSAPP_URL } from '@/constants/contact';
+import { TrayectoriaPress } from '@/components/TrayectoriaPress';
 
-// Schema Profesional para potenciar la marca personal del Abogado Titular
+export const metadata = {
+	title: 'Trayectoria Profesional | Adil Brkovic Almonte',
+	description: 'Conoce los más de 30 años de trayectoria del abogado Adil Brkovic Almonte. Hitos judiciales, casos complejos y defensa de derechos fundamentales en Chile.',
+	alternates: {
+		canonical: 'https://estudiobrkovic.cl/trayectoria',
+	},
+	openGraph: {
+		title: 'Trayectoria Profesional | Adil Brkovic Almonte',
+		description: 'Conoce los más de 30 años de trayectoria del abogado Adil Brkovic Almonte. Hitos judiciales, casos complejos y defensa de derechos fundamentales en Chile.',
+		url: 'https://estudiobrkovic.cl/trayectoria',
+		type: 'profile',
+		images: [{ url: '/img/Hero-adil.webp', width: 800, height: 1000, alt: 'Adil Brkovic' }],
+	},
+};
+
 const trayectoriaSchema = {
 	'@context': 'https://schema.org',
-	'@type': 'Attorney',
+	'@type': 'Person',
 	name: 'Adil Brkovic Almonte',
-	url: 'https://estudiobrkovic.cl/trayectoria/',
+	jobTitle: 'Abogado Litigante',
+	worksFor: {
+		'@type': 'LegalService',
+		name: 'Estudio Jurídico Brkovic',
+		url: 'https://estudiobrkovic.cl',
+	},
+	url: 'https://estudiobrkovic.cl/trayectoria',
 	image: 'https://estudiobrkovic.cl/img/Hero-adil.webp',
 	description: 'Abogado egresado de la Universidad Católica de Valparaíso, Magíster en Derecho Tributario y referente en la defensa de los Derechos Humanos en Chile.',
 	alumniOf: [
@@ -57,37 +73,14 @@ const hitos = [
 export default function TrayectoriaPage() {
 	const imagenTrayectoria = 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop';
 
-	// Aseguramos de que window solo sea accedido en el lado del cliente (hidratación de Next.js)
-	const [isClient, setIsClient] = useState(false);
-	const [currentPage, setCurrentPage] = useState(1);
-
-	useEffect(() => {
-		setIsClient(true);
-		window.scrollTo(0, 0);
-	}, []);
-
-	// Paginación (Cálculos dinámicos solo se evalúan después de hidratar el componente)
-	const itemsPerPage = isClient && window.innerWidth < 768 ? 1 : 3;
-	const totalPages = Math.ceil(noticias.length / itemsPerPage);
-	const currentNoticias = noticias.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
 	return (
-		<main className='min-h-screen font-sans'>
-			{/* INYECCIÓN JSON-LD NATIVA DE NEXT.JS */}
+		<div className='min-h-screen font-sans'>
 			<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(trayectoriaSchema) }} />
-
-			{/* HERO UNIFICADO */}
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' image={imagenTrayectoria} />
-
 			<section className='sm:px-12 md:py-8 max-w-7xl mx-auto'>
-				{/* SECCIÓN 1: BIOGRAFÍA PRINCIPAL */}
 				<ImageText
 					title='Adil Brkovic Almonte'
-					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad.
-
-Egresado de la Facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por la Corte Suprema de Chile y Magíster en Derecho Tributario por la Universidad Andrés Bello. Su carrera profesional en el ámbito de los litigios se ha destacado por liderar hitos jurídicos tales como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, destacando los casos denominados Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico ha sido profesor de pregrado en los cursos de derechos humanos y derecho tributario.
-
-Su estudio jurídico cuenta con profesionales especializados en litigios indemnizatorios, tributarios y administrativos, combinando el rigor técnico con el compromiso ético cuya misión principal es entregar una representación legal cercana, estratégica y de calidad a sus representados.`}
+					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad. Egresado de la Facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por la Corte Suprema de Chile y Magíster en Derecho Tributario por la Universidad Andrés Bello. Su carrera profesional en el ámbito de los litigios se ha destacado por liderar hitos jurídicos tales como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, destacando los casos denominados Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico ha sido profesor de pregrado en los cursos de derechos humanos y derecho tributario. Su estudio jurídico cuenta con profesionales especializados en litigios indemnizatorios, tributarios y administrativos, combinando el rigor técnico con el compromiso ético cuya misión principal es entregar una representación legal cercana, estratégica y de calidad a sus representados.`}
 					buttonText='Contactar ahora'
 					buttonLink={WHATSAPP_URL}
 					image='/img/Hero-adil.webp'
@@ -97,11 +90,8 @@ Su estudio jurídico cuenta con profesionales especializados en litigios indemni
 					buttonType='primary'
 					buttonVariant='dark'
 				/>
-
-				{/* SECCIÓN 2: LINEA DE TIEMPO Y PRENSA */}
 				<section className='md:my-16 max-w-7xl mx-auto' id='prensa-busqueda'>
 					<div className='grid md:grid-cols-2 md:gap-16 items-start'>
-						{/* COLUMNA: HITOS JUDICIALES */}
 						<div className='flex flex-col'>
 							<ContentBox title='Hitos Judiciales' subtitle='Casos que transformaron la jurisprudencia' icon={Gavel} borderColor='border-[#778696]'>
 								<div className='pt-6'>
@@ -109,42 +99,13 @@ Su estudio jurídico cuenta con profesionales especializados en litigios indemni
 								</div>
 							</ContentBox>
 						</div>
-
-						{/* COLUMNA: PRENSA */}
 						<div className='flex flex-col'>
-							<PressSection
-								noticiasFiltradas={currentNoticias}
-								renderPagination={
-									totalPages > 1 && (
-										<div className='flex justify-between p-2'>
-											<button
-												onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-												disabled={currentPage === 1}
-												className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest disabled:opacity-20 hover:text-[#e67e22] transition-colors'>
-												<ChevronLeft size={14} /> Anterior
-											</button>
-
-											<span className='text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]'>
-												{currentPage} / {totalPages}
-											</span>
-
-											<button
-												onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-												disabled={currentPage === totalPages}
-												className='flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest disabled:opacity-20 hover:text-[#e67e22] transition-colors'>
-												Siguiente <ChevronRight size={14} />
-											</button>
-										</div>
-									)
-								}
-							/>
+							<TrayectoriaPress />
 						</div>
 					</div>
 				</section>
 			</section>
-
-			{/* CTA DE CIERRE */}
 			<CTASection backTo='/' backText='Volver al Home' />
-		</main>
+		</div>
 	);
 }
