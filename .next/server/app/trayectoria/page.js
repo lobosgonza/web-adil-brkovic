@@ -1,14 +1,13 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/trayectoria/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0a-si5d._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__11on9q0._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_1n3w9lb._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__11amk28._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0j26pto._.js")
-R.c("server/chunks/ssr/_1vw0vz5._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0_oc5-_._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_0wpq8j3._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0symwr9.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0l_sp0x.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0q-w892.js")
-R.c("server/chunks/ssr/src_app_trayectoria_layout_jsx_0vf7cmj._.js")
 R.c("server/chunks/ssr/_next-internal_server_app_trayectoria_page_actions_06-5zk0.js")
-R.m(73981)
-module.exports=R.m(73981).exports
+R.m(54899)
+module.exports=R.m(54899).exports
