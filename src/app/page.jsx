@@ -1,29 +1,14 @@
 import { HeroHome } from '@/components/HeroHome';
 import { ServiceCard } from '@/components/ServiceCard';
 import { ImageText } from '@/components/ImageText';
-import CTASection from '@/components/CTASection';
 import { contenidos } from '@/data/areasDeTrabajo';
+import { ContactForm } from '@/components/ContactForm';
 
 export const metadata = {
 	title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
 	description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
 	alternates: {
 		canonical: '/',
-	},
-	openGraph: {
-		type: 'website',
-		locale: 'es_CL',
-		url: 'https://estudiobrkovic.cl',
-		siteName: 'Estudio Jurídico Brkovic',
-		title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
-		description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
-		images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Estudio Jurídico Brkovic' }],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'Estudio Jurídico Brkovic | Abogado & Consultor Jurídico',
-		description: 'Treinta años de trayectoria dedicados a la defensa técnica y ética en casos de alta complejidad, justicia y derechos humanos en Chile.',
-		images: ['/og-image.jpg'],
 	},
 };
 
@@ -49,17 +34,14 @@ export default function Home() {
 	return (
 		<>
 			<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
-
 			<div className='flex flex-col'>
 				<HeroHome />
-
 				<section id='areas' className='px-8 sm:px-0 py-24 section-dark'>
 					<div className='mx-auto max-w-7xl'>
 						<div className='mb-20 text-center'>
 							<h2 className='text-4xl font-semibold uppercase tracking-widest text-white'>Áreas de Trabajo</h2>
 							<div className='w-24 h-1 bg-[#e67e22] mx-auto mt-6'></div>
 						</div>
-
 						<div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
 							<div className='md:col-span-2'>
 								<ServiceCard
@@ -133,7 +115,10 @@ export default function Home() {
 					/>
 				</div>
 
-				<CTASection />
+				{/* AQUÍ SE AGREGA EL ID RESPONSABLE DEL DESPLAZAMIENTO */}
+				<div id='formulario-evaluacion' className='px-4 md:px-8 container mx-auto max-w-7xl pb-16'>
+					<ContactForm />
+				</div>
 			</div>
 		</>
 	);

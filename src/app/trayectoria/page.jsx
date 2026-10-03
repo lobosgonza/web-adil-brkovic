@@ -1,7 +1,8 @@
 import { HeroSecondary } from '@/components/HeroSecondary';
 import { Timeline } from '@/components/Timeline';
 import { ImageText } from '@/components/ImageText';
-import CTASection from '@/components/CTASection';
+import { ContactForm } from '@/components/ContactForm';
+import { BackButton } from '@/components/BackButton';
 import { Gavel } from 'lucide-react';
 import { ContentBox } from '@/components/ContentBox';
 import { WHATSAPP_URL } from '@/constants/contact';
@@ -77,12 +78,13 @@ export default function TrayectoriaPage() {
 		<div className='min-h-screen font-sans'>
 			<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(trayectoriaSchema) }} />
 			<HeroSecondary title='TRAYECTORIA PROFESIONAL' subtitle='MÁS DE 30 AÑOS DE COMPROMISO CON LA JUSTICIA' image={imagenTrayectoria} />
+
 			<section className='sm:px-12 md:py-8 max-w-7xl mx-auto'>
 				<ImageText
 					title='Adil Brkovic Almonte'
 					text={`Con más de 30 años de ejercicio profesional, Adil Brkovic Almonte es un referente en la defensa de las víctimas de violaciones a los Derechos Humanos cometidas durante la dictadura militar, la defensa de derechos civiles en democracia y litigios de alta complejidad. Egresado de la Facultad de Derecho de la Universidad Católica de Valparaíso en 1987, es Licenciado en Ciencias Jurídicas de la Universidad de Salamanca de España, titulado de abogado por la Corte Suprema de Chile y Magíster en Derecho Tributario por la Universidad Andrés Bello. Su carrera profesional en el ámbito de los litigios se ha destacado por liderar hitos jurídicos tales como las condenas a criminales de lesa humanidad, e indemnizaciones emblemáticas contra el Estado y grandes corporaciones, destacando los casos denominados Casas COPEVA y la Planta La Farfana de Aguas Andinas. En el ámbito académico ha sido profesor de pregrado en los cursos de derechos humanos y derecho tributario. Su estudio jurídico cuenta con profesionales especializados en litigios indemnizatorios, tributarios y administrativos, combinando el rigor técnico con el compromiso ético cuya misión principal es entregar una representación legal cercana, estratégica y de calidad a sus representados.`}
-					buttonText='Contactar ahora'
-					buttonLink={WHATSAPP_URL}
+					buttonText='Solicitar Evaluación'
+					buttonLink='#formulario-evaluacion'
 					image='/img/Hero-adil.webp'
 					aspect='aspect-[3/4]'
 					imageAlt='Adil Brkovic Almonte - Abogado Litigante'
@@ -90,6 +92,7 @@ export default function TrayectoriaPage() {
 					buttonType='primary'
 					buttonVariant='dark'
 				/>
+
 				<section className='md:my-16 max-w-7xl mx-auto' id='prensa-busqueda'>
 					<div className='grid md:grid-cols-2 md:gap-16 items-start'>
 						<div className='flex flex-col'>
@@ -105,7 +108,11 @@ export default function TrayectoriaPage() {
 					</div>
 				</section>
 			</section>
-			<CTASection backTo='/' backText='Volver al Home' />
+
+			<section id='formulario-evaluacion' className='px-4 md:px-8 max-w-7xl mx-auto pb-16'>
+				<ContactForm title='Evaluación de Caso con Adil Brkovic' />
+				<BackButton to='/' text='Volver al Home' />
+			</section>
 		</div>
 	);
 }

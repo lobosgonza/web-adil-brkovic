@@ -5,13 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PressSection } from '@/components/PressSection';
 import { ImageText } from '@/components/ImageText';
 import { HeroSecondary } from '@/components/HeroSecondary';
-import CTASection from '@/components/CTASection';
-import { WHATSAPP_URL } from '@/constants/contact';
+import { ContactForm } from '@/components/ContactForm';
+import { BackButton } from '@/components/BackButton';
 
 export default function ServiceClient({ id, data, noticiasArea = [] }) {
 	const [currentPage, setCurrentPage] = useState(1);
 	const itemsPerPage = 3;
-
 	const totalPages = Math.ceil(noticiasArea.length / itemsPerPage);
 	const currentNoticias = noticiasArea.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -20,6 +19,7 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 	}, [id]);
 
 	const prensaRef = useRef(null);
+
 	useEffect(() => {
 		if (currentPage > 1 && prensaRef.current) {
 			prensaRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -34,8 +34,8 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 					title={data.titulo}
 					titleSecondary={data.titleSecondary}
 					text={data.descripcion}
-					buttonText='Solicitar Consulta'
-					buttonLink={WHATSAPP_URL}
+					buttonText='Solicitar Evaluación'
+					buttonLink='#formulario-evaluacion'
 					imageSide='left'
 					image={data.imagen}
 					attribution={data.creditoFoto}
@@ -43,6 +43,7 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 					buttonType='primary'
 					buttonVariant='dark'
 				/>
+
 				{noticiasArea.length > 0 && (
 					<div className='py-12 px-4' ref={prensaRef}>
 						<PressSection
@@ -73,8 +74,12 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 						/>
 					</div>
 				)}
+
+				<div id='formulario-evaluacion' className='px-4 md:px-8 pb-16'>
+					<ContactForm defaultArea={id} title={`Evaluación Legal: ${data.titulo}`} />
+					<BackButton to='/areas-de-trabajo' text='Volver a Áreas de Trabajo' />
+				</div>
 			</div>
-			<CTASection backTo='/areas-de-trabajo' backText='Volver a Áreas de Trabajo' />
 		</div>
 	);
 }

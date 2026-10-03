@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HeroSecondary } from '@/components/HeroSecondary';
 import { ServiceCard } from '@/components/ServiceCard';
-import CTASection from '@/components/CTASection';
+// import CTASection from '@/components/CTASection';
 import { contenidos } from '@/data/areasDeTrabajo';
 
 export const metadata = {
@@ -70,7 +70,7 @@ export default function AreasTrabajoPage() {
 					<div className='md:col-span-2'>{renderCard('practica-tributaria')}</div>
 				</div>
 			</section>
-			<CTASection backTo='/' backText='Volver al Home' />
+			{/* <CTASection backTo='/' backText='Volver al Home' /> */}
 		</div>
 	);
 }

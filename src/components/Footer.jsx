@@ -62,7 +62,7 @@ const Footer = () => {
 							<Phone size={18} className='text-[#e67e22] shrink-0' />
 							<div className='flex flex-col gap-1'>
 								<span className='uppercase text-[9px] tracking-widest font-bold'>Teléfono</span>
-								<a href={WHATSAPP_URL} target='_blank' rel='noopener noreferrer' className='hover:text-[#e67e22] transition-colors text-sm font-light'>
+								<a href={`tel:+${PHONE_NUMBER}`} className='hover:text-[#e67e22] transition-colors text-sm font-light'>
 									+{PHONE_NUMBER}
 								</a>
 							</div>

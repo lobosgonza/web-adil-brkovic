@@ -2,11 +2,9 @@ import { contenidos } from '@/data/areasDeTrabajo';
 import { notFound } from 'next/navigation';
 import ServiceClient from './ServiceClient';
 
-// METADATOS SSR DINÁMICOS POR ÁREA
 export async function generateMetadata({ params }) {
 	const { id } = await params;
 	const data = contenidos[id];
-
 	if (!data) return { title: 'Área no encontrada' };
 
 	return {
@@ -24,7 +22,6 @@ export default async function ServicioPage({ params }) {
 
 	if (!data) notFound();
 
-	// Schema JSON-LD directo en el servidor
 	const serviceSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'Service',

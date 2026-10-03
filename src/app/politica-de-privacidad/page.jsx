@@ -1,4 +1,5 @@
-import CTASection from '@/components/CTASection';
+import { ContactForm } from '@/components/ContactForm';
+import { BackButton } from '@/components/BackButton';
 
 export const metadata = {
 	title: 'Política de Privacidad | Adil Brkovic',
@@ -26,7 +27,7 @@ export default function PoliticaPrivacidadPage() {
 		{
 			titulo: '2. TRATAMIENTO DE DATOS PERSONALES',
 			contenido:
-				'En cumplimiento con la Ley N° 19.628 sobre Protección de la Vida Privada (Chile), informamos que los datos proporcionados a través de nuestro botón de WhatsApp se utilizarán exclusivamente para gestionar su consulta legal. Toda información está protegida bajo el estricto deber de secreto profesional.',
+				'En cumplimiento con la Ley Nº 19.628 sobre Protección de la Vida Privada (Chile), informamos que los datos proporcionados a través de nuestros formularios de contacto se utilizarán exclusivamente para gestionar su consulta legal. Toda información está protegida bajo el estricto deber de secreto profesional.',
 		},
 		{
 			titulo: '3. NATURALEZA DEL CONTENIDO',
@@ -41,33 +42,33 @@ export default function PoliticaPrivacidadPage() {
 	];
 
 	return (
-		<>
+		<div className='pt-40 pb-20 px-6 bg-[#F4F7F6] min-h-screen font-sans'>
 			<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(privacidadSchema) }} />
+			<div className='max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-sm border-t-4 border-[#e67e22]'>
+				<h1 className='font-display text-4xl font-semibold text-[#2c3e50] mb-2 tracking-tighter uppercase'>Políticas de Privacidad</h1>
+				<p className='text-[#e67e22] font-semibold text-xs mb-12 tracking-widest uppercase'>Última actualización: Octubre, 2026</p>
 
-			<div className='pt-40 pb-20 px-6 bg-[#F4F7F6] min-h-screen font-sans'>
-				<div className='max-w-4xl mx-auto bg-white p-8 md:p-16 shadow-sm border-t-4 border-[#e67e22]'>
-					<h1 className='font-display text-4xl font-semibold text-[#2c3e50] mb-2 tracking-tighter uppercase'>Políticas de Privacidad</h1>
+				<div className='space-y-12'>
+					{secciones.map((seccion, index) => (
+						<div key={index} className='border-l-2 border-[#778696]/20 pl-8'>
+							<h2 className='font-display text-lg font-semibold text-[#2c3e50] mb-3 uppercase tracking-tight'>{seccion.titulo}</h2>
+							<p className='text-[#778696] leading-relaxed text-sm font-light italic'>{seccion.contenido}</p>
+						</div>
+					))}
+				</div>
 
-					<p className='text-[#e67e22] font-semibold text-xs mb-12 tracking-widest uppercase'>Última actualización: Febrero, 2026</p>
-
-					<div className='space-y-12'>
-						{secciones.map((seccion, index) => (
-							<div key={index} className='border-l-2 border-[#778696]/20 pl-8'>
-								<h2 className='font-display text-lg font-semibold text-[#2c3e50] mb-3 uppercase tracking-tight'>{seccion.titulo}</h2>
-								<p className='text-[#778696] leading-relaxed text-sm font-light italic'>{seccion.contenido}</p>
-							</div>
-						))}
-					</div>
-
-					<div className='mt-20 p-8 bg-[#F4F7F6] border border-gray-100'>
-						<p className='text-xs text-[#778696] font-light italic'>
-							Para cualquier duda respecto a sus datos, puede comunicarse directamente a:
-							<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>estudiobrkovic@gmail.com</span>
-						</p>
-					</div>
+				<div className='mt-20 p-8 bg-[#F4F7F6] border border-gray-100'>
+					<p className='text-xs text-[#778696] font-light italic'>
+						Para cualquier duda respecto a sus datos, puede comunicarse directamente a:
+						<span className='font-semibold text-[#2c3e50] ml-2 not-italic underline'>estudiobrkovic@gmail.com</span>
+					</p>
 				</div>
 			</div>
-			<CTASection backTo='/' backText='Volver al Inicio' />
-		</>
+
+			<div className='max-w-4xl mx-auto mt-12'>
+				<ContactForm title='Atención de Consultas Legales' />
+				<BackButton to='/' text='Volver al Inicio' />
+			</div>
+		</div>
 	);
 }

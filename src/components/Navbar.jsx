@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { WHATSAPP_URL } from '@/constants/contact';
 import { AREAS_TRABAJO } from '@/constants/routes';
 
 export const Navbar = () => {
@@ -80,10 +79,10 @@ export const Navbar = () => {
 						</div>
 					</div>
 
+					{/* BOTÓN DESKTOP -> FORMULARIO */}
 					<a
-						href={WHATSAPP_URL}
-						target='_blank'
-						rel='noopener noreferrer'
+						href='#formulario-evaluacion'
+						onClick={closeMenus}
 						className='border border-[#e67e22] text-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#e67e22] transition-all duration-300'>
 						Contacto
 					</a>
@@ -116,12 +115,11 @@ export const Navbar = () => {
 						))}
 					</div>
 
+					{/* BOTÓN MOBILE -> FORMULARIO */}
 					<a
-						href={WHATSAPP_URL}
-						target='_blank'
-						rel='noopener noreferrer'
+						href='#formulario-evaluacion'
 						onClick={closeMenus}
-						className='bg-[#e67e22] text-white text-center py-4 uppercase tracking-widest font-bold text-sm'>
+						className='border border-[#e67e22] text-white text-center py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#e67e22] transition-all duration-300'>
 						Contacto
 					</a>
 				</div>

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/postcss": "^4.3.3",
     "axios": "^1.19.0",
     "framer-motion": "^12.43.0",
