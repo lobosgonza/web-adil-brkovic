@@ -1,4 +1,5 @@
 import { contenidos } from '@/data/areasDeTrabajo';
+import { noticias } from '@/data/prensa'; // Importamos la lista de prensa
 import { notFound } from 'next/navigation';
 import ServiceClient from './ServiceClient';
 
@@ -22,6 +23,9 @@ export default async function ServicioPage({ params }) {
 
 	if (!data) notFound();
 
+	// MATCH AUTOMÁTICO: Filtra solo las noticias que coinciden con el ID del área
+	const noticiasArea = noticias.filter((item) => item.tag === id);
+
 	const serviceSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'Service',
@@ -39,7 +43,8 @@ export default async function ServicioPage({ params }) {
 	return (
 		<>
 			<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-			<ServiceClient id={id} data={data} />
+			{/* Pasamos noticiasArea como prop al cliente */}
+			<ServiceClient id={id} data={data} noticiasArea={noticiasArea} />
 		</>
 	);
 }

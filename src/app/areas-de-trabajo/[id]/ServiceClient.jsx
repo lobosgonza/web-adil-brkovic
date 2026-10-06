@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { PressSection } from '@/components/PressSection';
 import { ImageText } from '@/components/ImageText';
 import { HeroSecondary } from '@/components/HeroSecondary';
@@ -44,11 +44,37 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 					buttonVariant='dark'
 				/>
 
+				{/* SECCIÓN 1: ¿A quién está dirigido este servicio? */}
+				{data.perfilCliente && (
+					<div className='px-4 md:px-8 my-10'>
+						<div className='bg-white p-8 md:p-12 shadow-lg border-l-4 border-[#e67e22] text-[#2c3e50]'>
+							<span className='text-[#e67e22] font-bold uppercase tracking-[0.3em] text-[10px] block mb-2'>Perfil de Caso Viable</span>
+							<h3 className='text-2xl md:text-3xl font-display font-semibold uppercase tracking-tight mb-6'>¿A quién está dirigido este servicio?</h3>
+							<ul className='space-y-4 mb-8'>
+								{data.perfilCliente.map((item, idx) => (
+									<li key={idx} className='flex items-start gap-3 text-sm md:text-base text-[#546e7a] font-light leading-relaxed'>
+										<CheckCircle2 size={18} className='text-[#e67e22] shrink-0 mt-1' />
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+							<a href='#formulario-evaluacion' className='btn-primary inline-block text-center'>
+								{data.ctaPerfilText || 'Evaluar Mi Caso Ahora'}
+							</a>
+						</div>
+					</div>
+				)}
+
+				{/* FORMULARIO DE CUALIFICACIÓN */}
+				<div id='formulario-evaluacion' className='px-4 md:px-8 pb-16'>
+					<ContactForm defaultArea={id} title={`Evaluación Legal: ${data.titulo}`} />
+				</div>
+				{/* SECCIÓN 2: MATCH AUTOMÁTICO DE PRENSA Y CASOS (SE OCULTA SI NO HAY REGISTROS) */}
 				{noticiasArea.length > 0 && (
 					<div className='py-12 px-4' ref={prensaRef}>
 						<PressSection
-							title='Presencia en Medios'
-							subtitle='Impacto y Opinión Pública'
+							title='Casos Reales y Presencia en Medios'
+							subtitle='Respaldo periodístico y fallos destacados'
 							noticiasFiltradas={currentNoticias}
 							renderPagination={
 								totalPages > 1 && (
@@ -74,11 +100,7 @@ export default function ServiceClient({ id, data, noticiasArea = [] }) {
 						/>
 					</div>
 				)}
-
-				<div id='formulario-evaluacion' className='px-4 md:px-8 pb-16'>
-					<ContactForm defaultArea={id} title={`Evaluación Legal: ${data.titulo}`} />
-					<BackButton to='/areas-de-trabajo' text='Volver a Áreas de Trabajo' />
-				</div>
+				<BackButton to='/areas-de-trabajo' text='Volver a Áreas de Trabajo' />
 			</div>
 		</div>
 	);

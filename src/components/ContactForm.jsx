@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+
 import { Send, CheckCircle2, AlertCircle, MessageCircle, Lock } from 'lucide-react';
 import { WHATSAPP_URL } from '@/constants/contact';
 
@@ -29,43 +29,69 @@ export const ContactForm = ({ defaultArea = '', title = 'Evaluación Preliminar 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// 2. Filtro Honeypot: Si el campo trampa tiene texto, es un bot
+		// 1. Filtro Honeypot (Antispam)
 		if (honeypot !== '') {
-			setSubmittedStatus('qualified'); // Simulamos éxito para engañar al bot sin enviar correo
+			pushToDataLayer('form_submit_spam_bot');
+			setSubmittedStatus('qualified');
 			return;
 		}
 
 		setLoading(true);
 
-		// 3. FILTRO DE CUALIFICACIÓN: Intercepta si el usuario busca orientación gratuita
+		// 2. CASO NO CUALIFICADO (Orientación gratuita)
 		if (formData.intencion === 'orientacion_gratuita') {
 			setLoading(false);
 			setSubmittedStatus('unqualified');
+
+			// Registra la pérdida de lead por filtro informativo
+			pushToDataLayer('form_submit_unqualified', {
+				area_interes: formData.area,
+				intencion_principal: formData.intencion,
+				estado_envio: 'filtrado_gratuito',
+			});
 			return;
 		}
 
-		// 4. ENVÍA EMAILJS SOLO PARA CASOS CUALIFICADOS
+		// 3. CASO CUALIFICADO (Envío por API Route / Resend)
 		try {
-			await emailjs.send(
-				process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-				process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-				{
-					from_name: formData.nombre,
-					from_email: formData.email,
-					phone: formData.telefono,
-					area_practica: formData.area,
-					intencion: formData.intencion === 'demandar' ? 'Iniciar/Evaluar Demanda' : 'Notificado/Defensa Judicial',
-					message: formData.mensaje,
-				},
-				process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-			);
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(formData),
+			});
+
+			if (!res.ok) throw new Error('Error al enviar la solicitud');
 
 			setSubmittedStatus('qualified');
+
+			// Registra conversión exitosa
+			pushToDataLayer('form_submit_qualified', {
+				area_interes: formData.area,
+				intencion_principal: formData.intencion,
+				estado_envio: 'exitoso',
+			});
 		} catch (error) {
 			console.error('Error enviando formulario:', error);
 			setSubmittedStatus('error');
+
+			// Registra fallo técnico
+			pushToDataLayer('form_submit_error', {
+				area_interes: formData.area,
+				intencion_principal: formData.intencion,
+				estado_envio: 'error_servidor',
+			});
 		} finally {
 			setLoading(false);
+		}
+	};
+
+	const pushToDataLayer = (eventName, customParams = {}) => {
+		if (typeof window !== 'undefined') {
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				event: eventName,
+				...customParams,
+			});
 		}
 	};
 
@@ -90,6 +116,12 @@ export const ContactForm = ({ defaultArea = '', title = 'Evaluación Preliminar 
 							href={WHATSAPP_URL}
 							target='_blank'
 							rel='noopener noreferrer'
+							onClick={() =>
+								pushToDataLayer('whatsapp_click_post_form', {
+									area_interes: formData.area,
+									intencion_principal: formData.intencion,
+								})
+							}
 							className='inline-flex items-center justify-center gap-2 bg-[#2e7d32] text-white px-5 py-3 text-xs font-bold uppercase tracking-wider hover:bg-emerald-800 transition-colors w-full sm:w-auto text-center cursor-pointer'>
 							<MessageCircle size={16} className='shrink-0' />
 							<span>Enviar complemento por WhatsApp</span>
@@ -200,6 +232,7 @@ export const ContactForm = ({ defaultArea = '', title = 'Evaluación Preliminar 
 							<option value='demandar'>Deseo evaluar o iniciar una demanda judicial / acción legal</option>
 							<option value='notificado'>Fui notificado/a de una demanda o procedimiento en curso</option>
 							<option value='orientacion_gratuita'>Solo busco orientación general o consulta informativa gratuita</option>
+							<option value='empresa'>Represento a una empresa, asociación o comunidad</option>
 						</select>
 					</div>
 

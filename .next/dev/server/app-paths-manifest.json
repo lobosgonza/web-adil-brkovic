@@ -1,5 +1,5 @@
 {
-  "/areas-de-trabajo/[id]/page": "app/areas-de-trabajo/[id]/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
   "/page": "app/page.js",
   "/trayectoria/page": "app/trayectoria/page.js"
 }
