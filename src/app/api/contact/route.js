@@ -23,6 +23,7 @@ export async function POST(req) {
         await resend.emails.send({
             from: 'Web Estudio Brkovic <contacto@estudiobrkovic.cl>', // Debe ser tu dominio verificado en Resend
             to: ['estudiobrkovic@gmail.com'], // Correo real donde recibirán los leads
+            reply_to: email,
             subject: `Nuevo Caso Web (${area}): ${nombre}`,
             html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; padding: 24px; border-radius: 6px;">
