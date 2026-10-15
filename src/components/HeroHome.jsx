@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const HeroHome = () => (
 	<section className='px-8 bg-white overflow-hidden'>
@@ -16,8 +17,8 @@ export const HeroHome = () => (
 					</Link>
 				</div>
 			</div>
-			<div className='hidden md:block bg-[#778696]/10 aspect-[5/5] shadow-2xl overflow-hidden'>
-				<img src='/img/Hero-adil.webp' alt='Adil Brkovic - Retrato Profesional' className='w-full h-full object-cover object-top' />
+			<div className='hidden md:block bg-[#778696]/10 aspect-[5/5] shadow-2xl overflow-hidden relative'>
+				<Image src='/img/Hero-adil.webp' alt='Adil Brkovic - Retrato Profesional' fill priority className='object-cover object-top' sizes='(min-width: 768px) 50vw, 100vw' />
 			</div>
 		</div>
 	</section>

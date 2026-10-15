@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const ImageText = ({
 	title,
@@ -42,8 +43,8 @@ export const ImageText = ({
 
 	return (
 		<div className={`sm:my-16 shadow-none rounded-sm p-8 bg-white flex flex-col md:flex-row items-center gap-10 md:gap-16 ${imageSide === 'right' ? 'md:flex-row-reverse' : ''}`}>
-			<div className='w-full md:w-1/2 overflow-hidden shadow-xl group relative'>
-				<img src={image} alt={imageAlt} className={`w-full object-cover ${aspect} transition-all duration-700`} />
+			<div className={`w-full md:w-1/2 overflow-hidden shadow-xl group relative ${aspect}`}>
+				<Image src={image} alt={imageAlt} fill className='object-cover transition-all duration-700' sizes='(min-width: 768px) 50vw, 100vw' />
 				{attribution && (
 					<span className='absolute bottom-1 right-2 text-[7px] text-white/40 uppercase tracking-tighter pointer-events-none group-hover:text-white/70 transition-opacity italic z-10'>
 						{attribution}

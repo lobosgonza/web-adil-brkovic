@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const ServiceCard = ({ title, description, link, image, attribution }) => (
 	<div className='card-service bg-white flex flex-col h-full shadow-lg group'>
 		{/* CONTENEDOR DE IMAGEN */}
 		<div className='aspect-video overflow-hidden w-full relative shrink-0'>
-			<img src={image} alt={title} className='w-full h-full object-cover group-hover:scale-105 transition-all duration-700 block' />
+			<Image src={image} alt={title} fill className='object-cover group-hover:scale-105 transition-all duration-700 block' sizes='(min-width: 768px) 33vw, 100vw' />
 			{attribution && (
 				<span className='absolute bottom-1 right-2 text-[7px] text-white/50 uppercase tracking-tighter pointer-events-none group-hover:text-white/80 transition-opacity italic'>
 					{attribution}

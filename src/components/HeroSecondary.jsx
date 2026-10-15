@@ -1,9 +1,11 @@
+import Image from 'next/image';
+
 export const HeroSecondary = ({ title, subtitle, image }) => {
 	return (
 		<section className='bg-[#2c3e50] pt-40 pb-24 px-6 relative overflow-hidden'>
 			{image && (
 				<div className='absolute inset-0 z-0'>
-					<img src={image} alt={title} className='w-full h-full object-cover opacity-40' />
+					<Image src={image} alt={title} fill className='object-cover opacity-40' sizes='100vw' />
 					<div className='absolute inset-0 bg-gradient-to-t from-[#2c3e50] via-[#2c3e50]/60 to-transparent'></div>
 				</div>
 			)}
